@@ -377,7 +377,13 @@ MathJax = {{
 
     for level, hid, text in toc_entries:
         if level == 2:
-            if current_chapter is not None:
+            # Save any h3s collected before the first h2
+            if current_problems and current_chapter is None:
+                # Infer chapter name from problem titles (use most common topic keyword)
+                topics = [p[1].split(None, 1)[1] if ' ' in p[1] else p[1] for p in current_problems]
+                first_topic = topics[0].split('・')[0] if topics else "その他"
+                chapters.append((first_topic, current_problems))
+            elif current_chapter is not None:
                 chapters.append((current_chapter, current_problems))
             current_chapter = text
             current_problems = []
@@ -385,8 +391,10 @@ MathJax = {{
             current_problems.append((hid, text))
     if current_chapter is not None:
         chapters.append((current_chapter, current_problems))
+    elif current_problems:
+        chapters.append(("問題一覧", current_problems))
 
-    # If no h2 headings, treat all h3 as one flat list
+    # If no h2 headings at all, treat all h3 as one flat list
     if not chapters:
         all_h3 = [(hid, text) for level, hid, text in toc_entries if level == 3]
         if all_h3:
