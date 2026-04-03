@@ -25,8 +25,6 @@ MathJax = {
     line-height: 1.8; color: #333; background-color: #fafafa;
   }
   .layout { display: flex; min-height: 100vh; }
-
-  /* Sidebar */
   .sidebar {
     position: sticky; top: 0; align-self: flex-start;
     width: 240px; min-width: 240px; height: 100vh;
@@ -42,9 +40,7 @@ MathJax = {
     transition: color 0.1s;
   }
   .sidebar-home:hover { color: #1a5276; }
-  .sidebar-home svg {
-    vertical-align: -2px; margin-right: 4px;
-  }
+  .sidebar-home svg { vertical-align: -2px; margin-right: 4px; }
   .sidebar-title {
     font-weight: 700; font-size: 0.85rem; color: #1a5276;
     padding: 4px 16px 12px;
@@ -61,8 +57,6 @@ MathJax = {
   .toc-h2 { font-weight: 600; color: #1a5276 !important; margin-top: 10px; font-size: 0.88rem; }
   .toc-h3 { padding-left: 28px !important; font-size: 0.8rem; }
   .sidebar a.toc-h3.active { padding-left: 25px !important; }
-
-  /* Main */
   .main {
     flex: 1; max-width: 1000px; padding: 20px 36px; min-width: 0;
   }
@@ -75,8 +69,6 @@ MathJax = {
   tr:nth-child(even) { background-color: #f8f9fa; }
   tr:hover { background-color: #eef2f7; }
   mjx-container { overflow-x: auto; }
-
-  /* Mobile */
   .sidebar-toggle {
     display: none; position: fixed; bottom: 20px; right: 20px; z-index: 1000;
     width: 48px; height: 48px; border-radius: 50%;
@@ -97,9 +89,9 @@ MathJax = {
 <body>
 <div class="layout">
   <nav class="sidebar" id="sidebar">
-    <a class="sidebar-home" href="index.html">
-      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1L1 7h2v6h4V9h2v4h4V7h2L8 1z"/></svg>
-      TOP
+    <a class="sidebar-home" href="問題解釈｜名門の森1_index.html">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M6 2L0 7h2v7h3V9h2v5h3V7h2L6 2z"/></svg>
+      章一覧に戻る
     </a>
     <div class="sidebar-title">問題解釈｜名門の森1</div>
     <a class="toc-h2" href="#sec-1">力学</a>
