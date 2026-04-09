@@ -33,6 +33,9 @@ def convert_md_to_html(input_md, output_html, title):
         latex = latex.replace('\\*', '*')
         latex = latex.replace('\\[', '[')
         latex = latex.replace('\\]', ']')
+        # \( and \) that are NOT part of \left( or \right( — convert to plain parens
+        # But preserve \left( \right( which are valid LaTeX
+        latex = re.sub(r'(?<!\\left)(?<!\\right)\\([()])', lambda m: m.group(1), latex)
         return latex
 
     def store_formula(match):
