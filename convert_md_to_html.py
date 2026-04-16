@@ -378,11 +378,24 @@ MathJax = {{
     current_chapter = None
     current_problems = []
 
+    has_h1 = any(level == 1 for level, _, _ in toc_entries)
+
     for level, hid, text in toc_entries:
-        if level == 2:
+        if level == 1:
+            # h1 = top-level section (e.g. year). Flush current chapter.
+            if current_problems and current_chapter is not None:
+                chapters.append((current_chapter, current_problems))
+            elif current_problems and current_chapter is None:
+                topics = [p[1].split(None, 1)[1] if ' ' in p[1] else p[1] for p in current_problems]
+                first_topic = topics[0].split('・')[0] if topics else "その他"
+                chapters.append((first_topic, current_problems))
+            # Insert h1 as a section divider (no problems, just a label)
+            chapters.append(('__h1__' + text, []))
+            current_chapter = None
+            current_problems = []
+        elif level == 2:
             # Save any h3s collected before the first h2
             if current_problems and current_chapter is None:
-                # Infer chapter name from problem titles (use most common topic keyword)
                 topics = [p[1].split(None, 1)[1] if ' ' in p[1] else p[1] for p in current_problems]
                 first_topic = topics[0].split('・')[0] if topics else "その他"
                 chapters.append((first_topic, current_problems))
@@ -405,6 +418,10 @@ MathJax = {{
 
     index_body_parts = []
     for ch_name, problems in chapters:
+        if ch_name.startswith('__h1__'):
+            # Year/top-level section divider
+            index_body_parts.append(f'<h1 class="year-heading">{ch_name[6:]}</h1>')
+            continue
         index_body_parts.append(f'<h2>{ch_name}</h2>')
         index_body_parts.append('<div class="problem-grid">')
         for hid, label in problems:
@@ -437,6 +454,14 @@ MathJax = {{
   .back-link svg {{ vertical-align: -2px; margin-right: 4px; }}
   h1 {{
     font-size: 1.6rem; font-weight: 700; margin-bottom: 32px;
+  }}
+  h1.year-heading {{
+    font-size: 1.3rem; font-weight: 700; color: #2c3e50;
+    margin: 40px 0 12px; padding-bottom: 6px;
+    border-bottom: 3px solid #2c3e50;
+  }}
+  h1.year-heading:first-of-type {{
+    margin-top: 0;
   }}
   h2 {{
     font-size: 1.1rem; font-weight: 600; color: #1a5276;
@@ -490,3 +515,4 @@ MathJax = {{
 idx1 = convert_md_to_html("問題解釈｜良問の風.md", "問題解釈｜良問の風.html", "問題解釈｜良問の風")
 idx2 = convert_md_to_html("問題解釈｜名門の森1.md", "問題解釈｜名門の森1.html", "問題解釈｜名門の森1")
 idx3 = convert_md_to_html("問題解釈｜名門の森2.md", "問題解釈｜名門の森2.html", "問題解釈｜名門の森2")
+idx4 = convert_md_to_html("問題解釈｜共テ物理.md", "問題解釈｜共テ物理.html", "問題解釈｜共テ物理")

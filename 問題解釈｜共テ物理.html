@@ -1,0 +1,3907 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>問題解釈｜共テ物理</title>
+<script>
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$']],
+    displayMath: [['$$', '$$']],
+    processEscapes: true
+  },
+  options: {
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+};
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Meiryo", sans-serif;
+    margin: 0; padding: 0;
+    line-height: 1.8; color: #333; background-color: #fafafa;
+  }
+  .layout { display: flex; min-height: 100vh; }
+  .sidebar {
+    position: sticky; top: 0; align-self: flex-start;
+    width: 240px; min-width: 240px; height: 100vh;
+    overflow-y: auto; background: #fff;
+    border-right: 1px solid #e0e0e0;
+    padding: 16px 0; font-size: 0.82rem;
+  }
+  .sidebar-home {
+    display: block; text-decoration: none;
+    padding: 8px 16px 12px; margin-bottom: 4px;
+    color: #555; font-size: 0.8rem;
+    border-bottom: 1px solid #eee;
+    transition: color 0.1s;
+  }
+  .sidebar-home:hover { color: #1a5276; }
+  .sidebar-home svg { vertical-align: -2px; margin-right: 4px; }
+  .sidebar-title {
+    font-weight: 700; font-size: 0.85rem; color: #1a5276;
+    padding: 4px 16px 12px;
+  }
+  .sidebar a.toc-h2, .sidebar a.toc-h3 {
+    display: block; text-decoration: none; color: #555;
+    padding: 3px 16px; transition: background 0.1s, color 0.1s;
+  }
+  .sidebar a:hover { background: #eef2f7; color: #1a5276; }
+  .sidebar a.active {
+    color: #1a5276; font-weight: 600; background: #eef2f7;
+    border-left: 3px solid #3498db; padding-left: 13px;
+  }
+  .toc-h2 { font-weight: 600; color: #1a5276 !important; margin-top: 10px; font-size: 0.88rem; }
+  .toc-h3 { padding-left: 28px !important; font-size: 0.8rem; }
+  .sidebar a.toc-h3.active { padding-left: 25px !important; }
+  .main {
+    flex: 1; max-width: 1000px; padding: 20px 36px; min-width: 0;
+  }
+  h1 { font-size: 1.6rem; margin-bottom: 4px; }
+  h2 { color: #1a5276; border-bottom: 3px solid #1a5276; padding-bottom: 8px; margin-top: 40px; }
+  h3 { color: #2c3e50; border-left: 5px solid #3498db; padding-left: 12px; margin-top: 30px; }
+  table { border-collapse: collapse; width: 100%; margin: 16px 0; background-color: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  th, td { border: 1px solid #ddd; padding: 10px 14px; text-align: left; vertical-align: top; }
+  th { background-color: #2c3e50; color: #fff; font-weight: bold; }
+  tr:nth-child(even) { background-color: #f8f9fa; }
+  tr:hover { background-color: #eef2f7; }
+  mjx-container { overflow-x: auto; }
+  .sidebar-toggle {
+    display: none; position: fixed; bottom: 20px; right: 20px; z-index: 1000;
+    width: 48px; height: 48px; border-radius: 50%;
+    background: #1a5276; color: #fff; border: none;
+    font-size: 1.3rem; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  @media (max-width: 800px) {
+    .sidebar {
+      position: fixed; left: -260px; top: 0; z-index: 999;
+      transition: left 0.25s; box-shadow: 2px 0 12px rgba(0,0,0,0.1);
+    }
+    .sidebar.open { left: 0; }
+    .sidebar-toggle { display: block; }
+    .main { padding: 16px 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+  <nav class="sidebar" id="sidebar">
+    <a class="sidebar-home" href="問題解釈｜共テ物理_index.html">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M6 2L0 7h2v7h3V9h2v5h3V7h2L6 2z"/></svg>
+      章一覧に戻る
+    </a>
+    <div class="sidebar-title">問題解釈｜共テ物理</div>
+    <a class="toc-h3" href="#sec-1">2026</a>
+<a class="toc-h2" href="#sec-2">第1問</a>
+<a class="toc-h3" href="#sec-3">問1</a>
+<a class="toc-h3" href="#sec-4">問2</a>
+<a class="toc-h3" href="#sec-5">問3</a>
+<a class="toc-h3" href="#sec-6">問4</a>
+<a class="toc-h3" href="#sec-7">問5</a>
+<a class="toc-h2" href="#sec-8">第2問</a>
+<a class="toc-h3" href="#sec-9">問1</a>
+<a class="toc-h3" href="#sec-10">問2</a>
+<a class="toc-h3" href="#sec-11">問3以降</a>
+<a class="toc-h2" href="#sec-12">第3問</a>
+<a class="toc-h3" href="#sec-13">A</a>
+<a class="toc-h3" href="#sec-14">B</a>
+<a class="toc-h2" href="#sec-15">第4問</a>
+<a class="toc-h3" href="#sec-16">問1・問2・問3</a>
+<a class="toc-h3" href="#sec-17">問4</a>
+<a class="toc-h3" href="#sec-18">問5</a>
+<a class="toc-h3" href="#sec-19">2025</a>
+<a class="toc-h2" href="#sec-20">第1問</a>
+<a class="toc-h3" href="#sec-21">問1</a>
+<a class="toc-h3" href="#sec-22">問2</a>
+<a class="toc-h3" href="#sec-23">問3</a>
+<a class="toc-h3" href="#sec-24">問4</a>
+<a class="toc-h3" href="#sec-25">問5</a>
+<a class="toc-h2" href="#sec-26">第2問</a>
+<a class="toc-h3" href="#sec-27">問1・問2・問3</a>
+<a class="toc-h3" href="#sec-28">問4以降</a>
+<a class="toc-h2" href="#sec-29">第3問</a>
+<a class="toc-h3" href="#sec-30">A</a>
+<a class="toc-h3" href="#sec-31">B</a>
+<a class="toc-h3" href="#sec-32">問4</a>
+<a class="toc-h3" href="#sec-33">問5</a>
+<a class="toc-h3" href="#sec-34">問6</a>
+<a class="toc-h2" href="#sec-35">第4問</a>
+<a class="toc-h3" href="#sec-36">問1-4</a>
+<a class="toc-h3" href="#sec-37">問5以降</a>
+<a class="toc-h3" href="#sec-38">2024</a>
+<a class="toc-h2" href="#sec-39">第1問</a>
+<a class="toc-h3" href="#sec-40">問1</a>
+<a class="toc-h3" href="#sec-41">問2</a>
+<a class="toc-h3" href="#sec-42">問3</a>
+<a class="toc-h3" href="#sec-43">問4</a>
+<a class="toc-h3" href="#sec-44">問5</a>
+<a class="toc-h2" href="#sec-45">第2問★</a>
+<a class="toc-h3" href="#sec-46">問1</a>
+<a class="toc-h3" href="#sec-47">問2-3</a>
+<a class="toc-h3" href="#sec-48">問4-5</a>
+<a class="toc-h2" href="#sec-49">第3問</a>
+<a class="toc-h3" href="#sec-50">問1-2</a>
+<a class="toc-h3" href="#sec-51">問3</a>
+<a class="toc-h3" href="#sec-52">問4</a>
+<a class="toc-h3" href="#sec-53">問5</a>
+<a class="toc-h2" href="#sec-54">第4問</a>
+<a class="toc-h3" href="#sec-55">問1–2</a>
+<a class="toc-h3" href="#sec-56">問3</a>
+<a class="toc-h3" href="#sec-57">問4</a>
+<a class="toc-h3" href="#sec-58">問5</a>
+<a class="toc-h3" href="#sec-59">2023</a>
+<a class="toc-h2" href="#sec-60">第1問</a>
+<a class="toc-h3" href="#sec-61">問1</a>
+<a class="toc-h3" href="#sec-62">問2</a>
+<a class="toc-h3" href="#sec-63">問3</a>
+<a class="toc-h3" href="#sec-64">問4</a>
+<a class="toc-h3" href="#sec-65">問5</a>
+<a class="toc-h2" href="#sec-66">第2問</a>
+<a class="toc-h3" href="#sec-67">問1</a>
+<a class="toc-h3" href="#sec-68">問2</a>
+<a class="toc-h3" href="#sec-69">問3</a>
+<a class="toc-h3" href="#sec-70">問4</a>
+<a class="toc-h3" href="#sec-71">問5</a>
+<a class="toc-h2" href="#sec-72">第3問</a>
+<a class="toc-h3" href="#sec-73">問1-3</a>
+<a class="toc-h3" href="#sec-74">問4以降</a>
+<a class="toc-h2" href="#sec-75">第4問</a>
+<a class="toc-h3" href="#sec-76">問1</a>
+<a class="toc-h3" href="#sec-77">問2</a>
+<a class="toc-h3" href="#sec-78">問3</a>
+<a class="toc-h3" href="#sec-79">問4</a>
+<a class="toc-h3" href="#sec-80">問5</a>
+<a class="toc-h3" href="#sec-81">2022</a>
+<a class="toc-h2" href="#sec-82">第1問</a>
+<a class="toc-h3" href="#sec-83">問1</a>
+<a class="toc-h3" href="#sec-84">問2</a>
+<a class="toc-h3" href="#sec-85">問3</a>
+<a class="toc-h3" href="#sec-86">問4</a>
+<a class="toc-h3" href="#sec-87">問5</a>
+<a class="toc-h2" href="#sec-88">第2問</a>
+<a class="toc-h3" href="#sec-89">問1</a>
+<a class="toc-h3" href="#sec-90">問2</a>
+<a class="toc-h3" href="#sec-91">問3</a>
+<a class="toc-h3" href="#sec-92">問4</a>
+<a class="toc-h3" href="#sec-93">問5</a>
+<a class="toc-h3" href="#sec-94">問6</a>
+<a class="toc-h2" href="#sec-95">第2問</a>
+<a class="toc-h3" href="#sec-96">問1-2</a>
+<a class="toc-h3" href="#sec-97">問3</a>
+<a class="toc-h3" href="#sec-98">問4</a>
+<a class="toc-h3" href="#sec-99">問5</a>
+<a class="toc-h2" href="#sec-100">第4問</a>
+<a class="toc-h3" href="#sec-101">問1</a>
+<a class="toc-h3" href="#sec-102">問2</a>
+<a class="toc-h3" href="#sec-103">問3</a>
+<a class="toc-h3" href="#sec-104">問4</a>
+<a class="toc-h3" href="#sec-105">2021</a>
+<a class="toc-h2" href="#sec-106">第1問</a>
+<a class="toc-h3" href="#sec-107">問1</a>
+<a class="toc-h3" href="#sec-108">問2</a>
+<a class="toc-h3" href="#sec-109">問3</a>
+<a class="toc-h3" href="#sec-110">問4</a>
+<a class="toc-h3" href="#sec-111">問5</a>
+<a class="toc-h2" href="#sec-112">第2問</a>
+<a class="toc-h3" href="#sec-113">問1</a>
+<a class="toc-h3" href="#sec-114">問2</a>
+<a class="toc-h3" href="#sec-115">問3</a>
+<a class="toc-h3" href="#sec-116">問4</a>
+<a class="toc-h3" href="#sec-117">問5-6</a>
+<a class="toc-h2" href="#sec-118">第3問</a>
+<a class="toc-h3" href="#sec-119">問1</a>
+<a class="toc-h3" href="#sec-120">問2</a>
+<a class="toc-h3" href="#sec-121">問3</a>
+<a class="toc-h3" href="#sec-122">問4</a>
+<a class="toc-h3" href="#sec-123">問5-6</a>
+<a class="toc-h2" href="#sec-124">第4問</a>
+<a class="toc-h3" href="#sec-125">問1</a>
+<a class="toc-h3" href="#sec-126">問2-3</a>
+<a class="toc-h3" href="#sec-127">問4</a>
+  </nav>
+  <div class="main">
+    <h1>問題解釈｜共テ物理</h1>
+    <h1 id="sec-1">2026</h1>
+<h2 id="sec-2">第1問</h2>
+<h3 id="sec-3">問1</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">音速を $340\text{ m/s}$ とし</td>
+<td style="text-align: left;">音波の伝播速度 $V = 340\text{ m/s}$ である。音の到達時間の計算や、ドップラー効果の公式に代入する値として用いる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">風はないものとする</td>
+<td style="text-align: left;">媒質（空気）が静止しているため、音速は観測者や音源の運動状態によらず、地上に対して常に一定（$340\text{ m/s}$）として扱える。</td>
+</tr>
+<tr>
+<td style="text-align: left;">点Oにいる観測者</td>
+<td style="text-align: left;">観測者は静止している。したがって、ドップラー効果の公式における観測者の速度は $v_o = 0\text{ m/s}$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">観測者に向かって救急車が速さ $20\text{ m/s}$ で近づいている</td>
+<td style="text-align: left;">音源の速度の大きさは $v_s = 20\text{ m/s}$ である。音源から観測者に向かう方向を正とすると速度は $+20\text{ m/s}$ となる。音源が近づくため、観測される波長は短くなり、振動数は高くなる（ドップラー効果の公式の分母が $V - v_s$ となる）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">点Oから $720\text{ m}$ 離れた点Aにおいて、…サイレンを鳴らし始めた</td>
+<td style="text-align: left;">点Aで最初に発せられた音波の波面が、観測者のいる点Oまで伝播する距離は $L = 720\text{ m}$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">サイレンを鳴らし始めて [ ア ] 秒後から、観測者にサイレンの音が届く</td>
+<td style="text-align: left;">発音体が運動していても、一度媒質中に放出された音波は、静止した媒質中を一定の音速 $V$ で伝わる（音源の速度は加算されない）。したがって、最初の音が届くまでの時間 $t$ は、距離 $\div$ 音速より $t = \frac{720}{340}$ (s) と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">振動数 $960\text{ Hz}$ と $770\text{ Hz}$ の音が交互に入れ替わる</td>
+<td style="text-align: left;">音源の振動数 $f_0$ として、$f_0 = 960\text{ Hz}$ と $f_0 = 770\text{ Hz}$ の2つのケースについて、それぞれ独立してドップラー効果の計算を行う必要がある。</td>
+</tr>
+<tr>
+<td style="text-align: left;">観測者が聞くサイレンは、振動数約 [ イ ] $\text{Hz}$ と約 $820\text{ Hz}$</td>
+<td style="text-align: left;">観測者が聞く振動数 $f$ は、ドップラー効果の公式 $f = \frac{V - v_o}{V - v_s} f_0 = \frac{340 - 0}{340 - 20} f_0 = \frac{340}{320} f_0$ で計算できる。$f_0 = 770\text{ Hz}$ を代入すると $f = \frac{17}{16} \times 770 \fallingdotseq 818\text{ Hz}$ となり、「約 $820\text{ Hz}$」に該当する。したがって、[ イ ] には $f_0 = 960\text{ Hz}$ を代入して $f = \frac{340}{320} \times 960$ と立式して求めた値が入る。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図1（イラストと矢印）</td>
+<td style="text-align: left;">音源（救急車）から観測者（人）に向かう向き（左向き）を正方向として各速度の符号を決定できる。また、観測者が静止していることが視覚的にも確認できる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-4">問2</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">図2（回路図）の配線</td>
+<td style="text-align: left;">電源、ランプ、ホルダー1、ホルダー2がすべて1つの経路で繋がった「直列回路」である。各素子には同じ大きさの電流が流れる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">導線とコイルの抵抗値は無視できる</td>
+<td style="text-align: left;">導線の抵抗値は $0,\Omega$ である。コイルは内部（直流）抵抗を持たない、純粋な自己インダクタンス $L$ のみの素子として扱う。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（直流電源で）しばらくたったとき</td>
+<td style="text-align: left;">直流回路の定常状態（十分に時間が経過した状態）である。コンデンサーは充電が完了して電流を通さない（断線、すなわち抵抗無限大として扱う）。コイルは電流の時間変化がないため自己誘導起電力が生じず、単なる導線（抵抗 $0,\Omega$）として振る舞う。</td>
+</tr>
+<tr>
+<td style="text-align: left;">ランプが最も明るくつく</td>
+<td style="text-align: left;">ランプの明るさは消費電力 $P$ で決まる。ランプの抵抗を $r$ とすると $P = I^2 r$（交流の場合は実効値 $I_e$ を用いて $P = I_e^2 r$）と表せるため、回路を流れる電流が最大になるときに最も明るくなる。電源電圧が一定であるため、オームの法則より「回路全体の合成抵抗（交流の場合は合成インピーダンス $Z$）が最小になる素子の組合せを選べ」という条件に読み替えることができる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">交流電源…コイルとコンデンサーのリアクタンス（誘導リアクタンス、容量リアクタンス）の値は、抵抗器の抵抗値と同じ</td>
+<td style="text-align: left;">交流電源の角周波数を $\omega$、コイルの自己インダクタンスを $L$、コンデンサーの電気容量を $C$、抵抗器の抵抗値を $R$ とすると、誘導リアクタンス $X_L = \omega L$ と容量リアクタンス $X_C = \frac{1}{\omega C}$ について、$X_L = X_C = R$ という関係式が成り立つ。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（交流電源で）組合せは [ 3 ] である</td>
+<td style="text-align: left;">$X_L = X_C$ の条件下で、コイルとコンデンサーを直列に接続すると「直列共振」が起こる。このとき、コイルとコンデンサーにかかる電圧の位相がちょうど逆になり互いに打ち消し合うため、この2つの素子部分の合成インピーダンスは $0,\Omega$ となる。これにより回路全体のインピーダンスが最小となる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-5">問3</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">軽い糸</td>
+<td style="text-align: left;">糸自体の質量は無視できる。したがって、糸の張力の向きは、糸が張っている方向（風船と結び目を結ぶ直線上）と常に一致する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">バスの窓は閉じられていて、外からの空気の流れはなかった</td>
+<td style="text-align: left;">バス内の空気全体がバスと一緒に運動している。風による空気抵抗などは考慮せず、バス内における周囲の空気からの圧力差（浮力）のみを考えればよい。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図3（静止しているときの風船の様子）</td>
+<td style="text-align: left;">二酸化炭素入りの風船は全体（気体＋ゴム）の平均密度が空気より大きく、重力が浮力を上回る。ヘリウム入りの風船は全体の平均密度が空気より小さく、浮力が重力を上回る。</td>
+</tr>
+<tr>
+<td style="text-align: left;">直線道路を一定の加速度で速さを増している（図4・図5）</td>
+<td style="text-align: left;">加速度 $\vec{a}$（前方）で運動するバス内の観測者（非慣性系）から見ると、各物体には後方へ慣性力 $-m\vec{a}$ が働く。重力加速度 $\vec{g}$ と慣性加速度 $-\vec{a}$ の合ベクトルを「見かけの重力加速度 $\vec{g}' = \vec{g} - \vec{a}$」と定義すると、浮力はこの $\vec{g}'$ の逆向きに働く。図5は、「空気より密度の大きい物体（CO$_2$風船）は見かけの重力 $\vec{g}'$ の向き（斜め下後方）に引っ張られ、密度の小さい物体（He風船）は $\vec{g}'$ の逆向き（斜め上前方）に浮力を受けて傾く」という法則を示している。</td>
+</tr>
+<tr>
+<td style="text-align: left;">二つの風船はほとんど止まって見えた</td>
+<td style="text-align: left;">バス内の観測者から見て、風船に働く力（見かけの重力、浮力、糸の張力）がつり合っている状態である。このとき、糸の張る方向は、見かけの重力 $\vec{g}'$ の方向と直線状に一致する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">一定の半径の左カーブを一定の速さで進んでいる（図6）</td>
+<td style="text-align: left;">バスは等速円運動をしており、バス内の観測者から見ると、カーブの中心から遠ざかる向き（進行方向に向かって右向き）に遠心力（慣性力）が働く。</td>
+</tr>
+<tr>
+<td style="text-align: left;">カメラBで撮影された（図7）</td>
+<td style="text-align: left;">カメラBは後方から前方を向いているため、左カーブによる遠心力は「画面の右向き」として観測される。下向きの重力と右向きの遠心力の合力である「見かけの重力」は「画面の右下向き」となる。直線加速時の法則を適用し、CO$_2$風船は見かけの重力の向き（右下）に、He風船は逆向き（左上）に傾いている様子を作図して選択肢から選ぶ。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-6">問4</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">波長 $\lambda$ の光は、エネルギー $\frac{hc}{\lambda}$、運動量 $\frac{h}{\lambda}$ をもつ （波長は $\lambda$ から $\lambda'$ に変化した）</td>
+<td style="text-align: left;">衝突前の入射X線のエネルギーは $\frac{hc}{\lambda}$、運動量の大きさは $\frac{h}{\lambda}$ である。 衝突後の散乱X線のエネルギーは $\frac{hc}{\lambda'}$、運動量の大きさは $\frac{h}{\lambda'}$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">静止している質量 $m$ の電子に弾性衝突する場合 （衝突前後のエネルギー保存の法則より）</td>
+<td style="text-align: left;">衝突前の電子の運動エネルギーは $0$ である。衝突後、電子は速さ $v$ ではね飛ばされるため、正の運動エネルギー（非相対論的な近似では $\frac{1}{2}mv^2$）を得る。 衝突の前後で光子のエネルギーと電子の運動エネルギーの和が保存されるため、電子の運動エネルギーを $K$（$K>0$）とすると、$\frac{hc}{\lambda} = \frac{hc}{\lambda'} + K$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">散乱X線の波長 $\lambda'$ は、入射X線の波長 $\lambda$ より [ ウ ]</td>
+<td style="text-align: left;">エネルギー保存の式 $\frac{hc}{\lambda} = \frac{hc}{\lambda'} + K$（$K>0$）より、$\frac{hc}{\lambda} > \frac{hc}{\lambda'}$ となる。光速 $c$ とプランク定数 $h$ は正の定数であるため、分母の波長を比較すると $\lambda < \lambda'$ となる。すなわち、散乱X線の波長は「大きく」なる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図8（散乱X線と電子の進行方向）</td>
+<td style="text-align: left;">散乱X線の運動量の $y$ 成分は正の向き、電子の運動量の $y$ 成分は負の向きである。そのため、$y$ 方向の運動量保存の式において、電子の運動量成分はマイナスの符号をつけて $-mv\sin\phi$ と表されている。また、図より角度 $\phi$ は $0^\circ < \phi < 90^\circ$ の鋭角であることが読み取れる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">X線が $\theta = 90^\circ$ の向きに散乱されたとき</td>
+<td style="text-align: left;">$\cos 90^\circ = 0$、$\sin 90^\circ = 1$ であるため、問題文で与えられた運動量保存則の式に代入することで $x$ 方向： $\frac{h}{\lambda} = mv\cos\phi$ $y$ 方向： $\frac{h}{\lambda'} = mv\sin\phi$ という2つの簡略化された関係式が得られる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\lambda$ と $\lambda'$ はほぼ等しいとした</td>
+<td style="text-align: left;">得られた $y$ 方向の式において $\lambda' \approx \lambda$ と近似することで、$\frac{h}{\lambda} \approx mv\sin\phi$ と見なすことができる。これを $x$ 方向の式 $\frac{h}{\lambda} = mv\cos\phi$ と比較（連立）すると、$mv\cos\phi \approx mv\sin\phi$ となり、$\tan\phi \approx 1$ が導出できる。図から $0^\circ < \phi < 90^\circ$ であるため、$\phi \approx 45^\circ$ と一意に決定できる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-7">問5</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">同じ種類</td>
+<td style="text-align: left;">2つの容器内の気体分子1個あたりの質量 $m$ やモル質量 $M$ はそれぞれ等しい。</td>
+</tr>
+<tr>
+<td style="text-align: left;">単原子分子からなる</td>
+<td style="text-align: left;">内部エネルギー $U$ は、物質量 $n$、気体定数 $R$、絶対温度 $T$ を用いて $U = \frac{3}{2}nRT$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">理想気体</td>
+<td style="text-align: left;">理想気体の状態方程式 $pV = nRT$ が成り立つ。これにより、内部エネルギーは $U = \frac{3}{2}pV$ とも表せる。 また、分子1個あたりの平均運動エネルギー $\bar{K}$ は $\bar{K} = \frac{1}{2}m\overline{v^2} = \frac{3}{2}k_BT$（$k_B$ はボルツマン定数）と表せる。 気体分子の二乗平均速度 $\sqrt{\overline{v^2}}$ は $\sqrt{\frac{3RT}{M}}$ と表せる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">同じ体積</td>
+<td style="text-align: left;">2つの容器の体積をそれぞれ $V_1, V_2$ とすると、$V_1 = V_2 = V$（定数）とおける。</td>
+</tr>
+<tr>
+<td style="text-align: left;">圧力は等しく</td>
+<td style="text-align: left;">2つの容器内の気体の圧力をそれぞれ $p_1, p_2$ とすると、$p_1 = p_2 = p$（定数）とおける。</td>
+</tr>
+<tr>
+<td style="text-align: left;">温度(絶対温度)は異なっている</td>
+<td style="text-align: left;">2つの容器内の気体の絶対温度をそれぞれ $T_1, T_2$ とすると、$T_1 \neq T_2$ である。 また、状態方程式を変形した $n = \frac{pV}{RT}$ において $p$ と $V$ が等しいため、物質量 $n_1, n_2$ についても $n_1 \neq n_2$ であることが導かれる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">(a) 内部エネルギー</td>
+<td style="text-align: left;">式 $U = \frac{3}{2}pV$ より、内部エネルギーは圧力 $p$ と体積 $V$ のみで決まる。両容器で $p$ と $V$ が等しいため、内部エネルギーは「等しい」と判定できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">(b) 分子1個あたりの平均運動エネルギー</td>
+<td style="text-align: left;">式 $\bar{K} = \frac{3}{2}k_BT$ より、平均運動エネルギーは絶対温度 $T$ のみに比例する。両容器で $T$ が異なるため、平均運動エネルギーは「異なる（等しくない）」と判定できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">(c) 分子の二乗平均速度と物質量の積</td>
+<td style="text-align: left;">求める積は $n\sqrt{\overline{v^2}} = n\sqrt{\frac{3RT}{M}}$ と立式できる。状態方程式より $n = \frac{pV}{RT}$ を代入すると、$\frac{pV}{RT}\sqrt{\frac{3RT}{M}} = pV\sqrt{\frac{3}{MRT}}$ と変形できる。$p, V, M, R$ は両容器で等しいが、$T$ が異なるため、この値は「異なる（等しくない）」と判定できる。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sec-8">第2問</h2>
+<h3 id="sec-9">問1</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">なめらかな水平面上</td>
+<td style="text-align: left;">摩擦力がはたらかないため、衝突時以外の水平方向の運動において力学的エネルギーは保存される。また、水平面上の運動であるため、高さの変化がなく、重力による位置エネルギーの変化は 0 である。したがって、力学的エネルギーの変化は運動エネルギーの変化のみを考えればよい。</td>
+</tr>
+<tr>
+<td style="text-align: left;">空気抵抗は無視できるものとする</td>
+<td style="text-align: left;">運動中の空気抵抗による負の仕事は 0 であるため、考慮しなくてよい。</td>
+</tr>
+<tr>
+<td style="text-align: left;">固定された鉛直な壁</td>
+<td style="text-align: left;">壁の速度は衝突前後を通して常に 0 である。また、壁が動かないため壁自身の運動エネルギーは常に 0 であり、系全体の力学的エネルギーの損失は「小物体Aの運動エネルギーの減少分」に等しい。</td>
+</tr>
+<tr>
+<td style="text-align: left;">反発係数(はね返り係数)を $e$、衝突前のAの速度を $v_0$</td>
+<td style="text-align: left;">壁の速度が 0 であることから、衝突後の小物体Aの速度を $v$ とすると、反発係数の定義式より $e = -\frac{v - 0}{v_0 - 0}$ と立式できる。これより、衝突後の速度は $v = -ev_0$ となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図1（衝突前と衝突後の矢印）</td>
+<td style="text-align: left;">衝突前は $+x$ 方向に速度 $v_0$（$v_0 > 0$）で運動している。衝突後は壁からはね返され、左向き（$-x$ 方向）に運動している。これは数式上 $v = -ev_0$ となり、速度が負の値をとることと整合している。衝突後の「速さ」は絶対値をとって $ev_0$ と表せる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">小物体Aが衝突で失った力学的エネルギー</td>
+<td style="text-align: left;">失ったエネルギー $\Delta E$ は「(衝突前の運動エネルギー) $-$ (衝突後の運動エネルギー)」で求められる。衝突前の運動エネルギーは $\frac{1}{2}mv_0^2$、衝突後の運動エネルギーは $\frac{1}{2}mv^2 = \frac{1}{2}m(-ev_0)^2 = \frac{1}{2}me^2v_0^2$ と立式できるため、$\Delta E = \frac{1}{2}mv_0^2 - \frac{1}{2}me^2v_0^2 = \frac{1}{2}mv_0^2(1 - e^2)$ と計算できる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-10">問2</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">（共通設定より）なめらかな水平面上</td>
+<td style="text-align: left;">衝突時に水平方向に外力（摩擦力など）がはたらかないため、小物体Aと小物体B₁からなる系の運動量が保存される。</td>
+</tr>
+<tr>
+<td style="text-align: left;">静止していたB₁にAが速度 $v_0$ で</td>
+<td style="text-align: left;">衝突前の小物体Aの速度は $v_0$、小物体B₁の速度は $0$ である。したがって、衝突前の系全体の運動量は $mv_0 + M \cdot 0 = mv_0$ と表せる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">衝突後のA, B₁の速度をそれぞれ $v, V_1$ とする</td>
+<td style="text-align: left;">衝突後の系全体の運動量は $mv + MV_1$ と表せる。これと衝突前の運動量より、運動量保存則の式 $mv_0 = mv + MV_1$ が立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">弾性衝突した</td>
+<td style="text-align: left;">反発係数（はね返り係数）$e$ が $1$ である。反発係数の定義式 $e = -\frac{v' - V'}{v - V}$ に各速度を代入し、$1 = -\frac{v - V_1}{v_0 - 0}$ と立式できる。これを整理すると $V_1 - v = v_0$ となる。（※力学的エネルギー保存則 $\frac{1}{2}mv_0^2 = \frac{1}{2}mv^2 + \frac{1}{2}MV_1^2$ を立式してもよいが、1次式である反発係数の式を用いる方が計算が容易である）</td>
+</tr>
+<tr>
+<td style="text-align: left;">図2（速度の矢印の向き）</td>
+<td style="text-align: left;">$v_0, v, V_1$ のすべての速度は、右向き（$+x$ 方向）を正として定義されている。立式した運動量保存則と反発係数の連立方程式（$mv_0 = mv + MV_1$ と $V_1 - v = v_0$）を解くことで、$v$ と $V_1$ を $m, M, v_0$ を用いて表すことができる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-11">問3以降</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">軽いばね</td>
+<td style="text-align: left;">ばねの質量は無視できる（ばね自身の運動エネルギーを計算に含める必要がない）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">衝突前は，$\text{B}_1$，ばね，$\text{B}_2$は静止していて，ばねの長さは自然長であった</td>
+<td style="text-align: left;">衝突前の$\text{B}_1$と$\text{B}_2$の運動エネルギーは $0$ である。また、ばねは自然長であるため、弾性力による位置エネルギーも $0$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">衝突直後のA，$\text{B}_1$の速度はそれぞれ$v$，$V_1$であり，ばねと$\text{B}_2$は静止したままであった</td>
+<td style="text-align: left;">衝突が極めて短時間で行われるため（撃力のみを考慮）、衝突の瞬間にはばねの変形は起こらず、$\text{B}_1$はばねから力を受けていない。したがって、この衝突におけるAと$\text{B}_1$の間の力学的な関係は問2と全く同じであり、得られる速度 $v, V_1$ も問2で求めた結果と一致する。また、衝突直後の系「$\text{B}_1$＋ばね＋$\text{B}_2$」の運動量は $MV_1$、力学的エネルギーは $\frac{1}{2}MV_1^2$ であることが決定する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">衝突後は，$\text{B}_1$とばねと$\text{B}_2$は，ばねが伸び縮みしながら，一直線上を動いていった</td>
+<td style="text-align: left;">（共通設定より水平面はなめらかであるため）衝突後、系「$\text{B}_1$＋ばね＋$\text{B}_2$」には水平方向の外力が働かない。したがって、任意の時刻の$\text{B}_1$の速度を $v_1$、$\text{B}_2$の速度を $v_2$ とすると、運動量保存則 $MV_1 = Mv_1 + Mv_2$ が成り立つ。 また、非保存力による仕事がないため力学的エネルギーも保存され、ばねの伸び（または縮み）を $x$ とすると、$\frac{1}{2}MV_1^2 = \frac{1}{2}Mv_1^2 + \frac{1}{2}Mv_2^2 + \frac{1}{2}kx^2$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">「$\text{B}_1$，ばね，$\text{B}_2$」を一つの物体とみなして，質量$2M$の物体Bと呼ぶ</td>
+<td style="text-align: left;">「物体Bの運動」は、系「$\text{B}_1$＋$\text{B}_2$」の重心の運動に等しい。外力が働かないため、物体B（重心）の速度を $V_G$ とすると等速直線運動となる。運動量について $2MV_G = MV_1$ が成り立つため、$V_G = \frac{V_1}{2}$ で一定であることが導ける。ばねが最も縮む（または伸びる）瞬間、$\text{B}_1$と$\text{B}_2$の速度はともにこの重心速度 $\frac{V_1}{2}$ に一致する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aと$\text{B}_1$はもう一度衝突することはなかったとする</td>
+<td style="text-align: left;">Aが$\text{B}_1$から離れた後、再び追いついて衝突するような複雑な状況は除外されているため、以後の設問において「A」と「物体B」の相互作用を考慮する必要はない。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sec-12">第3問</h2>
+<h3 id="sec-13">A</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">なめらかに動くピストンのついたシリンダー</td>
+<td style="text-align: left;">ピストンの移動に伴う摩擦力の仕事は $0$ であり、考慮する必要はない。 また、シリンダー内は閉鎖系であり、気体の物質量 $n$ は常に一定である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">単原子分子理想気体</td>
+<td style="text-align: left;">理想気体の状態方程式 $pV = nRT$ が常に成り立つ。 内部エネルギー $U$ は、絶対温度 $T$ または圧力 $p$ と体積 $V$ を用いて $U = \frac{3}{2}nRT = \frac{3}{2}pV$ と立式できる。 また、定積モル比熱 $C_V = \frac{3}{2}R$、定圧モル比熱 $C_p = \frac{5}{2}R$ を用いることができる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">はじめ、気体の圧力と体積はそれぞれ、$10p_0$ と $V_0$ であった（状態A）</td>
+<td style="text-align: left;">状態Aにおける絶対温度を $T_A$ とすると、状態方程式は $10p_0V_0 = nRT_A$ となる。 また、状態Aの内部エネルギーは $U_A = \frac{3}{2}(10p_0)V_0 = 15p_0V_0$ と計算できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aから圧力を一定に保ったまま体積を $10V_0$ にした（状態B）</td>
+<td style="text-align: left;">過程A→Bは定圧（等圧）変化である。状態Bの圧力 $p_B = 10p_0$、体積 $V_B = 10V_0$ である。 この過程で気体が外部にする仕事は $W_{A \to B} = p\Delta V = 10p_0 \cdot (10V_0 - V_0) = 90p_0V_0$（正の仕事）と立式できる。 状態Bの内部エネルギーは $U_B = \frac{3}{2}(10p_0)(10V_0) = 150p_0V_0$ であり、内部エネルギーが増加しているため温度は上昇し、気体は外部から熱を吸収している。</td>
+</tr>
+<tr>
+<td style="text-align: left;">Bから体積を一定に保ったまま圧力を $p_0$ にした（状態C）</td>
+<td style="text-align: left;">過程B→Cは定積（等積）変化である。状態Cの圧力 $p_C = p_0$、体積 $V_C = 10V_0$ である。 体積の変化 $\Delta V = 0$ であるため、この過程で気体がする仕事は $W_{B \to C} = 0$ である。 状態Cの内部エネルギーは $U_C = \frac{3}{2}(p_0)(10V_0) = 15p_0V_0$ であり、内部エネルギーが減少しているため温度は低下し、気体は外部へ熱を放出している。</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cの状態から気体の温度(絶対温度)を一定に保ったまま、状態Aに戻した</td>
+<td style="text-align: left;">過程C→Aは等温変化である。ボイルの法則より、この過程では常に $pV = \text{一定} = 10p_0V_0$ が成り立つ。 温度変化 $\Delta T = 0$ であるため、内部エネルギーの変化量 $\Delta U_{C \to A}$ は $0$ である（状態Cと状態Aの内部エネルギーは等しく $U_C = U_A = 15p_0V_0$）。 体積が減少（圧縮）するため、気体がする仕事 $W_{C \to A}$ は負の値をとる（外部から正の仕事をされる）。熱力学第一法則 $Q = \Delta U + W$ より $Q_{C \to A} = W_{C \to A} < 0$ となり、気体は外部へ熱を放出している。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図1（$p-V$グラフ）</td>
+<td style="text-align: left;">グラフにおける曲線・直線と $V$ 軸で囲まれた面積が、各過程で気体がする仕事の大きさを表す。 サイクルA→B→C→Aが時計回りに描かれているため、1サイクルの間に気体が外部にする正味の仕事（$W_{\text{net}} = W_{A \to B} + W_{B \to C} + W_{C \to A}$）は正の値となり、その大きさは閉曲線によって囲まれた領域の面積に等しい。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-14">B</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">一様に存在する媒質</td>
+<td style="text-align: left;">媒質が均一であるため、波の伝わる速さ $v$ は平面上のどの場所でも、どの方向に向かっても一定である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">平面に垂直な変位を生じる横波</td>
+<td style="text-align: left;">波の変位方向が共通（$z$ 軸方向など）であるため、2つの波が重なり合う点での合成波の変位は、それぞれの波の変位の単純な和として計算できる（重ね合わせの原理）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">原点 $\text{O}$（から円形波を発生させる）</td>
+<td style="text-align: left;">波源 $\text{O}(0,0)$ から任意の観測点 $\text{P}(X,Y)$ までの波の進行距離（経路長） $r_1$ は、三平方の定理より $r_1 = \sqrt{X^2 + Y^2}$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">直線 $x = L$ の位置に波源を置き（平面波を発生させる）、図の左向きの矢印</td>
+<td style="text-align: left;">平面波の波面は $y$ 軸に平行であり、波は $-x$ 方向に進む。したがって、直線 $x = L$ 上の波源から点 $\text{P}(X,Y)$（ただし $X < L$）に到達するまでの波の進行距離（経路長） $r_2$ は、$x$ 座標の差を用いて $r_2 = L - X$ と立式できる（$Y$ 座標に依存しない）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">波長と同じ一定の値 $\lambda$</td>
+<td style="text-align: left;">2つの波の波長 $\lambda$ が等しい。速さ $v$ も一定であるため、波の基本式 $v = f\lambda$ より、振動数 $f$ や周期 $T$ も2つの波で等しい。これにより時間的に安定した干渉縞が形成される。</td>
+</tr>
+<tr>
+<td style="text-align: left;">同じ位相で振動している</td>
+<td style="text-align: left;">波源 $\text{O}$ と直線 $x = L$ 上の各点での波の初期位相が等しい。したがって、点 $\text{P}$ において2つの波が強め合う（振幅が最大になる）条件は、経路差が波長の整数倍となる</td>
+</tr>
+<tr>
+<td style="text-align: left;">山の波面の様子</td>
+<td style="text-align: left;">図中の同心円の実線および垂直な実線は波の「山」（位相が $0, 2\pi, 4\pi, \dots$ の点）を表している。隣り合う実線の間隔は波長 $\lambda$ に等しい。また、2つの波の「実線と実線の交点」は、山と山が重なるため大きく強め合う位置（腹）となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">波源での波の反射は考えない</td>
+<td style="text-align: left;">波源を通り過ぎた波（例えば原点を越えて左へ進む平面波や、$x=L$ を越えて右へ進む円形波）が反射して戻ってくることはないため、単純に「$\text{O}$ から広がる進行波」と「$-x$ 方向に進む進行波」の1回の干渉のみを考えればよい。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sec-15">第4問</h2>
+<h3 id="sec-16">問1・問2・問3</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">真空中に固定</td>
+<td style="text-align: left;">空気抵抗はなく、極板間に誘電体などの影響はない。外力が働かない限り力学的エネルギーや運動量が保存される。</td>
+</tr>
+<tr>
+<td style="text-align: left;">重力の影響を無視</td>
+<td style="text-align: left;">粒子に働く力として重力 $mg$ を考慮する必要はない。運動方程式を立てる際、働く力は電場による静電気力と磁場によるローレンツ力のみとなる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">荷電粒子が電場と磁場に与える影響は無視</td>
+<td style="text-align: left;">粒子自身の電荷による電場の乱れや、粒子の運動（電流）が作る磁場の影響は考えず、外から加えられた一定の電場 $E$、磁場 $B$ から受ける力のみを考慮すればよい。</td>
+</tr>
+<tr>
+<td style="text-align: left;">運動は紙面内である</td>
+<td style="text-align: left;">粒子の位置や速度は2次元（$x-y$ 平面）のベクトルで表せる。また、装置2の磁場による力が常に紙面内にあるため、磁場の向きは「紙面に垂直」である（表から裏、または裏から表）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">電気量 $-e$ $(e>0)$</td>
+<td style="text-align: left;">粒子は<strong>負電荷</strong>である。電場 $\vec{E}$ の中では電場と逆向きに静電気力 $\vec{F}=-e\vec{E}$ を受け、磁場 $\vec{B}$ 中では正電荷とは逆向きにローレンツ力 $\vec{F}=-e\vec{v}\times\vec{B}$ を受けることに注意が必要。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図2：放物線を描いて運動（上に凸の軌跡）</td>
+<td style="text-align: left;">粒子は極板間において常に一定の「下向き」の力を受けている。極板Bに沿って右向きに $x$ 軸、垂直上向きに $y$ 軸をとると、加速度は $a_x = 0$、$a_y = -a$ $(a>0)$ と表せる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">直流電源の記号 / 軌跡が「上に凸」</td>
+<td style="text-align: left;">電池の記号（上が負極・短い太線、下が正極・長い細線）より極板Bが高電位である。また、負電荷が下向きの力を受けている事実からも、<strong>電場 $E$ の向きは極板Bから極板Aへ向かう方向（上向き）</strong>であると特定できる。よって加速度の大きさは $a = \frac{eE}{m}$（下向き）と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">速度の大きさ $v_0$、極板Bと $45^\circ$ の角をなす向きに入射</td>
+<td style="text-align: left;">入射点での初速度を成分分解すると、水平成分 $v_{0x} = v_0 \cos 45^\circ = \frac{v_0}{\sqrt{2}}$、鉛直成分 $v_{0y} = v_0 \sin 45^\circ = \frac{v_0}{\sqrt{2}}$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">放物線を描き、距離 $L$ 離れたもう一方の穴から飛び出した</td>
+<td style="text-align: left;">$x$ 方向には等速直線運動を行うため、極板間にいる時間 $t$ は $L = v_{0x} t$ と表せる。また $y$ 方向には等加速度運動を行い、$t$ 秒後の変位が $0$ になることから $0 = v_{0y} t - \frac{1}{2}\left(\frac{eE}{m}\right)t^2$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">飛び出した直後の速度は大きさ $v_0$、角度 $45^\circ$</td>
+<td style="text-align: left;">力学的エネルギー保存則、あるいは放物運動の対称性を示している。飛び出す瞬間の速度成分は、水平方向は変わらず $v_x = v_{0x}$、鉛直方向は反転し $v_y = -v_{0y}$ となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">装置1と装置2の間の空間</td>
+<td style="text-align: left;">電場も磁場も存在しないため力が働かず、速さ $v_0$ で等速直線運動を行って装置2へ入射する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図1：一様磁場中を運動（円弧の軌跡）</td>
+<td style="text-align: left;">一様磁場中では、常に速度 $\vec{v}$ に垂直で大きさが一定のローレンツ力 $f = e v B$ を受けるため、等速円運動を行う。円の半径を $r$ とすると、運動方程式 $m\frac{v_0^2}{r} = e v_0 B$ が成り立つ。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図1：軌跡が進行方向に対して右側（時計回り）に曲がる</td>
+<td style="text-align: left;">負電荷が進行方向右向きに力を受けている。フレミングの左手の法則（中指を進行方向と「逆」に向ける）を適用すると、<strong>一様磁場の向きは「紙面の表から裏へ向かう向き」</strong>であると決定できる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-17">問4</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">質量 $m$, 電気量 $-e$ の荷電粒子</td>
+<td style="text-align: left;">負電荷であるため、磁場から受けるローレンツ力の向きは、正電荷の進行方向を基準とするフレミングの左手の法則による結果と<strong>逆向き</strong>になる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">装置1から飛び出した (...) 荷電粒子が</td>
+<td style="text-align: left;">装置2（磁場領域）に入射する際の粒子の速さは、装置1を飛び出した直後と同じ $v_0$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">境界面に対して垂直な向きに入射した</td>
+<td style="text-align: left;">図3と合わせて、点Pでの粒子の初速度ベクトルは「b方向（下向き）」である。また、入射速度が境界に垂直であることから、円軌道の中心は境界面（直線PR上）に位置することが分かる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">紙面内を等速円運動し</td>
+<td style="text-align: left;">磁場から受ける力（ローレンツ力）は常に進行方向に垂直であり、仕事をしないため速さ $v_0$ は変化しない。磁束密度の大きさを $B$、円軌道の半径を $r$ とすると、向心方向の運動方程式は $m\frac{v_0^2}{r} = e v_0 B$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図3：点Pから入射し、点Qを経て、点Rから飛び出す軌跡</td>
+<td style="text-align: left;">境界面に入ってから出るまでの軌跡は<strong>半円</strong>（中心角 $\pi$ rad）である。したがって、磁場中を運動している時間 $t$ は円運動の周期 $T$ の半分であり、$t = \frac{T}{2} = \frac{1}{2}\left(\frac{2\pi r}{v_0}\right) = \frac{\pi m}{eB}$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図3：軌跡の曲がる向き（下向きに入射し、左回りに曲がって右側の点Rへ向かう）</td>
+<td style="text-align: left;">点Pにおいて、b方向（下向き）に運動する負電荷が、円の中心方向であるc方向（右向き）にローレンツ力を受けている。フレミングの左手の法則より、一様磁場の向きは「<strong>紙面の表から裏に向かう向き</strong>」であると特定できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">PからRの軌跡上の中間地点を点Qとする</td>
+<td style="text-align: left;">点Qは半円軌道の最下点に該当する。この瞬間、粒子の速度ベクトルの向きは境界に平行な「c方向（右向き）」であり、受けるローレンツ力の向きは円の中心へ向かう「d方向（上向き）」である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">点Pと点Rの位置関係</td>
+<td style="text-align: left;">入射点Pと脱出点Rの間の距離は円軌道の直径に等しく、$PR = 2r = \frac{2mv_0}{eB}$ と立式できる。また、点Rから飛び出す直前の速度ベクトルの向きは「d方向（上向き）」である。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-18">問5</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">電場と磁場を同じ強さと向きに保ったまま</td>
+<td style="text-align: left;">電場の強さ $E$ および磁束密度 $B$ は変化しない。極板間の電場方向（上向き）と装置2の磁場方向（紙面裏向き）も前問のままである。</td>
+</tr>
+<tr>
+<td style="text-align: left;">異なる質量 $m'$ で同じ電気量 $-e$</td>
+<td style="text-align: left;">運動方程式を立てる際の質量を $m'$ とする必要がある。電荷は変わらないため、受ける静電気力（大きさ $eE$）やローレンツ力（大きさ $evB$）の式の形は変わらない。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（装置1で）質量 $m$（略）と同じ軌道を描くように</td>
+<td style="text-align: left;">装置1内での放物線の軌道方程式 $y(x)$ が元の粒子と完全に一致する。入射角 $\theta=45^\circ$ は同じであるため、軌道方程式 $y = x\tan\theta - \frac{eE}{2m{v_0}^2\cos^2\theta}x^2$ の係数を比較することで、<strong>$m{v_0}^2 = m'{v_0'}^2$</strong> （または入射時の運動エネルギー $K = \frac{1}{2}m{v_0}^2$ が等しい）という関係が成り立つ。</td>
+</tr>
+<tr>
+<td style="text-align: left;">装置1への入射速度の大きさだけを調整する</td>
+<td style="text-align: left;">調整後の入射速度の大きさを $v_0'$ とすると、上記の「同じ軌道」の条件から $v_0' = v_0 \sqrt{\frac{m}{m'}}$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ｐから磁場中に入射</td>
+<td style="text-align: left;">装置1から装置2までの軌道が元の粒子と全く同じであるため、磁場領域の境界への入射位置（点P）と入射角（境界に対して垂直・b方向）は変わらない。入射する速さは調整後の $v_0'$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">等速円運動し、磁場中から飛び出した</td>
+<td style="text-align: left;">新しい粒子の磁場中での円運動の運動方程式は $m'\frac{{v_0'}^2}{r'} = ev_0'B$ となる。円軌道の半径 $r'$ は $r' = \frac{m'v_0'}{eB}$ と表せ、ここに $v_0'$ の関係式を代入することで、$r' = \sqrt{\frac{m'}{m}}r$ となり、質量の違いによって磁場を飛び出す位置（直径）が変化することが立式できる。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="sec-19">2025</h1>
+<h2 id="sec-20">第1問</h2>
+<h3 id="sec-21">問1</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">空気は理想気体とし</td>
+<td style="text-align: left;">注射器内の空気にボイル・シャルルの法則 $\frac{pV}{T} = \text{一定}$、または理想気体の状態方程式 $pV = nRT$ が適用できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">ピストンはなめらかに動き / 図1（水平に置かれた注射器）</td>
+<td style="text-align: left;">ピストンとシリンダー間の摩擦力は無視できる。また、注射器が水平に置かれているためピストンの重力は水平方向の力のつり合いに影響しない。したがって、ピストンは常に力のつり合いの位置で静止し、「注射器内の気体の圧力 ＝ 外部の大気圧」が常に成立する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">注射器は熱を通すものとする</td>
+<td style="text-align: left;">注射器内の気体は周囲の環境と熱のやり取りを行い、常に外気の温度と熱平衡状態になる。すなわち、山頂での内部気体の絶対温度は $T_0$、ふもとでの絶対温度は $T_1$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">山頂で…ゴム栓をして、これをふもとに持ってくる</td>
+<td style="text-align: left;">注射器内は密閉されるため、内部の空気の質量（物質量 $n$）は一定に保たれる。これにより、2つの状態間でボイル・シャルルの法則を用いた立式が可能となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">山頂での大気圧を $P_0$、絶対温度を $T_0$、…体積 $V$</td>
+<td style="text-align: left;">山頂における注射器内の気体の状態は、圧力 $p = P_0$、体積 $v = V$、絶対温度 $t = T_0$ と定まる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">ふもとでの大気圧を $P_1$、絶対温度を $T_1$、…体積が $V - \Delta V$</td>
+<td style="text-align: left;">ふもとにおける注射器内の気体の状態は、圧力 $p' = P_1$、体積 $v' = V - \Delta V$、絶対温度 $t' = T_1$ と定まる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">山頂での大気圧 $P_0$ を表す式</td>
+<td style="text-align: left;">山頂とふもとの状態でボイル・シャルルの法則より $\frac{P_0 \cdot V}{T_0} = \frac{P_1 \cdot (V - \Delta V)}{T_1}$ と立式できる。これを $P_0$ について解けばよい。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-22">問2</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">重力の大きさは、重力加速度の大きさを $g$ とするとき、$mg$ となる。</td>
+<td style="text-align: left;">地表面の小物体にはたらく重力の大きさを $W = mg$ と表す。</td>
+</tr>
+<tr>
+<td style="text-align: left;">地球の全質量 $M$ が地球の重心に集まったときの万有引力 / 小物体と地球の重心の距離を $R$、万有引力定数を $G$ とする</td>
+<td style="text-align: left;">地球を重心にある質量 $M$ の質点とみなす。万有引力の法則を用いて、小物体にはたらく引力の大きさを $F = G\frac{mM}{R^2}$ と立式する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">この力（重力）は、･･･万有引力にほぼ等しい。</td>
+<td style="text-align: left;">重力と万有引力の大きさが等しいとして、$mg = G\frac{mM}{R^2}$ という方程式を立てる（地球の自転による遠心力などは無視する暗黙の前提を含む）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">[ ア ] という関係式が得られる。 / 選択肢の式</td>
+<td style="text-align: left;">選択肢がすべて地球の質量 $M$ について解かれた形（$M = \cdots$）であることから、立てた方程式 $mg = G\frac{mM}{R^2}$ の両辺を小物体の質量 $m$ で割り、$M$ について解いて $M = \frac{gR^2}{G}$ を導出する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$R = 6.4 \times 10^6\text{ m}, g = 9.8\text{ m/s}^2,$ $G = 6.7 \times 10^{-11}\text{ N}\cdot\text{m}^2/\text{kg}^2$ として地球の質量 $M$ を求めると</td>
+<td style="text-align: left;">導出した関係式に各数値を代入し、$M = \frac{9.8 \times (6.4 \times 10^6)^2}{6.7 \times 10^{-11}}$ と立式する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">約 [ イ ] $\text{ kg}$ となる。 / 選択肢の数値</td>
+<td style="text-align: left;">選択肢の数値が「1桁の整数 $\times 10^n$」の形であることから、精密な計算よりも概算が求められていると判断する。10の累乗の計算（$\frac{(10^6)^2}{10^{-11}} = 10^{23}$）と、係数部分の近似計算（$\frac{9.8 \times 6.4^2}{6.7} \approx \frac{10 \times 40}{6.7} \approx 60$）を行い、$M \approx 60 \times 10^{23} = 6 \times 10^{24}\text{ kg}$ と見積もって一意に決定する。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-23">問3</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">板のふちに、･･･三つの力がはたらいている。･･･合力を表す図として</td>
+<td style="text-align: left;">大きさを持つ剛体（板）にはたらく平面内の力の合成である。「力のベクトル和（並進方向の等価性）」と「任意の点まわりの力のモーメントの和（回転の等価性）」が元の3つの力と等しくなるような、単一の合力を求める。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図2（暗黙の座標設定）</td>
+<td style="text-align: left;">力を成分で扱うため、点Oを原点 $(0,0)$、線分OPの方向を $x$ 軸の正の向き、それに垂直で図の上向きを $y$ 軸の正の向きとする直交座標系を設定する。これにより点Pの座標は $(L, 0)$ となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">大きさ$F$で板の頂点Pに作用し、その向きは線分OPに垂直で図の下向き</td>
+<td style="text-align: left;">頂点Pにはたらく力のベクトルは $(0, -F)$ と表せる。作用点の座標は $(L, 0)$ なので、点Oまわりの力のモーメントは $L \times (-F) = -FL$ （反時計回りを正とする）と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">線分OPから反時計回りに$30^\circ$と$150^\circ$の方向を向いた大きさ$2F$の力</td>
+<td style="text-align: left;">2つの力のベクトルは、それぞれ $x$ 軸の正の向きから $30^\circ$、$150^\circ$ の角度をなす。成分表示すると $(2F\cos 30^\circ, 2F\sin 30^\circ) = (\sqrt{3}F, F)$ および $(2F\cos 150^\circ, 2F\sin 150^\circ) = (-\sqrt{3}F, F)$ と分解できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">それらの作用線は点Oで交わっている</td>
+<td style="text-align: left;">力は作用線上を平行移動（滑りベクトルとして扱う）して考えても剛体への効果は変わらない。作用線がモーメントの基準点である点Oを通る（腕の長さが $0$ である）ため、これら2つの力による点Oまわりの力のモーメントはともに $0$ とみなせる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">三つの力の合力（大きさ・向きの特定）</td>
+<td style="text-align: left;">各力のベクトルの和を計算する。$x$ 成分の和は $\sqrt{3}F + (-\sqrt{3}F) + 0 = 0$、$y$ 成分の和は $F + F + (-F) = F$。したがって、合力ベクトルは $(0, F)$ となり、合力の大きさは $F$、向きは図の上向き（$+y$方向）であると特定できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">三つの力の合力（作用線の位置の特定）</td>
+<td style="text-align: left;">合力が点Oまわりに作るモーメントは、元の3力のモーメントの和に等しい。合力は $y$ 方向の力なので、作用線の $x$ 座標を $x_0$ とすると、合力によるモーメントは $x_0 \times F$ と表せる。3力のモーメントの和は $-FL + 0 + 0 = -FL$ なので、$x_0 \cdot F = -FL$ より $x_0 = -L$ と立式できる。これにより、合力は点Oから左へ距離 $L$ 離れた点（図の左端の頂点）を通る作用線上で働く力であると一意に決定できる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-24">問4</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">真空中の領域Rを電子が通過</td>
+<td style="text-align: left;">空気抵抗や、特に明記されていない重力などの力は無視する。電子の運動は、電場と磁場から受ける力（静電気力とローレンツ力）のみによって決まるものとして立式する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">電子の入射速度は一定である</td>
+<td style="text-align: left;">3つのどのケースにおいても、領域Rの境界に達した瞬間の電子の初速（速さ）は同じ値である。これを $v_0$ とおく。</td>
+</tr>
+<tr>
+<td style="text-align: left;">速度の向きに垂直に一様な電場…適当な磁場</td>
+<td style="text-align: left;">電場による静電気力 $\vec{F}_e$ と磁場によるローレンツ力 $\vec{F}_L$ は、いずれも入射速度ベクトルに対して垂直な直線上で働く。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（電場と磁場が両方あるとき）電子は速度の向きを変えずに直進して、速さ $v_1$ で領域Rを出た</td>
+<td style="text-align: left;">電子に働く静電気力とローレンツ力が互いに逆向きで大きさが等しく、合力が $0$（力のつり合い）になっている。加速度が $0$ であるため電子は等速直線運動をしており、領域Rを出るときの速さは入射時と同じである（$v_1 = v_0$）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">電場を0にした（＝磁場のみの）ときには、…速さ $v_3$ で領域Rを出る / 図3の「磁場のみ」の軌道</td>
+<td style="text-align: left;">電子は磁場からローレンツ力を受けて等速円運動の一部を描く。ローレンツ力は常に速度ベクトルと垂直な向きに働くため、電子に対して仕事をしない（$W=0$）。仕事と運動エネルギーの関係より、運動エネルギーは変化せず、速さは入射時から一定に保たれる（$v_3 = v_0$）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">磁場を0にした（＝電場のみの）ときには、…速さ $v_2$ で領域Rを出る / 図3の「電場のみ」の軌道</td>
+<td style="text-align: left;">電子は一様な電場から一定の静電気力を受ける。図の軌道が力の向きに曲がっている（変位成分を持つ）ことから、静電気力は電子に対して正の仕事をする（$W > 0$）。仕事と運動エネルギーの関係 $\frac{1}{2}mv_2^2 - \frac{1}{2}mv_0^2 = W > 0$ より、運動エネルギーが増加するため、速さは入射時より大きくなる（$v_2 > v_0$）。（※入射方向の速度成分 $v_0$ を保ったまま、垂直方向に加速して速度成分 $v_y$ を持つため、合成速度の大きさ $v_2 = \sqrt{v_0^2 + v_y^2} > v_0$ と考えてもよい）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-25">問5</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">電子の質量を $m$, プランク定数を $h$ として, 速さ $v$ の電子のド・ブロイ波長</td>
+<td style="text-align: left;">運動量 $p=mv$ の粒子は波長 $\lambda = \frac{h}{p}$ の波としてふるまうという物質波（ド・ブロイ波）の公式から、波長 $\lambda = \frac{h}{mv}$ と立式する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図4（入射電子と反射電子の経路、結晶面の間隔 $d$、結晶面となす角 $\theta$）</td>
+<td style="text-align: left;">上下の結晶面（隣り合う格子面）でそれぞれ反射する2つの電子線の経路差を作図により求める。入射波と反射波の波面（進行方向に垂直な面）を考えるなどの幾何学的な考察から、経路差 $\Delta l = 2d \sin\theta$ と導出する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">ブラッグの条件を満たす反射方向で, 電子線が強め合う。</td>
+<td style="text-align: left;">反射波が干渉して強め合う条件として、経路差が波長 $\lambda$ の整数倍に等しいという式 $2d \sin\theta = n\lambda$ （$n = 1, 2, 3, \dots$）を立てる。また、この $\lambda$ には先ほど求めた物質波の波長 $\lambda = \frac{h}{mv}$ を代入する暗黙の前提がある。</td>
+</tr>
+<tr>
+<td style="text-align: left;">ブラッグの条件を満たす最小の $\theta$ の値を $\theta_0$ としたとき</td>
+<td style="text-align: left;">干渉条件の式を変形した $\sin\theta = n\frac{\lambda}{2d}$ において、$\theta$ が鋭角の範囲では $\theta$ が最小のとき $\sin\theta$ も最小となる。右辺は $n$ に比例するため、$\theta$ が最小になるのは干渉次数 $n$ が最小（$n=1$）のときであると判断し、$2d \sin\theta_0 = 1 \cdot \frac{h}{mv}$ と特定して立式する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">結晶面の間隔 $d$ は [ エ ] となる。 / 選択肢の式</td>
+<td style="text-align: left;">立式した方程式 $2d \sin\theta_0 = \frac{h}{mv}$ を未知数である結晶面の間隔 $d$ について解き、$d = \frac{h}{2mv \sin\theta_0}$ を導出する。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sec-26">第2問</h2>
+<h3 id="sec-27">問1・問2・問3</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">伸び縮みしない･･･糸</td>
+<td style="text-align: left;">糸の長さは常に $L$ で一定であり、小球は点Pを中心とする半径 $L$ の円弧上を運動する（軌道が固定される）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">軽い糸</td>
+<td style="text-align: left;">糸の質量は $0$ とみなす。運動を考える際、糸自体の質量や運動エネルギーは無視し、小球のみの運動方程式やエネルギー保存則を立式する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">空気抵抗および点Pでの摩擦は無視できる</td>
+<td style="text-align: left;">小球にはたらく張力は常に運動方向に垂直で仕事をせず、重力（保存力）のみが仕事をする。したがって、小球の力学的エネルギー（運動エネルギーと重力による位置エネルギーの和）は保存される。</td>
+</tr>
+<tr>
+<td style="text-align: left;">最下点にあるときの小球の位置Oを原点とし、鉛直方向に $y$ 軸、水平方向に $x$ 軸をとり</td>
+<td style="text-align: left;">点O（$y=0$ の水平面）を重力による位置エネルギーの基準面にとることができる。また、幾何学的な関係から、小球の座標は $(x, y) = (L\sin\theta, L - L\cos\theta)$ と表せる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">振り子が $x$ 軸の正の向きに振れたときの $s$ を正とする。このとき、$s = L\theta$ が成り立つ。</td>
+<td style="text-align: left;">変位 $s$ が正のとき角度 $\theta$ も正（反時計回り）となるように符号が定義されている。これにより、円弧に沿った運動を $s$ を座標とする1次元の運動として扱い、角度 $\theta$ を含む物理量を $s$ を用いて書き換えることができる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\sin\theta \fallingdotseq \theta$ の近似が成り立つ</td>
+<td style="text-align: left;">小球にはたらく力の円弧の接線方向成分は重力の分力 $F = -mg\sin\theta$（原点Oに向かう向きが負）であるが、近似式と $\theta = \frac{s}{L}$ を用いることで $F \approx -mg\theta = -mg \cdot \frac{s}{L} = -\left(\frac{mg}{L}\right)s$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（全体から）</td>
+<td style="text-align: left;">円弧に沿った運動方向にはたらく力が、変位 $s$ に比例し逆向きにはたらく復元力 $F = -Ks$（比例定数 $K = \frac{mg}{L}$）となるため、小球の運動は単振動であると特定できる。これにより、単振動の周期 $T = 2\pi\sqrt{\frac{m}{K}} = 2\pi\sqrt{\frac{L}{g}}$ などが導出できる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-28">問4以降</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">光センサーの受光部とレーザー光の光軸は、$xy$面と直交する軸上に固定されている / 図2</td>
+<td style="text-align: left;">測光のための光軸は $y$ 軸（鉛直線）と交差するように設定されており、振り子が $x=0$（変位 $s=0$）の位置に来たときにのみ糸が光軸を横切る。</td>
+</tr>
+<tr>
+<td style="text-align: left;">小球が最下点にあるとき糸がレーザー光をさえぎり、電圧が下がる</td>
+<td style="text-align: left;">オシロスコープ上で観測される電圧低下（パルス信号）のタイミングは、小球が単振動の振動中心（最下点）を通過する時刻と完全に一致する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（上記の条件と単振動の性質から導かれる暗黙の前提）</td>
+<td style="text-align: left;">振り子は1周期（1往復）の間に、振動中心（最下点）を「右向き」と「左向き」で計2回通過する。したがって、オシロスコープで観測される<strong>連続する電圧低下の時間間隔 $\Delta t$ は、振り子の周期 $T$ の半分（$\Delta t = \frac{T}{2}$）</strong>に相当する。周期を求めるには $T = 2\Delta t$ と立式する必要がある。</td>
+</tr>
+<tr>
+<td style="text-align: left;">等間隔の針状の波形がオシロスコープで観測された</td>
+<td style="text-align: left;">振り子が最下点を通過する時間間隔が常に一定であることが示されており、振り子の運動において単振動の等時性が成り立っていることを裏付けている。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図3（横軸の目盛り表示 `500ms` と波形の間隔）</td>
+<td style="text-align: left;">横軸の1マスが $500\text{ ms} = 0.5\text{ s}$ の時間幅を表している。隣り合う針状の波形（電圧降下の谷と谷）の間隔を読み取るとちょうど2マス分であるため、小球が最下点を連続して通過する時間間隔 $\Delta t$ は $\Delta t = 2 \times 0.5\text{ s} = 1.0\text{ s}$ と計算できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（グラフの読み取り値と前問の条件の統合）</td>
+<td style="text-align: left;">前問の考察により「電圧が下がる時間間隔 $\Delta t$ は振り子の周期 $T$ の半分（$\Delta t = \frac{T}{2}$）」であることが分かっている。グラフから読み取った値を代入して $\frac{T}{2} = 1.0\text{ s}$ と立式し、振り子の周期を $T = 2.0\text{ s}$ と一意に決定する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図3（縦軸の目盛り表示 `20mV`）</td>
+<td style="text-align: left;">縦軸の1マスが $20\text{ mV}$ の電圧幅を表している。波形から約 $60\text{ mV}$ 程度の電圧降下が起きていることが読み取れる。（※ただし、振り子の周期 $T$ を求める計算には直接関与しないダミー情報である可能性が高い）。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sec-29">第3問</h2>
+<h3 id="sec-30">A</h3>
+<p>単なる知識問題であるため、割愛</p>
+<h3 id="sec-31">B</h3>
+<h4 id="sec-32">問4</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">平面に広がった薄い媒質，ふちの影響はない</td>
+<td style="text-align: left;">波は波源を中心とする同心円状の波面を持つ「円形波」として広がる。また、媒質の境界からの反射波は考慮せず、波源からの直接波のみを考えればよい。</td>
+</tr>
+<tr>
+<td style="text-align: left;">平面に垂直な変位を生じる横波</td>
+<td style="text-align: left;">媒質の各点の変位は共通の軸に沿ったスカラー量として扱える。そのため、複数の波が同一点に到達した際、重ね合わせの原理により各波の変位の単純な和（代数和）で合成波の変位を計算できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">点Aおよび点Bを振動数 $f$ で振動させ</td>
+<td style="text-align: left;">2つの波源（AとB）から発生する波の振動数が等しい。これは、2つの波が干渉したときに空間的に安定した干渉縞を生じるための前提条件である。周期は $T = \frac{1}{f}$ となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$y_A = a_0 \sin(2\pi f t)$</td>
+<td style="text-align: left;">波源Aの媒質は振幅 $a_0$ の単振動を行う。また、時刻 $t=0$ で変位が $0$ であり、その後正の向きへ変位する（初期位相が $0$ である）ことがわかる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">点Pに到達するまでにかかる時間を $t_{PA}$</td>
+<td style="text-align: left;">媒質上を伝わる波の速さを $v$、波源Aから点Pまでの距離を $r_A$ （または $\overline{AP}$）とすると、$t_{PA} = \frac{r_A}{v}$ という等式関係が成り立つ。</td>
+</tr>
+<tr>
+<td style="text-align: left;">振幅を $a_{PA}$ として</td>
+<td style="text-align: left;">振幅が波源での値 $a_0$ ではなく $a_{PA}$ と置かれている。これは、波が二次元平面上を広がる円形波であるため、波源からの距離が大きくなるにつれて波のエネルギーが拡散し、振幅が減衰していくことを示している。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$y_{PA} = a_{PA} \sin { 2\pi f (t - t_{PA}) }$</td>
+<td style="text-align: left;">媒質を波が伝わることによる「時間遅れ」を表している。点Pの時刻 $t$ における振動状態は、波源Aの時刻 $t - t_{PA}$ における振動状態と一致する（振幅の減衰を除く）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$2\pi f (t - t_{PA})$ （位相の項）</td>
+<td style="text-align: left;">波長を $\lambda$、波源Aから点Pまでの距離を $r_A$ とし、波の基本式 $v = f\lambda$ を用いて $t_{PA} = \frac{r_A}{v}$ を代入すると、$2\pi f(t - \frac{r_A}{f\lambda}) = 2\pi ft - 2\pi\frac{r_A}{\lambda}$ と変形できる。波源Aからの距離 $r_A$ によって位相が $2\pi\frac{r_A}{\lambda}$ だけ遅れることが導出できる。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="sec-33">問5</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">$y_{\text{B}} = a_0 \sin(2 \pi f t)$</td>
+<td style="text-align: left;">波源Bの振動は、波源Aの振動（$y_{\text{A}} = a_0 \sin(2 \pi f t)$）と振幅 $a_0$ および振動数 $f$ が等しく、初期位相も同じ（同位相）であることが数式として定義されている。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$y_{\text{PB}} = a_{\text{PB}} \sin { 2 \pi f (t - t_{\text{PB}}) }$</td>
+<td style="text-align: left;">波源Bからの波が点Pに到達する際にも、距離に応じた時間遅れ $t_{\text{PB}}$ （位相の遅れ $2 \pi f t_{\text{PB}}$）が生じ、振幅が $a_{\text{PB}}$ へと変化（減衰）することが示されている。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$y_{\text{P}}$ は波源A，Bから出た波の変位 $y_{\text{PA}}$，$y_{\text{PB}}$ の和になる</td>
+<td style="text-align: left;">波の独立性と重ね合わせの原理が成り立つ。任意の時刻 $t$ において、点Pでの合成波の変位は代数和の等式 $y_{\text{P}}(t) = y_{\text{PA}}(t) + y_{\text{PB}}(t)$ で表される。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$y_{\text{PA}}$ は図4 ... $y_{\text{P}}$ は図5 ... $y_{\text{PB}}$ を示すグラフとして</td>
+<td style="text-align: left;">重ね合わせの式を変形すると $y_{\text{PB}}(t) = y_{\text{P}}(t) - y_{\text{PA}}(t)$ と立式できる。すなわち、ある時刻 $t$ における「図5のグラフの変位」から「図4のグラフの変位」を引き算することで、求める $y_{\text{PB}}$ のグラフの各点（振幅や位相）を作図・特定できる。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="sec-34">問6</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">点Pにおいて波源Aから出た波と波源Bから出た波が最も強め合うためには、$y_{\text{PA}}$ と $y_{\text{PB}}$ が同位相で振動しなければならない。</td>
+<td style="text-align: left;">波の干渉において振幅が最大（強め合う）になる条件は、2つの波の位相差が $2\pi$ の整数倍（$2\pi m$、$m = 0, \pm1, \dots$）となり、波の山と山、谷と谷が点Pで同時に重なることである。</td>
+</tr>
+<tr>
+<td style="text-align: left;">振動子1と振動子2を同位相で振動させた場合、</td>
+<td style="text-align: left;">2つの波源（波源Aと波源Bに相当）は同じタイミングで振動を始めている（初期位相差が $0$）。したがって、点Pにおける2つの波の位相差は、波源から点Pまでの波の伝搬時間の差にのみ起因する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$y_{\text{PB}} = a_{\text{PB}} \sin { 2\pi f (t - t_{\text{PA}}) + 2\pi f (t_{\text{PA}} - t_{\text{PB}}) }$</td>
+<td style="text-align: left;">$f$ は波の振動数、$t_{\text{PA}}$ と $t_{\text{PB}}$ はそれぞれ波源A、Bから点Pまで波が伝搬するのにかかる時間である。この式は、$y_{\text{PA}} = a_{\text{PA}} \sin { 2\pi f (t - t_{\text{PA}}) }$ であることを暗黙の前提としており、全体の中の $2\pi f(t_{\text{PA}} - t_{\text{PB}})$ の部分が $y_{\text{PA}}$ を基準とした $y_{\text{PB}}$ の位相差を表している。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$f(t_{\text{PA}} - t_{\text{PB}})$ が整数でなければならない</td>
+<td style="text-align: left;">同位相の条件（位相差が $2\pi m$）を数式にあてはめ、$2\pi f(t_{\text{PA}} - t_{\text{PB}}) = 2\pi m$ （$m$ は整数）より両辺を $2\pi$ で割ることで、$f(t_{\text{PA}} - t_{\text{PB}}) = m$ と立式できることを示している。</td>
+</tr>
+<tr>
+<td style="text-align: left;">点Pとそれぞれの波源からの距離AP，BPの差の絶対値 $\vert\text{AP} - \text{BP}\vert$ の条件が求められる。</td>
+<td style="text-align: left;">波の速さを $v$、波長を $\lambda$ とする。時間と距離の関係から $t_{\text{PA}} = \frac{\text{AP}}{v}$、$t_{\text{PB}} = \frac{\text{BP}}{v}$ が成り立つ。これを時間の差に代入して $t_{\text{PA}} - t_{\text{PB}} = \frac{\text{AP} - \text{BP}}{v}$ を得る。さらに波の基本式 $v = f\lambda$ （すなわち $\frac{f}{v} = \frac{1}{\lambda}$）を用いて、$f(t_{\text{PA}} - t_{\text{PB}}) = \frac{\text{AP} - \text{BP}}{\lambda} = m$ と変形でき、最終的に強め合う条件である経路差の式 $\vert\text{AP} - \text{BP}\vert = m\lambda$ （$m = 0, 1, 2, \dots$）が導出できる。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sec-35">第4問</h2>
+<h3 id="sec-36">問1-4</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">同一水平面(紙面)に...置かれた</td>
+<td style="text-align: left;">重力は紙面に垂直（裏向き）に働くため、導体棒のレールに沿った運動（水平方向）には影響を与えない。</td>
+</tr>
+<tr>
+<td style="text-align: left;">軽い導体棒</td>
+<td style="text-align: left;">導体棒の質量 $m$ は無視できるほど小さい（$m = 0$ とみなせる）。運動方程式 $ma = \sum F$ を立てる際、左辺が $0$ となるため、加速度の有無に関わらず常に水平方向に働く力の合力が $0$（力のつり合い）になる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">間隔 $l$ ... 磁束密度の大きさが $B$ ... 右向きに一定の速さ $v$ で動かし</td>
+<td style="text-align: left;">導体棒が磁場を垂直に横切るため、ファラデーの電磁誘導の法則より、大きさ $V = vBl$ の誘導起電力が生じる。ローレンツ力（またはフレミングの右手の法則）より、正電荷は a から b の向きに力を受けるため、b側が高電位、a側が低電位の電池として働く。</td>
+</tr>
+<tr>
+<td style="text-align: left;">はじめにコンデンサーには電荷が蓄えられておらず</td>
+<td style="text-align: left;">スイッチを閉じた瞬間（$t=0$）において、コンデンサーに蓄えられている電気量 $Q = 0$ C であり、極板間の電位差も $V_C = \frac{Q}{C} = 0$ V である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">Sを閉じる</td>
+<td style="text-align: left;">閉回路が形成され、コンデンサーの充電が始まる。任意の時刻 $t$ において回路に流れる電流を $I$、コンデンサーの電気量を $Q$ とすると、キルヒホッフの第2法則より、$vBl = RI + \frac{Q}{C}$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">導体棒が右向きに速さ $v$ で動き続ける</td>
+<td style="text-align: left;">導体棒は等速直線運動（加速度 $a=0$）をしている。したがって、導体棒に働く水平方向の力は常につり合っている。</td>
+</tr>
+<tr>
+<td style="text-align: left;">導体棒に大きさ $F$ の外力を加える</td>
+<td style="text-align: left;">導体棒に電流 $I$ が a $\rightarrow$ b の向きに流れるとき、フレミングの左手の法則より、磁場から左向き（運動を妨げる向き）に大きさ $F_m = IBl$ のアンペール力を受ける。これと右向きの外力 $F$ がつり合うため、$F = IBl$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">なめらかに運動するものとする / 空気抵抗...は無視できる</td>
+<td style="text-align: left;">導体棒とレールの間の動摩擦力や、空気抵抗による力は $0$ である。水平方向の力のつり合いは、外力 $F$ とアンペール力 $IBl$ のみで考えればよい。</td>
+</tr>
+<tr>
+<td style="text-align: left;">導線，導体レール，導体棒の電気抵抗...は無視できる</td>
+<td style="text-align: left;">回路全体における電気抵抗は、抵抗器の抵抗値 $R$ のみである。ジュール熱は抵抗器でのみ発生する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">回路の自己インダクタンスは無視できる</td>
+<td style="text-align: left;">電流の変化に伴って生じる自己誘導起電力（コイルのような性質：$-L\frac{\Delta I}{\Delta t}$）は考慮しなくてよい。純粋なRC直列回路として扱える。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-37">問5以降</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">図2（磁束密度 $B$ の向き $\odot$、速さ $v$ の向き $\rightarrow$、レール間隔 $l$）</td>
+<td style="text-align: left;">フレミングの右手の法則（またはローレンツ力）より、導体棒には a から b の向きに誘導起電力が発生する。これにより、導体棒は b 側を正極とする電池として働き、回路には反時計回りの電流 $I$ が流れる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">導体棒を...一定の速さ $v$ で動かし</td>
+<td style="text-align: left;">導体棒が磁場を横切る速さが一定であるため、生じる誘導起電力の大きさ $V_2$ は時間によらず一定となる。その大きさはファラデーの電磁誘導の法則より $V_2 = vBl$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">速さ $v$ で動き続けるように、導体棒に大きさ $F$ の外力を加える</td>
+<td style="text-align: left;">導体棒は等速直線運動をしているため、加速度は 0 であり、運動方向の力はつり合っている。導体棒を流れる電流 $I$ が磁場から受ける左向きのアンペール力 $IBl$ と右向きの外力 $F$ がつり合うため、力のつり合いの式 $F = IBl$ が成り立つ。</td>
+</tr>
+<tr>
+<td style="text-align: left;">はじめにスイッチSは開いており、...Sを閉じる</td>
+<td style="text-align: left;">回路を閉じた瞬間（$t=0$）、コイルの自己誘導の働き（レンツの法則）により電流の急激な変化が妨げられるため、直後には電流は流れない。すなわち初期条件として、$t=0$ のとき $I=0$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図2の回路図（コイル $L$、抵抗 $R$、誘導起電力 $V_2$ の閉回路）</td>
+<td style="text-align: left;">反時計回りを正の向きとしてキルヒホッフの第2法則（回路方程式）を適用すると、微小時間 $\Delta t$ の間の電流の変化量 $\Delta I$ を用いて $V_2 - L\frac{\Delta I}{\Delta t} - RI = 0$ （または $vBl = L\frac{\Delta I}{\Delta t} + RI$）と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図3の実線のグラフ（電流 $I$ が一定値に漸近する曲線）</td>
+<td style="text-align: left;">十分に時間が経過すると電流 $I$ は一定値に近づき、電流の変化がなくなる（$\frac{\Delta I}{\Delta t} \to 0$）。このときコイルの自己誘導起電力は 0 となるため、回路方程式より最終的な電流値（漸近線の縦軸の値）は $I = \frac{V_2}{R} = \frac{vBl}{R}$ となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">破線は時刻 $t=0$ におけるグラフの接線を表している</td>
+<td style="text-align: left;">グラフの接線の傾きは、電流の時間変化率 $\frac{\Delta I}{\Delta t}$ に等しい。時刻 $t=0$ では $I=0$ であるため、回路方程式に代入すると $V_2 - L\frac{\Delta I}{\Delta t} - R\cdot 0 = 0$ となる。よって、原点を通る破線の傾きは $\frac{V_2}{L} = \frac{vBl}{L}$ と求まる。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="sec-38">2024</h1>
+<h2 id="sec-39">第1問</h2>
+<h3 id="sec-40">問1</h3>
+<p>添付の画像から読み取れる「隠れた条件」や「暗黙の前提（物理法則）」を抽出・整理した表は以下の通りです。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">$\text{AC} = \text{BC} = L$（図より点Cは直角）</td>
+<td style="text-align: left;">辺ACが床（水平）に接し、辺BCは鉛直方向となる。点Aを回転軸として選んだとき、点Bに作用する水平な力の「うでの長さ」は $L$ となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">板の質量を $M$ とし、重力加速度の大きさを $g$ とする。板の重心は辺BCから $\frac{L}{3}$ の距離のところにある。</td>
+<td style="text-align: left;">板の重心には鉛直下向きに大きさ $Mg$ の重力が働く。重力の作用線を床まで延長したときの交点は、点Cから右（点Aの方向）へ $\frac{L}{3}$ の位置にある。したがって、点Aを回転軸としたときの重力の「うでの長さ」は $L - \frac{L}{3} = \frac{2L}{3}$ となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">点Bに水平右向きに大きさ $F$ の力を加える</td>
+<td style="text-align: left;">力 $F$ は、板を点Aのまわりに時計回りに回転させるように働き、そのモーメントは $F \times L$ と表せる。一方、重力は板を反時計回りに回転させるように働き、そのモーメントは $Mg \times \frac{2L}{3}$ と表せる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">板が壁と垂直になるように、頂点Aを壁に接触させる（図より床にも接触）</td>
+<td style="text-align: left;">点Aにおいて、板は壁や床から垂直抗力や静止摩擦力を受ける。しかし、点Aのまわりの力のモーメントを考える場合、これらの力の作用線はすべて回転軸（点A）を通るため、「うでの長さ」が 0 となり、力のモーメントは 0 として計算から除外できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">板が点Aのまわりに回転しないような $F$ の最大値</td>
+<td style="text-align: left;">力 $F$ が大きくなり最大値を超えると、板は点Aを支点として時計回りに回転し始める（点Cが床から浮き上がり、点Cにおける垂直抗力が 0 になる）。したがって、回転しないための条件は「（時計回りのモーメント）$\leqq$（反時計回りのモーメント）」すなわち $F \cdot L \leqq Mg \cdot \frac{2L}{3}$ と立式できる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-41">問2</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">単原子分子理想気体とみなす</td>
+<td style="text-align: left;">気体分子運動論を適用する。単原子分子1個あたりの平均並進運動エネルギー $\bar{K}$ は、絶対温度を $T$、ボルツマン定数を $k$ とすると、$\bar{K} = \frac{3}{2}kT$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">運動エネルギーの平均値</td>
+<td style="text-align: left;">公式 $\bar{K} = \frac{3}{2}kT$ より、粒子の種類（質量や構成）には依存せず、絶対温度 $T$ のみに比例することがわかる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">温度は約 $1500\text{ 万 K}$ / 温度 $300\text{ K}$</td>
+<td style="text-align: left;">それぞれの環境における絶対温度 $T_1 = 1.5 \times 10^7\text{ K}$、$T_2 = 300\text{ K}$ が与えられている。運動エネルギーの平均値は温度に比例するため、空欄2の倍率は $\frac{T_1}{T_2} = \frac{1500 \times 10^4}{300}$ と計算できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">太陽の中心部で、水素原子核...は、ヘリウム原子核...の</td>
+<td style="text-align: left;">どちらの粒子も「太陽の中心部」という同一の環境にあるため、絶対温度 $T$ が等しい（熱平衡状態にある）ことがわかる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">水素原子核... / ヘリウム原子核...</td>
+<td style="text-align: left;">水素原子核とヘリウム原子核で質量は異なるが、温度 $T$ が同じであれば、$\bar{K} = \frac{3}{2}kT$ より運動エネルギーの平均値は同一になる（すなわち、比は1となる）ことが導かれる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-42">問3</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">厚さ一定のガラス / 図2の作図</td>
+<td style="text-align: left;">水とガラスの境界面、およびガラスと空気の境界面は互いに平行である。したがって、それぞれの境界面に立てた法線も平行となり、幾何学的な錯角の関係から、「水からガラスへ入射した際の屈折角 $\theta'$」は、「ガラスから空気へ入射する際の入射角 $\theta'$」と等しくなる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$n' > n > n''$</td>
+<td style="text-align: left;">全反射は、光が「屈折率の大きい（光学的に密な）媒質から小さい（疎な）媒質」へ進むときにのみ起こる。不等式の条件から、水→ガラスの進行では $n < n'$ なので全反射は起こらず、ガラス→空気の進行では $n' > n''$ なので全反射が起こり得ることが判定できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">ガラスと空気の境界面でも同様の関係が成り立つ / $n''=1$</td>
+<td style="text-align: left;">屈折の法則（スネルの法則）をガラスと空気の境界面について適用すると、$n' \sin\theta' = n'' \sin\theta''$ と立式できる。さらに $n''=1$ を代入すると、$n' \sin\theta' = 1 \cdot \sin\theta''$ となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（平行多層媒質における屈折の法則の連立）</td>
+<td style="text-align: left;">水とガラスの境界面の式 $n \sin\theta = n' \sin\theta'$ と、ガラスと空気の境界面の式 $n' \sin\theta' = \sin\theta''$ を連立させると、$n' \sin\theta'$ を媒介として $n \sin\theta = \sin\theta''$ が導かれる。これは、中間のガラス層を無視し、水から空気へ直接光が入射したとした場合と同じ関係式になることを意味する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">角度 $\theta$ がある角度 $\theta_c$ を超えると、光は空気中に出てこなくなる / 全反射</td>
+<td style="text-align: left;">入射角 $\theta$ を徐々に大きくしていくと、連動して空気側の屈折角 $\theta''$ も大きくなる。光が空気中へ抜けられなくなる境界の瞬間（全反射が起こり始める瞬間）において、空気側の屈折角は $\theta'' = 90^\circ$ となる。このときの最初の入射角 $\theta$ が臨界角 $\theta_c$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\sin\theta_c = $ [ イ ] で与えられる</td>
+<td style="text-align: left;">導出した関係式 $n \sin\theta = \sin\theta''$ に対して、全反射の限界条件である $\theta = \theta_c$、$\theta'' = 90^\circ$ を代入すると、$n \sin\theta_c = \sin 90^\circ$ と立式できる。$\sin 90^\circ = 1$ であるため、これを解いて $\sin\theta_c = \frac{1}{n}$ と求まる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-43">問4</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">一様な磁場(磁界)中の荷電粒子の運動</td>
+<td style="text-align: left;">磁束密度を $B$、荷電粒子の速度を $v$、電気量を $q$、$\vec{v}$ と $\vec{B}$ のなす角を $\theta$ とすると、粒子は大きさ $f = |q|vB\sin\theta$ のローレンツ力を受ける。その力の向きは、フレミングの左手の法則より $\vec{v}$ と $\vec{B}$ の両方に垂直である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$xy$ 平面内で円運動している</td>
+<td style="text-align: left;">粒子が $xy$ 平面内で円軌道を描くためには、常に $xy$ 平面内で速度ベクトルに垂直な向心力（ローレンツ力）がはたらく必要がある。もし磁場が $xy$ 平面成分を持つと、$z$ 軸方向のローレンツ力が生じて軌道が $xy$ 平面から外れてしまうため、磁場は $xy$ 平面に垂直、すなわち $z$ 軸に平行でなければならない。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$x$ 軸に平行に直線運動している</td>
+<td style="text-align: left;">粒子の進行方向が変化しない（直線軌道を描く）ことから、速度に垂直な向きの力がはたらいていない、すなわちローレンツ力の大きさが $0$ であることがわかる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（ローレンツ力が0になる条件）</td>
+<td style="text-align: left;">ローレンツ力の大きさの式 $f = |q|vB\sin\theta = 0$ が成り立つためには、$\sin\theta = 0$、すなわち速度ベクトルと磁場ベクトルが平行（なす角が $0^\circ$ または $180^\circ$）でなければならない。速度は $x$ 軸に平行であるため、磁場の方向も $x$ 軸に平行であると決定できる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-44">問5</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">陽子($^{1}*{1}\text{H}$)を炭素の原子核$^{12}*{6}\text{C}$に衝突させたところ、原子核反応により原子核$^{13}_{7}\text{N}$が生成された。</td>
+<td style="text-align: left;">核反応の前後で質量数と原子番号が保存されている（質量数：$1+12=13$、原子番号：$1+6=7$）。これにより、他に生成される粒子はなく、反応式が $^{1}*{1}\text{H} + ^{12}*{6}\text{C} \to ^{13}_{7}\text{N}$ と決定できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">表1に示す統一原子質量単位 u で表した原子核の質量から考えると</td>
+<td style="text-align: left;">表の値を用いて反応前後の質量を計算・比較する。反応前の質量の和 $M_{\text{前}} = 1.0073 + 11.9967 = 13.0040\text{ u}$、反応後の質量の和 $M_{\text{後}} = 13.0019\text{ u}$ であり、$M_{\text{前}} > M_{\text{後}}$ となるため、反応によって質量が減少している（質量欠損が生じている）ことがわかる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">この反応で核エネルギーが [ オ ] ことがわかる。</td>
+<td style="text-align: left;">アインシュタインの質量とエネルギーの等価性（$E=mc^2$）より、減少した質量（質量欠損 $\Delta m = 13.0040 - 13.0019 = 0.0021\text{ u}$）がエネルギーに変換されているため、核エネルギーが「放出される（発生する）」と判断できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">原子核$^{13}_{7}\text{N}$の個数が40分間で$\frac{1}{16}$になった</td>
+<td style="text-align: left;">放射性崩壊の法則により、半減期を $T$ とすると、原子核の数は経過時間 $t$ に対して $\left(\frac{1}{2}\right)^{\frac{t}{T}}$ 倍に減少する。$\frac{1}{16} = \left(\frac{1}{2}\right)^4$ であることから、経過した40分間は半減期 $T$ のちょうど4回分に相当するとわかり、$4T = 40$（分） と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">原子核$^{13}_{7}\text{N}$の半減期は約 [ カ ] となる。</td>
+<td style="text-align: left;">立式した方程式 $4T = 40$ を解くことで、半減期 $T = 10$ 分 を一意に決定する。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sec-45">第2問★</h2>
+<h3 id="sec-46">問1</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ペットボトルとノズルはそれぞれ断面積 $S_0$, $s$ の円筒形 / 図（速度 $u_0$, $u$）</td>
+<td style="text-align: left;">水は押し縮められず、密度が一定であるとみなせる。微小な時間の間に水面が押し下げられる体積と、ノズルから噴出する水の体積は等しくなるため、$S_0 u_0 = s u$ という関係式が立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">水の運動による摩擦（粘性）...の影響は無視する</td>
+<td style="text-align: left;">水に粘り気がなく、管の壁面との間や水どうしの間で摩擦熱が発生しないことを意味する。エネルギーの損失がないため、移動する水に対して「仕事と運動エネルギーの変化の関係（力学的エネルギー保存則）」が適用できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">重力の影響は無視する</td>
+<td style="text-align: left;">水面とノズル出口の間に高低差があるが、エネルギーの式を立てる際、重力による位置エネルギーの変化は $0$ として扱ってよい。</td>
+</tr>
+<tr>
+<td style="text-align: left;">大気圧...の影響は無視する</td>
+<td style="text-align: left;">ペットボトルの外側にある空気の圧力を $0$ として扱うことができる。つまり、水がノズルから外へ押し出される際、大気が押し返そうとする力は無視でき、外気が水に対してする仕事（負の仕事）は $0$ とみなしてよい。</td>
+</tr>
+<tr>
+<td style="text-align: left;">圧縮空気がとじこめられている</td>
+<td style="text-align: left;">図の「圧縮空気」とは、大気圧よりも高い圧力 $P$ を持った空気のことである。この空気が水を押してする仕事によって、水の運動エネルギーが増加する。水の密度を $\rho$ 、移動する微小な体積を $V$ とすると、空気がする仕事 $PV$ が運動エネルギーの変化に等しいという式 $PV = \frac{1}{2}(\rho V)u^2 - \frac{1}{2}(\rho V)u_0^2$ （両辺を $V$ で割って整理すると $P = \frac{1}{2}\rho u^2 - \frac{1}{2}\rho u_0^2$）が成り立つ。</td>
+</tr>
+<tr>
+<td style="text-align: left;">ペットボトルがストッパーで固定されている</td>
+<td style="text-align: left;">ペットボトル本体の速度は $0$ である。そのため、図に示された水面の降下速度 $u_0$ や水の噴出速度 $u$ は、地面から見た絶対速度としてそのまま扱うことができる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">ノズルの栓を開くとその先端から下向きに水が噴出する</td>
+<td style="text-align: left;">下向きの運動量を持った水が外へ排出されるため、水がペットボトルを押し返す力（反作用）によって、ボトル本体には上向きの力（推力）が働く。固定されている間は、この推力とつり合う力をストッパーから下向きに受けていると解釈できる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-47">問2-3</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">引き続き，ペットボトルが固定されている</td>
+<td style="text-align: left;">ペットボトル本体の速度および運動エネルギーは $0$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">質量 $\Delta m$、体積 $\Delta V$、水の密度 $\rho_0$</td>
+<td style="text-align: left;">密度・体積・質量の関係式より、$\Delta m = \rho_0 \Delta V$ が立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$t=0$ から $t=\Delta t$ までの間、$\Delta t$ は小さいので... 圧縮空気の圧力 $p$ や，噴出した水の速さ $u$ は一定とみなせる</td>
+<td style="text-align: left;">微小時間 $\Delta t$ における変化を考える際、$p$ や $u$ は変化しない定数として扱ってよい。これにより、圧縮空気が水を押し出す際の仕事は $W = p\Delta V$、噴出した水が持つ運動エネルギーは $K = \frac{1}{2}\Delta m u^2$ と、単純な式で表すことができる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">ペットボトルやノズルの中にあるときの水の運動エネルギーは考えなくてよい</td>
+<td style="text-align: left;">ボトル内部での水面の降下速度などは非常に小さいため、その運動エネルギーは $0$ と近似してよい。これにより、力学的エネルギー保存則（仕事と運動エネルギーの変化の関係）について、「圧縮空気が水にした仕事」がそのまま「噴出した水（質量 $\Delta m$）の運動エネルギー」に変換されるという式 $p\Delta V = \frac{1}{2}\Delta m u^2$ が立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（前項までの条件を統合して）</td>
+<td style="text-align: left;">先のエネルギーの関係式 $p\Delta V = \frac{1}{2}\Delta m u^2$ に、$\Delta m = \rho_0 \Delta V$ を代入して整理することで、圧力と噴出速度の関係式 $p = \frac{1}{2}\rho_0 u^2$ が導出できる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-48">問4-5</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">$t=0$ にストッパーを外して動けるようになった</td>
+<td style="text-align: left;">ロケットを固定していた外力がなくなる。重力や空気抵抗は無視できる（前問までの条件）ため、「ロケット本体（内部の水を含む）」と「噴出する水」からなる物体系において、鉛直方向の「運動量保存則」が成り立つ。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$t=0$ での，ロケット全体の...速さを $0$ とする</td>
+<td style="text-align: left;">運動量保存則を立式する際、変化前（$t=0$）の系の総運動量は $0$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$t=\Delta t$ での，ロケット全体の質量を $M'$，速さを $\Delta v$</td>
+<td style="text-align: left;">鉛直上向きを正の向きとすると、$t=\Delta t$ におけるロケット本体の運動量は $+M'\Delta v$ と表せる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">噴出した水の速さを $u'$ とする</td>
+<td style="text-align: left;">図３(b)の矢印より、噴出した水は下向きに運動している。鉛直上向きを正の向きとすると、噴出した水（質量 $\Delta m$）の運動量は $-\Delta m \cdot u'$ と表せる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\Delta v$ も小さいので，$M'$ を $M$ に，$u'$ を $u$ に等しいとみなせる</td>
+<td style="text-align: left;">厳密にはロケットの質量は減少し、地面から見た水の噴出速度もロケットの速度分だけ変化するが、$\Delta t$ が極めて短い間の変化を考えるため、それらの変化を無視してよい。これらの近似により、$t=\Delta t$ における系の総運動量は $M\Delta v - \Delta m \cdot u$ と表すことができる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（前項までの条件を統合して）</td>
+<td style="text-align: left;">運動量保存則「はじめの総運動量＝あとの総運動量」より、$0 = M\Delta v - \Delta m \cdot u$ という関係式が立式できる。（これを変形すると、ロケットの微小な速度変化について $\Delta v = \frac{\Delta m}{M}u$ と導ける）</td>
+</tr>
+<tr>
+<td style="text-align: left;">ペットボトル内部の水の流れの影響は考えなくてよい</td>
+<td style="text-align: left;">ボトル内部で水面が下がることに伴う、水の相対的な運動や運動量の変化は無視してよい。つまり、$t=\Delta t$ において、ロケット本体と内部に残っている水はひとつの塊として、すべて同じ速度 $\Delta v$ で上向きに動いているとみなすことができる。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sec-49">第3問</h2>
+<h3 id="sec-50">問1-2</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">均一な太さの一本の金属線</td>
+<td style="text-align: left;">金属線の線密度（単位長さあたりの質量）を $\rho$ とおいたとき、$\rho$ が弦のどこでも一定の定数として扱える。</td>
+</tr>
+<tr>
+<td style="text-align: left;">間隔 $L$ で置かれた二つのこまにかける / 二つのこまの間の金属線を弦と呼ぶ</td>
+<td style="text-align: left;">弦の振動する部分の長さが $L$ である。こまと接している部分は固定端となり振動できないため、作図において定常波の両端（$x=0$ および $x=L$）は必ず「節」となる。ここから、波長 $\lambda$ と弦の長さ $L$ の間に $L = m \frac{\lambda}{2}$ （$m=1, 2, 3, \dots$ は腹の数）という関係式が成り立つ。</td>
+</tr>
+<tr>
+<td style="text-align: left;">大きさ $S$ の一定の力で引く</td>
+<td style="text-align: left;">弦にはたらく張力が $S$ である。線密度を $\rho$ とすると、弦を伝わる波の速さ $v$ は $v = \sqrt{\frac{S}{\rho}}$ と表すことができる。（おもりを変えるなどして張力 $S$ を変化させると、波の速さ $v$ も変化する。）</td>
+</tr>
+<tr>
+<td style="text-align: left;">交流の電流を流す / $y$軸方向に...磁場 / 電流に応じた力がはたらく</td>
+<td style="text-align: left;">弦を流れる電流（$x$軸方向）と磁場（$y$軸方向）が直交しているため、フレミングの左手の法則より、弦には $z$軸方向（上下方向）に電磁力（アンペール力）がはたらく。交流電流は周期的に向きが変わるため、力の向きも $+z$方向と $-z$方向で交互に入れ替わり、これが弦を $z$軸方向に強制振動させる原因（起振力）となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">交流電源の周波数を調節すると弦が共振し</td>
+<td style="text-align: left;">交流電流の周波数 $f$ （＝起振力の周波数）が、弦の持つ固有振動数のいずれかと一致した状態である。このとき、弦には周波数 $f$ の波が生じているため、波の基本式 $v = f\lambda$ が成立する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">弦の中央部分には...磁場がかけられており</td>
+<td style="text-align: left;">弦を強制振動させる力がはたらく作用点は、弦の中央（$x = \frac{L}{2}$ の位置）である。したがって、共振して定常波が生じた際、弦の中央は振動の「腹」になる。（ここから、中央が節となってしまう2倍振動や4倍振動などの偶数倍振動は発生せず、基本振動や3倍振動などの奇数倍振動が観察されることが予想できる。）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-51">問3</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">定在波の腹が $n$ 個生じている</td>
+<td style="text-align: left;">弦の長さを $L$ とすると、波長 $\lambda_n$ との間に $L = n \cdot \frac{\lambda_n}{2}$ の関係がある。すなわち波長は $\lambda_n = \frac{2L}{n}$ と表せる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">周波数を弦の固有振動数 $f_n$ として記録</td>
+<td style="text-align: left;">弦を伝わる波の速さを $v$ とすると、波の基本式 $v = f_n \lambda_n$ に上記の関係式を代入して、$f_n = \frac{v}{\lambda_n} = n \cdot \frac{v}{2L}$ が導かれる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">縦軸を $f_n$、横軸を $n$ としてグラフを描く</td>
+<td style="text-align: left;">式 $f_n = (\frac{v}{2L})n$ より、$f_n$ は $n$ に比例する。グラフが原点を通る直線状に並んでいることから、実験中、波の速さ $v$（張力 $S$ と線密度 $\rho$）が一定に保たれていることが読み取れる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図２のグラフの傾き</td>
+<td style="text-align: left;">直線の傾きは $\frac{f_n}{n}$ であり、これは基本振動数 $f_1 = \frac{v}{2L}$ を表している。グラフの点 $(n, f_n) = (1, 15), (3, 45), (5, 75), (7, 105)$ から、基本振動数は $f_1 = 15$ Hz であると特定できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">グラフにプロットされた $n$ の値が 1, 3, 5, 7 （奇数のみ）</td>
+<td style="text-align: left;">前項の「弦の中央部に磁石がある」という条件と対応している。弦の中央（$x = L/2$）に強制振動の力が働くため、中央が「腹」となる振動モードしか安定して成長しない。$n$ が偶数のときは中央が「節」になるため、この実験設定では共振が起こりにくい（または観測されない）ことを示唆している。</td>
+</tr>
+<tr>
+<td style="text-align: left;">固有振動数 $f_n$ の等間隔性</td>
+<td style="text-align: left;">$f_3 - f_1 = 30$ Hz、$f_5 - f_3 = 30$ Hz と、隣り合うプロットの間隔が $2f_1$ ずつ一定である。これは $n$ が 2 ずつ飛び越えて記録されているためであり、物理法則通りの整合性があることを示している。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-52">問4</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">おもりの質量を変えることで...$S$ を変化させ</td>
+<td style="text-align: left;">弦の張力 $S$ は吊り下げたおもりの重力に等しい（$S = Mg$）。おもりを交換しても、弦の長さ $L$ や単位長さあたりの質量（線密度） $\rho$ は変化しない定数として扱える。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$n=3$ の固有振動数 $f_3$ を測定した</td>
+<td style="text-align: left;">腹の数 $n$ が 3 で固定されている。弦の長さ $L$ が一定であれば、波長も $\lambda_3 = \frac{2L}{3}$ で一定のまま実験が行われていることを意味する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">横軸を $S, \frac{1}{S}, S^2, \sqrt{S}$ として描いたグラフ</td>
+<td style="text-align: left;">「比例する」とは、グラフが「原点を通る直線」になることを指す。図3の4つのグラフを比較し、点が直線状に並び、かつその延長線が原点 $(0,0)$ を通るものを探すと、右下の $\sqrt{S}$ のグラフが該当する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$f_3$ と $\sqrt{S}$ のグラフが直線である</td>
+<td style="text-align: left;">実験結果から、$f_3 = (\text{定数}) \times \sqrt{S}$ という数式関係が推定できる。空欄[ 16 ]には「 $\sqrt{S}$ 」が入る。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（理論的な背景知識との対応）</td>
+<td style="text-align: left;">弦を伝わる波の速さ $v$ は、張力 $S$ の平方根に比例する（$v \propto \sqrt{S}$）。波の基本式 $v = f\lambda$ より、波長 $\lambda$ が一定（$n=3$ で固定）ならば、振動数 $f$ は速さ $v$ に比例する。これらを組み合わせると $f \propto \sqrt{S}$ となり、実験データが理論通りであることを示している。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-53">問5</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">おもりの質量を変えずに</td>
+<td style="text-align: left;">弦の張力 $S$ がすべての実験データで一定である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">直径 $d = 0.1$ mm, $0.2$ mm, $0.3$ mm</td>
+<td style="text-align: left;">弦の断面積 $A$ は $\pi(d/2)^2 = \frac{\pi d^2}{4}$ と表せる。したがって、断面積は直径の2乗に比例して変化する（$A \propto d^2$）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">同じ材質の金属線</td>
+<td style="text-align: left;">金属線の密度（体積あたりの質量）を $D$ とすると、$D$ が一定であることを意味する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">線密度（単位長さあたりの質量） $\rho$ の変化</td>
+<td style="text-align: left;">$\rho = \text{密度} \times \text{断面積} = D \times \frac{\pi d^2}{4}$ より、線密度は直径の2乗に比例する（$\rho \propto d^2$）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">固有振動数 $f_n$ と直径 $d$ の関係</td>
+<td style="text-align: left;">弦を伝わる波の速さ $v = \sqrt{\frac{S}{\rho}} = \sqrt{\frac{S}{D \frac{\pi d^2}{4}}} = \frac{2}{d} \sqrt{\frac{S}{\pi D}}$ より、速さ $v$ は直径 $d$ に反比例する（$v \propto \frac{1}{d}$）。波の基本式 $f_n = \frac{v}{\lambda_n}$ より、波長（弦の長さ）が一定なら、固有振動数も直径に反比例する（$f_n \propto \frac{1}{d}$）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">表１の数値データからの検証</td>
+<td style="text-align: left;">例えば $f_1$ に着目すると、直径が 2倍（$0.1 \rightarrow 0.2$ mm）になると振動数は約1/2倍（$29.4 \rightarrow 14.9$ Hz）に、直径が 3倍（$0.1 \rightarrow 0.3$ mm）になると振動数は約1/3倍（$29.4 \rightarrow 9.5$ Hz）になっている。このことから $f_n \cdot d \approx \text{一定}$ という関係が読み取れる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">固有振動数 $f_1, f_3, f_5$ の関係（各列の比較）</td>
+<td style="text-align: left;">いずれの直径においても、$f_3$ は $f_1$ の約3倍、$f_5$ は $f_1$ の約5倍となっている。これは $f_n = n f_1$ という定常波の理論式（$n$倍振動の関係）が成立していることを示している。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sec-54">第4問</h2>
+<h3 id="sec-55">問1–2</h3>
+<p>単なる知識問題のため、割愛</p>
+<h3 id="sec-56">問3</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">一様な導体紙（導電紙）</td>
+<td style="text-align: left;">導体紙のどこでも抵抗率（電気抵抗のなりやすさ）が一定である。これにより、電流密度の大きさが電場の強さに比例し、電位の勾配（等電位線の詰まり具合）が電流の流れ方を直接的に表す。</td>
+</tr>
+<tr>
+<td style="text-align: left;">等電位線（図２）</td>
+<td style="text-align: left;">各点における電場の向きは、その点を通る等電位線と垂直である。電気力線を描く際は、等電位線と常に直交するように作図する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">負の電極(Q)から正の電極(P)の向きに $x$ 軸をとる</td>
+<td style="text-align: left;">$x$ 軸の正の向きに進むほど電位 $V$ が高くなる。電場 $\vec{E}$ は電位が低くなる向きを向くため、電場の $x$ 成分は負（$-x$ 方向）である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">原点 $x=0$ で電位 $0$ mV / 電極間の中央を原点</td>
+<td style="text-align: left;">電位分布が原点を通る $y$ 軸（$0$ mV の等電位線）および $x$ 軸に対して線対称である。これにより、点 $(x, y)$ の電位 $V$ と点 $(-x, y)$ の電位 $V'$ の間には $V' = -V$ という関係が成り立つ。</td>
+</tr>
+<tr>
+<td style="text-align: left;">等電位線の間隔（図２の密度）</td>
+<td style="text-align: left;">隣り合う等電位線間の電位差を $\Delta V$、間隔を $d$ とすると、電場の強さは $E = \frac{\Delta V}{d}$ で表される。図において線が密集している電極 P, Q 付近ほど電場が強く、中央付近や端の方ほど電場が弱いことが読み取れる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">導体紙の辺（図２の太枠）</td>
+<td style="text-align: left;">導体紙の縁（ふち）から外へは電流が流れない。これは、辺の近傍で電場が辺に対して平行であることを意味する。したがって、すべての等電位線は導体紙の辺（境界）に対して直角に交わる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">電極付近の等電位線の形状</td>
+<td style="text-align: left;">電極 P, Q は点に近い形状であるため、電極のごく近くでは等電位線は電極を中心とした同心円状（円弧状）になる。これは、2次元平面における点電荷が作る電位分布と相似である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">直線 PQ 上の電位変化</td>
+<td style="text-align: left;">$x$ 軸（直線 PQ）上に注目すると、電位 $V$ は $x$ の増加に伴って単調に増加する。ただし、等電位線の間隔が変化しているため、$V$ は $x$ の一次関数（直線的変化）ではなく、電極付近で急激に変化する曲線的なグラフになる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-57">問4</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">直線PQ上の位置 $x$ と電位 $V$ の関係（図３のグラフ）</td>
+<td style="text-align: left;">$V-x$ グラフの接線の傾きは、その地点における電場の強さ $E$ に対応する（厳密には電場の $x$ 成分 $E_x = -\frac{\Delta V}{\Delta x}$）。傾きが急なほど電場が強く、緩やかなほど電場が弱い。</td>
+</tr>
+<tr>
+<td style="text-align: left;">グラフの傾きの変化（曲線の形状）</td>
+<td style="text-align: left;">原点 $x=0$ 付近で傾きが最も緩やかで、電極（</td>
+</tr>
+<tr>
+<td style="text-align: left;">原点 $(0, 0)$ を通る点対称な曲線</td>
+<td style="text-align: left;">電位分布が $V(-x) = -V(x)$ という関係（原点に関して点対称）にある。これは、電極 P（正）と Q（負）が原点から等距離にあり、対称な電位を与えていることを意味する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">グラフが直線ではない</td>
+<td style="text-align: left;">電位 $V$ が位置 $x$ の一次関数になっていないため、この導体紙上の電場は「一様な電場」ではない。もし平行平板コンデンサーのような一様な電場であれば、グラフは直線になる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">各座標での具体的な数値</td>
+<td style="text-align: left;">位置 $x$ [mm] と電位 $V$ [mV] の値を方眼から読み取ることができる（例：$x=50$ mm で $V \approx 0.40$ mV）。これを用いることで、特定の区間における平均の電場の強さ $E_{ave} = \frac{}$</td>
+</tr>
+<tr>
+<td style="text-align: left;">$x$ が増えるほど $V$ が大きくなる</td>
+<td style="text-align: left;">電位が $x$ 軸正の向き（QからP）に向かって高くなっている。電場は電位が高い方から低い方へ向かうため、直線 PQ 上の電場の向きは $x$ 軸負の向き（PからQ）であることがわかる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-58">問5</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">導体紙を立体的に考えて</td>
+<td style="text-align: left;">平面的な導体紙を、厚みを持った一つの「抵抗器」としてモデル化している。これにより、抵抗の公式 $R = \rho \frac{l}{S}$ （$\rho$：抵抗率、$l$：長さ、$S$：断面積）が適用可能になる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$x = 0$ を中心とする小さい幅の範囲</td>
+<td style="text-align: left;">この幅（微小な長さ）を $\Delta x$ とおくと、この区間を一つの小さな独立した抵抗器としてみなして計算を進めることができる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">電場の大きさは一様とみなせる。この電場の大きさを $E$</td>
+<td style="text-align: left;">一様な電場の中での距離 $\Delta x$ はなれた2点間の電位差（電圧） $\Delta V$ は、関係式 $\Delta V = E \cdot \Delta x$ で表せる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">面積 $S$ の断面を通る電流を $I$</td>
+<td style="text-align: left;">回路全体を流れる電流 $I$ が、そのままこの微小区間の断面積 $S$ を垂直に貫いている。この区間の抵抗を $R$ とすると、オームの法則より $\Delta V = R \cdot I$ が成り立つ。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（前項までの条件を統合して）</td>
+<td style="text-align: left;">電圧に関する2つの式を組み合わせると、$E \cdot \Delta x = R \cdot I$ となる。ここに抵抗の公式 $R = \rho \frac{\Delta x}{S}$ を代入することで、$E \cdot \Delta x = \left( \rho \frac{\Delta x}{S} \right) \cdot I$ という関係式が導かれる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">導体紙の抵抗率（$\rho$）を求める</td>
+<td style="text-align: left;">上記の式から微小な幅 $\Delta x$ を両辺で消去し、$\rho$ について解くことで、$\rho = \frac{ES}{I}$ という結論（選択肢の根拠）が得られる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図４の立体的イメージ</td>
+<td style="text-align: left;">電流は $x$ 軸の負の向き（PからQ）に流れているが、抵抗率の計算においては電流の向き（正負）ではなく、スカラー量としての大きさの関係に注目すればよい。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="sec-59">2023</h1>
+<h2 id="sec-60">第1問</h2>
+<h3 id="sec-61">問1</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">変形しない長い板</td>
+<td style="text-align: left;">板は剛体として扱える。力を受けてもたわむことがなく、力の作用点間の距離は変化しないため、力のモーメントのつりあいの式を厳密に立てることができる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">板の両端の下面に細い角材を取り付けた / それぞれの体重計が（中略）板をのせた</td>
+<td style="text-align: left;">板が体重計 a, b から受ける鉛直上向きの垂直抗力の作用点は、それぞれ板の両端（角材が体重計と接する位置）である。これらの垂直抗力の大きさをそれぞれ $N_a, N_b$ [N] とおくことができる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">水平な床の上に</td>
+<td style="text-align: left;">重力は鉛直下向きに働き、体重計からの垂直抗力は鉛直上向きに働く。考慮すべき力はすべて鉛直方向に平行であり、1次元的な力のつりあいとして扱える。</td>
+</tr>
+<tr>
+<td style="text-align: left;">体重計ではかると 60 kg の人 / 片足立ちで</td>
+<td style="text-align: left;">人の質量は $m = 60$ kg である。人が板から受ける垂直抗力と板が人から受ける力は作用・反作用の関係にあるため、板には人から鉛直下向きに大きさ $mg = 60g$ [N]（$g$ は重力加速度）の力が一点（足の位置）に集中的に働く。</td>
+</tr>
+<tr>
+<td style="text-align: left;">板の全長を 2：1 に内分する位置（体重計aから遠く、体重計bに近い）</td>
+<td style="text-align: left;">体重計 a の作用点、人からの力の作用点、体重計 b の作用点までの水平距離の比が $2:1$ である。任意の長さ $L$ を用いて、体重計 a から人までの距離を $2L$、人から体重計 b までの距離を $L$ とおくことができる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">静止した</td>
+<td style="text-align: left;">板に対して「鉛直方向の力のつりあい」と「任意の点のまわりの力のモーメントのつりあい」が同時に成り立つ。力のつりあいより $N_a + N_b - 60g = 0$ が成り立つ。また、人からの力の作用点のまわりのモーメントのつりあいより $N_a \cdot 2L - N_b \cdot L = 0$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">板と角材の重さは考えなくてよい</td>
+<td style="text-align: left;">板と角材の質量は無視できる。そのため、重心に働く板自身の重力とその力のモーメントは式に含めず、板に働く力は体重計からの垂直抗力 $N_a, N_b$ と人からの荷重 $60g$ の3つのみとして立式する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">体重計 a と b の表示は、それぞれ何 kg を示すか</td>
+<td style="text-align: left;">体重計は自身が受ける下向きの力（垂直抗力の反作用）の大きさを測定し、それを重力加速度 $g$ で割った「質量」の数値を表示する。したがって、求めるべき表示値はそれぞれ求めた垂直抗力を用いて $\frac{N_a}{g}$ [kg], $\frac{N_b}{g}$ [kg] と表せる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-62">問2</h3>
+<p>単なる知識問題であるため割愛</p>
+<h3 id="sec-63">問3</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">水平な氷の上 / そりの上面は水平</td>
+<td style="text-align: left;">物体の運動は水平方向に限定される。鉛直方向に働く重力と垂直抗力は物体の移動方向と垂直であるため仕事をせず、重力による位置エネルギーの変化もない。したがって、力学的エネルギーの保存・非保存は運動エネルギーの総和のみに着目すれば判定できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">そりと氷の間には摩擦力ははたらかない</td>
+<td style="text-align: left;">そりに対して氷の面から水平方向の力（外力）が一切働かないことを示している。</td>
+</tr>
+<tr>
+<td style="text-align: left;">そりに対してブロックが動いている間、ブロックとそりの間には摩擦力がはたらき</td>
+<td style="text-align: left;">ブロックとそりの間に動摩擦力（非保存力）が働く。動摩擦力が物体の相対的な滑り（変位）を伴って仕事をするため、力学的エネルギーの一部が摩擦熱として失われ、系（ブロック＋そり）の力学的エネルギーの総和は減少する（保存しない）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">ブロックはそりに対して静止した</td>
+<td style="text-align: left;">ブロックとそりの速度が完全に等しくなった状態（相対速度がゼロ）を指す。この時点で動摩擦力は働かなくなり（または静止摩擦力となり）、力学的エネルギーの減少が終了する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">そりが岸に固定されていて動けない場合</td>
+<td style="text-align: left;">そりの速度は常に $0$ である。そりが動かないということは、ブロックから受ける摩擦力と釣り合う力（抗力）を岸から受けていることを意味する。この岸からの力は系（ブロック＋そり）にとっての「外力」となるため、系に水平方向の外力が働き、運動量の総和は保存しない。</td>
+</tr>
+<tr>
+<td style="text-align: left;">そりが固定されておらず、氷の上を左に動くことができる場合</td>
+<td style="text-align: left;">氷との間に摩擦がないため、系（ブロック＋そり）に働く水平方向の力は、互いに及ぼし合う動摩擦力（内力）のみとなる。水平方向の「外力」の和が $0$ であるため、系の運動量の総和は保存される（$\Delta P = 0$）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">運動量と力学的エネルギーについて（選択肢）</td>
+<td style="text-align: left;">運動量保存則が成り立つ条件は「系に働く外力の和が $0$ であること」、力学的エネルギー保存則が成り立つ条件は「非保存力（動摩擦力など）が仕事をしないこと」である。この2つの法則は成立条件が全く異なるため、それぞれ独立して判定する必要がある。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-64">問4</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">紙面に垂直で（中略）一様な磁場（中略）磁場に対して垂直に（中略）運動している</td>
+<td style="text-align: left;">速度ベクトルと磁場ベクトルが垂直（なす角が $90^\circ$）であるため、荷電粒子は磁場から受けるローレンツ力 $f = |q|vB$ （$q$：電気量、$v$：速さ、$B$：磁束密度）を向心力とする等速円運動を行う。質量を $m$、軌道半径を $r$ として、運動方程式 $m\frac{v^2}{r} = |q|vB$ を立てることができる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">表から裏に向かう（中略）磁場 / 正と負の荷電粒子 / 運動の向き（矢印）</td>
+<td style="text-align: left;">フレミングの左手の法則よりローレンツ力の向き（円運動の中心方向）が判定できる。磁場が紙面奥向き（$\otimes$）のとき、正電荷は進行方向に向かって常に「左向き」に力を受けるため、軌道は「反時計回り（左回り）」となる。負電荷は電流の向きが進行方向と逆になるため、進行方向に向かって常に「右向き」に力を受け、軌道は「時計回り（右回り）」となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">同じ大きさの電気量 / 同じ速さ / 正の荷電粒子は負の荷電粒子より、質量が大きい</td>
+<td style="text-align: left;">運動方程式から軌道半径の式 $r = \frac{mv}{|q|B}$ が導かれる。2つの粒子において電気量の絶対値 $|q|$、速さ $v$、磁束密度 $B$ がすべて共通であるため、軌道半径 $r$ は質量 $m$ に比例する。正電荷の質量 $m_+$ と負電荷の質量 $m_-$ の間に $m_+ > m_-$ の関係があるため、正電荷の軌道半径 $r_+$ は負電荷の軌道半径 $r_-$ よりも大きくなる（$r_+ > r_-$）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">荷電粒子間にはたらく力や重力の影響は無視できる</td>
+<td style="text-align: left;">2つの粒子間に働く静電気力（クーロン力）や、重力による落下運動などを考慮する必要はない。それぞれの粒子は、一様な磁場からローレンツ力のみを受けて独立して理想的な等速円運動（真円の軌道）を行うとみなしてよい。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-65">問5</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">光電効果 / 飛び出してくる電子の運動エネルギーの最大値 $K_0$ と光の振動数 $\nu$</td>
+<td style="text-align: left;">プランク定数を $h$、金属の仕事関数を $W'$ とすると、$K_0 = h\nu - W'$ という関係式が成り立つ。（光電方程式という）</td>
+</tr>
+<tr>
+<td style="text-align: left;">図4（直線のグラフ）</td>
+<td style="text-align: left;">グラフが直線であることから、$K_0$ は $\nu$ の一次関数として表される。縦軸を $K_0$、横軸を $\nu$ としたとき、この直線の傾きがプランク定数 $h$ に対応している。</td>
+</tr>
+<tr>
+<td style="text-align: left;">グラフの横軸との交点 $\nu_0$</td>
+<td style="text-align: left;">光電子が飛び出すために必要な最小の振動数（限界振動数）である。このとき運動エネルギーの最大値は $K_0 = 0$ となるため、光電方程式に代入して $0 = h\nu_0 - W'$ という関係が成り立つ。</td>
+</tr>
+<tr>
+<td style="text-align: left;">グラフの縦軸との交点 $-W$</td>
+<td style="text-align: left;">直線を $\nu = 0$ まで延長したときの縦軸の切片が $-W$ であることを示している。光電方程式 $K_0 = h\nu - W'$ と比較すると、図中の $W$ がこの金属の仕事関数 $W'$ そのものを表していることが読み取れる。したがって、グラフの式は $K_0 = h\nu - W$ と決定できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">プランク定数 $h$ を（中略）表す</td>
+<td style="text-align: left;">グラフ上の2点 $(\nu_0, 0)$ と $(0, -W)$ を結ぶ直線の傾きが $h$ であることから、$h = \frac{0 - (-W)}{\nu_0 - 0} = \frac{W}{\nu_0}$ と計算できる。あるいは、方程式 $0 = h\nu_0 - W$ を $h$ について解くことでも立式できる。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sec-66">第2問</h2>
+<h3 id="sec-67">問1</h3>
+<p>単なる知識問題のため割愛</p>
+<h3 id="sec-68">問2</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">$R = kv$ / $R = mg$ となる $v$ が終端速度の大きさ $v_f$</td>
+<td style="text-align: left;">落下中の物体には鉛直下向きに重力 $mg$、鉛直上向きに空気抵抗力 $R$ が働く。速度が増加するにつれて抵抗力 $R$ が大きくなり、やがて $R = mg$ となって力のつりあい（合力 $0$、加速度 $0$）が成立する。これ以降の一定の落下速度が終端速度 $v_f$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">物体の形は枚数によらずほぼ同じなので、$k$ は変わらない / 質量 $m$ は（中略）枚数 $n$ に比例します</td>
+<td style="text-align: left;">アルミカップ1枚の質量を $m_0$ とおくと、全体の質量は $m = m_0 n$ と表せる。$k, m_0, g$ がすべて定数であるため、終端速度の理論式は $v_f = \frac{mg}{k} = \left(\frac{m_0g}{k}\right) n$ となり、$v_f$ は枚数 $n$ に正比例すると立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">20 cm ごとに落下するのに要する時間（表1の数値）</td>
+<td style="text-align: left;">ある区間の変位 $\Delta x = 20$ cm（$0.20$ m）を通過するのに要した時間 $\Delta t$ [s] が記録されている。各区間における平均の速さは $v = \frac{\Delta x}{\Delta t}$ で求められる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">表1の $n=3$ の列の数値変化</td>
+<td style="text-align: left;">落下し始めは区間ごとの所要時間が短くなっていく（加速している）が、区間「40～60 cm」以降は所要時間が $0.13$ s で一定に落ち着いている。時間が一定になった区間では、物体が終端速度 $v_f$ に達し等速直線運動をしているとみなすことができる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$v_f$ を（中略）求める / $\text{m/s}$（解答群の単位）</td>
+<td style="text-align: left;">速度が一定になった区間のデータ（$\Delta x = 20$ cm, $\Delta t = 0.13$ s）を用いて終端速度を求める。解答の単位が $\text{m/s}$ であるため、距離の単位を cm から m に変換し、$v_f = \frac{0.20}{0.13}$ [m/s] と立式して計算する必要がある。</td>
+</tr>
+<tr>
+<td style="text-align: left;">有効数字2桁 / 選択肢の形式（$\square.\square \times 10^\square$）</td>
+<td style="text-align: left;">計算結果（$1.538\dots$）を四捨五入して有効数字2桁とし、科学的記数法（$1.5 \times 10^0$）のフォーマットに合わせて空欄に当てはまる数字を決定する。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-69">問3</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述・図の表現</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">$v_f = \frac{mg}{k}$ に基づく予想（生徒の発言）</td>
+<td style="text-align: left;">空気抵抗が速さに比例するモデル（$R = kv$）を前提としている。このモデルが正しいならば、$v_f$ は質量 $m$（すなわち枚数 $n$）に正比例するため、図3のグラフは「原点を通る直線」になるはずである。</td>
+</tr>
+<tr>
+<td style="text-align: left;">予想と少し違いますね（生徒の発言）</td>
+<td style="text-align: left;">実験データが直線に乗っていないことを示唆している。これは、最初に立てた「抵抗力は速さに比例する」という物理モデル（仮定）そのものが、この実験条件下では不適切であることを意味する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図3のプロットの形状（右上がりの曲線）</td>
+<td style="text-align: left;">点の並びが上に凸の曲線（次第に傾きが緩やかになる形状）を描いている。これは $v_f$ の増加率が $n$ の増加に対して減少していることを示しており、数学的には $v_f \propto n^a$（ただし $0 < a < 1$）のような関係が推測される。</td>
+</tr>
+<tr>
+<td style="text-align: left;">空気抵抗の別モデルの検討（暗黙の前提）</td>
+<td style="text-align: left;">高校物理で扱う空気抵抗のもう一つのモデルは「速さの2乗に比例する（$R = kv^2$）」である。この場合、終端速度では $mg = kv_f^2$ より $v_f = \sqrt{\frac{mg}{k}} \propto \sqrt{n}$ となる。図3の曲線は、この $v_f \propto \sqrt{n}$（ルートのグラフ）の形状と整合する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">グラフの原点付近の挙動</td>
+<td style="text-align: left;">枚数 $n = 0$ のときは質量が $0$ なので、当然 $v_f = 0$ となる。どのようなモデル（$v$ に比例か、$v^2$ に比例か）を採用するにせよ、妥当な回帰曲線は必ず原点 $(0, 0)$ を通る必要がある。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-70">問4</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">$R = k'v^2$ （速さの2乗に比例する空気抵抗）</td>
+<td style="text-align: left;">慣性抵抗が支配的なモデルである。物体が空気を押しのける際に生じる抵抗に着目しており、高速度域や大きな物体において適用されることが多い。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$R = mg$ となる $v$ が終端速度の大きさ $v_f$</td>
+<td style="text-align: left;">終端速度において「重力」と「速さの2乗に比例する空気抵抗」が平衡状態にあることを示す。運動方程式 $m\frac{dv}{dt} = mg - k'v^2$ において、加速度が $0$ となった状態である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$v_f = \sqrt{\frac{mg}{k'}}$</td>
+<td style="text-align: left;">終端速度 $v_f$ は質量の平方根 $\sqrt{m}$ に比例する。前のモデル（$v_f \propto m$）とは、質量変化に対する速度の変化率が根本的に異なる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$k'$ は $n$ によって変化しない / $m$ は $n$ に比例する</td>
+<td style="text-align: left;">アルミカップを重ねても形状や投影面積が変わらないため、形状抵抗の係数 $k'$ は一定とみなせる。また、$m = m_0 n$ （$m_0$ は1枚の質量）と代入できるため、終端速度の式は $v_f = \sqrt{\frac{m_0 g n}{k'}} = \left( \sqrt{\frac{m_0 g}{k'}} \right) \sqrt{n}$ と書き換えられる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">縦軸と横軸をうまく選んで（中略）原点を通る直線</td>
+<td style="text-align: left;">物理法則を $Y = aX$ （$a$ は定数）の形に整理することを意味する。$v_f = (\text{定数}) \cdot \sqrt{n}$ より、<strong>「縦軸を $v_f$、横軸を $\sqrt{n}$」<strong>とするか、あるいは両辺を2乗した $v_f^2 = (\text{定数}) \cdot n$ より、</strong>「縦軸を $v_f^2$、横軸を $n$」</strong>と設定すれば、グラフは原点を通る直線になる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">どちらが測定値によく合うかわかります</td>
+<td style="text-align: left;">2つのモデル（$v_f \propto n$ か $v_f \propto \sqrt{n}$ か）を比較実験する。作成したグラフがより高い直線性（線形性）を示す方のモデルが、実際の現象をより正しく説明していると判断できる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-71">問5</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">落下途中の速さが変化していく過程で</td>
+<td style="text-align: left;">終端速度（$a=0$）に達する前の、加速度 $a$ が存在する運動（加速運動）に注目することを意味する。運動方程式 $ma = mg - R$ を用いて、各瞬間の $R$ を算出できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">鉛直下向きに $y$ 軸をとり</td>
+<td style="text-align: left;">座標系の設定。重力加速度 $g$、速度 $v$、加速度 $a$ はすべて正の値として扱える。運動方程式は $m\frac{dv}{dt} = mg - R$ となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">原点から初速度 0 で落下</td>
+<td style="text-align: left;">初期条件 $t = 0$ において $y = 0, v = 0$ である。この瞬間、速度に依存する抵抗力は $R=0$ であり、物体の加速度は $a = g$ （自由落下と同じ）から始まる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">位置 $y$ を $\Delta t = 0.05$ s ごとに記録</td>
+<td style="text-align: left;">離散的なデータから微分値を推定する。ある時刻における速度 $v$ は、$y-t$ グラフの接線の傾き（$\frac{\Delta y}{\Delta t}$）として、加速度 $a$ はその傾きの変化率（$\frac{\Delta v}{\Delta t}$）として近似計算できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$y-t$ グラフをもとにして</td>
+<td style="text-align: left;">グラフの形状から運動の状態が読み取れる。曲線部分は加速運動（$a > 0$）を表し、のちに直線に近づく部分は終端速度（$a \to 0$）への接近を表す。グラフの「曲がり具合（二階微分）」が加速度 $a$ に直結する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$R$ と $v$ の関係を調べる手順</td>
+<td style="text-align: left;">以下の物理的なステップを踏むことを示唆している。 1\. $y-t$ データの差分から各時刻の速さ $v$ を求める。 2\. さらにその差分から各時刻の加速度 $a$ を求める。 3\. 運動方程式を $R = m(g - a)$ と変形し、各 $v$ に対応する $R$ を算出する。 4\. 得られた $(v, R)$ のペアをプロットして相関を確認する。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sec-72">第3問</h2>
+<h3 id="sec-73">問1-3</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">時計回りに等速円運動</td>
+<td style="text-align: left;">音源の速度ベクトル $\vec{v}$ の向きは、円軌道の各点における<strong>接線方向</strong>である。また、速さ $v$ は常に一定である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">円軌道を含む平面上で静止している観測者</td>
+<td style="text-align: left;">観測者の速度 $v_0 = 0$ である。ドップラー効果の公式 $f = \frac{V - v_0}{V - v_s}f_0$ において、分子は音速 $V$ 固定となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">点Qから円に引いた接線の接点A</td>
+<td style="text-align: left;">点Aにおいて音源の速度ベクトルは<strong>直線AQ（視線方向）と完全に重なり</strong>、観測者に向かう向きとなる。このとき、音源の観測者に近づく速度成分が最大（$v_s = v$）となり、観測される振動数は最大値 $f_{max} = \frac{V}{V - v}f_0$ をとる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">点Qから円に引いた接線の接点B</td>
+<td style="text-align: left;">点Bにおいて音源の速度ベクトルは<strong>直線BQ（視線方向）と完全に重なり</strong>、観測者から遠ざかる向きとなる。このとき、音源の遠ざかる速度成分が最大（$v_s = -v$）となり、観測される振動数は最小値 $f_{min} = \frac{V}{V + v}f_0$ をとる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">直線OQが円と交わる点C、点D</td>
+<td style="text-align: left;">点Cおよび点Dにおいて、音源の速度ベクトル（接線方向）は<strong>直線OQ（視線方向）と垂直</strong>になる。視線方向の速度成分が $0$（$v_s = 0$）となるため、ドップラー効果は起こらず、観測される振動数は音源の振動数と等しくなる（$f = f_0$）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図1（幾何学的関係）</td>
+<td style="text-align: left;">$\triangle\text{OAQ}$ および $\triangle\text{OBQ}$ は $\angle\text{OAQ} = \angle\text{OBQ} = 90^\circ$ の<strong>直角三角形</strong>である。三平方の定理より、距離 $\text{AQ} = \text{BQ} = \sqrt{\text{OQ}^2 - r^2}$ と求められる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">届いた音波の振動数 $f$ を測定する</td>
+<td style="text-align: left;">観測者が時刻 $t$ に聞く音は、それより以前の時刻 $t' = t - \frac{L}{V}$（$L$ はその時の音源・観測者間距離）に音源が発した音である。<strong>「音源が点Pを通過した瞬間」と「観測者がその音を聞く瞬間」にはタイムラグがある。</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">$v$ は音速 $V$ より小さい</td>
+<td style="text-align: left;">分母 $V - v$ が常に正であることを示しており、衝撃波が発生せず、通常のドップラー効果の公式が適用できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">風は吹いていない</td>
+<td style="text-align: left;">音波は空気（地面）に対して全方向に速さ $V$ で伝播する。媒質の移動による音速の変化を考慮する必要がない。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-74">問4以降</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">音源を点 Q の位置に固定</td>
+<td style="text-align: left;">音源の速度 $v_s = 0$ である。ドップラー効果の公式 $f = \frac{V \pm v_o}{V \mp v_s}f_0$ において、<strong>分母が音速 $V$ で固定</strong>される。</td>
+</tr>
+<tr>
+<td style="text-align: left;">観測者が時計回りに等速円運動</td>
+<td style="text-align: left;">観測者の速度ベクトル $\vec{v}$ の向きは常に円の<strong>接線方向</strong>であり、速さ $v$ は常に一定である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">点 A（点 Q から引いた接線の接点）</td>
+<td style="text-align: left;">点 A を通過する瞬間、観測者の速度ベクトルは直線 AQ（視線方向）と一致し、<strong>音源 Q に向かう向き</strong>となる。観測者が音源に近づく速度が最大（$v_o = v$）となるため、観測される振動数は最大値 $f_{max} = \frac{V + v}{V}f_0$ となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">点 B（点 Q から引いた接線の接点）</td>
+<td style="text-align: left;">点 B を通過する瞬間、観測者の速度ベクトルは直線 BQ（視線方向）と一致し、<strong>音源 Q から遠ざかる向き</strong>となる。観測者が音源から遠ざかる速度が最大（$v_o = -v$）となるため、観測される振動数は最小値 $f_{min} = \frac{V - v}{V}f_0$ となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">点 C および点 D</td>
+<td style="text-align: left;">これらの点において、観測者の速度ベクトル（接線方向）は<strong>視線方向（直線 OQ）と垂直</strong>になる。音源に対する相対的な速度成分が $0$ となるため、ドップラー効果は起こらず、観測される振動数は音源の振動数と等しくなる（$f = f_0$）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図 3 の幾何学的関係（$\angle\text{OAQ} = 90^\circ$）</td>
+<td style="text-align: left;">半径 OA と接線 AQ が垂直であることから、点 A での速度（接線方向）が<strong>「音源 Q と観測者を結ぶ直線」と完全に重なる</strong>ことが幾何学的に保証されている。</td>
+</tr>
+<tr>
+<td style="text-align: left;">観測者が動く場合のドップラー効果</td>
+<td style="text-align: left;">音源が静止しているため、音波の<strong>波長 $\lambda$ 自体は変化しない</strong>（$\lambda = V/f_0$）。観測者が動くことで、単位時間あたりに受ける波の数（波に対する観測者の相対速度）が変化することで振動数が変わる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">音源と観測者を入れかえた場合（前問との比較）</td>
+<td style="text-align: left;">前問の最大振動数 $f_1 = \frac{V}{V - v}f_0$ と、本問の最大振動数 $f_2 = \frac{V + v}{V}f_0$ を比較すると、分母を払って比較することで $f_1 > f_2$ であることがわかる（観測者が動く方が、振動数の変化幅はわずかに小さい）。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sec-75">第4問</h2>
+<h3 id="sec-76">問1</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">真空中に置かれた</td>
+<td style="text-align: left;">極板間の誘電体の比誘電率が $\varepsilon_r = 1$ であることを意味する。誘電率として真空の誘電率 $\varepsilon_0 = \frac{1}{4\pi k_0}$ をそのまま使用できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">極板間の電場（電界）が一様</td>
+<td style="text-align: left;">極板間の端付近での電場の乱れ（縁効果）を無視し、どの場所でも電場の強さ $E$ と向きが一定であるとみなす。これにより、電位差 $V$ との関係式 $V = Ed$ が厳密に成立する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$4\pi k_0 Q$ 本の電気力線</td>
+<td style="text-align: left;">ガウスの法則（またはファラデーの電気力線の考え方）に基づき、電荷 $Q$ から出る電気力線の総数を定義している。これは、すべての電気力線が漏れることなく正極板から負極板へ向かっていることを前提としている。</td>
+</tr>
+<tr>
+<td style="text-align: left;">電気力線の本数と電場の大きさの関係</td>
+<td style="text-align: left;">「電場の強さ $E$ は、電気力線の向きに垂直な単位面積あたりの電気力線の本数に等しい」という定義を指す。数式では $E = \frac{N}{S}$（$N$：総本数）と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$Q = CV$</td>
+<td style="text-align: left;">電気量 $Q$ は電位差 $V$ に比例し、比例定数 $C$（電気容量）は極板の形状（面積 $S$、間隔 $d$）と間の物質（$k_0$）のみによって決定される定数である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">空欄 ア ($E$ と $V, d$ の関係)</td>
+<td style="text-align: left;">一様な電場中での電位の傾きが一定であることを利用し、単位長さあたりの電位差として $E = \frac{V}{d}$ と数式化できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">空欄 イ ($C$ の導出プロセス)</td>
+<td style="text-align: left;">2通りの方法で表した電場の強さ $E = \frac{V}{d}$ と $E = \frac{4\pi k_0 Q}{S}$ を等置（$ \frac{V}{d} = \frac{4\pi k_0 Q}{S}$）し、$Q = \dots$ の形に解くことで、$C = \frac{1}{4\pi k_0} \cdot \frac{S}{d}$（$\varepsilon_0 \frac{S}{d}$）が導かれる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図1（反対符号の電荷 $+Q, -Q$）</td>
+<td style="text-align: left;">コンデンサー全体としては電気的に中性であり、外部に電場を作らない。電場は極板間の空間のみに閉じ込められている。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-77">問2</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">スイッチを閉じて十分に時間が経過</td>
+<td style="text-align: left;">回路が<strong>定常状態</strong>に達している。コンデンサーへの充電が完了し、コンデンサーを含む枝路には電流が流れていない。このとき、コンデンサーの端子電圧は並列な直流電源の電圧（電圧計の指示値）と等しくなっている。</td>
+</tr>
+<tr>
+<td style="text-align: left;">スイッチを開く直前に電圧計は 5.0 V を示していた</td>
+<td style="text-align: left;">スイッチを開く直前のコンデンサーの端子電圧が $V_0 = 5.0$ V であることを示す。また、この回路構成から直流電源の起電力も $5.0$ V であることがわかる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">スイッチを開いた</td>
+<td style="text-align: left;">電源と電圧計が回路から切り離され、<strong>コンデンサー、電流計、抵抗のみの閉回路</strong>（放電回路）が形成される。蓄えられていた電荷 $Q$ が抵抗を通って流れ出し、電気エネルギーが熱エネルギーとして消費され始める。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図3のグラフ（$t=0$ で $I=100$ mA）</td>
+<td style="text-align: left;">放電開始直後の電流の最大値が $I_0 = 0.10$ A であることを示す。キルヒホッフの第2法則（$V_c - RI = 0$）より、$5.0 = R \times 0.10$ が成り立ち、ここから<strong>抵抗値 $R = 50$ $\Omega$</strong> を特定できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図3のグラフの「面積」</td>
+<td style="text-align: left;">電流 $I$ の時間変化グラフにおける<strong> $t$ 軸との間の面積</strong>は、放電された全電荷量 $\Delta Q = \int I dt$ を表す。すべての電荷が放電された場合、この面積がコンデンサーに最初に蓄えられていた電荷 $Q_0$ に等しい。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$Q = CV$ の関係</td>
+<td style="text-align: left;">グラフの面積から求めた電気量 $Q_0$ と、スイッチを開く直前の電圧 $V_0 = 5.0$ V を用いて、コンデンサーの電気容量を $C = \frac{Q_0}{V_0}$ として算出できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">縦軸の単位が [mA]</td>
+<td style="text-align: left;">計算時にアンペア [A] に換算（$10^{-3}$ 倍）する必要がある。これを見落とすと、電気容量 $C$ や抵抗 $R$ の値が桁違いになる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">グラフが指数関数的に減少</td>
+<td style="text-align: left;">コンデンサーの放電において、電流 $I$ は $I = I_0 e^{-\frac{t}{CR}}$ の形で減少する。この減衰の速さ（時定数 $CR$）がグラフの傾きに現れている。</td>
+</tr>
+<tr>
+<td style="text-align: left;">電流計・電圧計の内部抵抗</td>
+<td style="text-align: left;">特に断りがない場合、電流計の内部抵抗は $0$（無視できる）、電圧計の内部抵抗は $\infty$（電流を流さない理想的なもの）として扱う。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-78">問3</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">横軸 $1\text{ cm} = 10\text{ s}$、縦軸 $1\text{ cm} = 10\text{ mA}$</td>
+<td style="text-align: left;">図4における面積 $1\text{ cm}^2$ は、物理量として $(10 \times 10^{-3}\text{ A}) \times 10\text{ s} = 0.1\text{ C}$ の電気量に対応することを意味する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">面積は放電された電気量に対応</td>
+<td style="text-align: left;">電流の定義 $I = \frac{\Delta Q}{\Delta t}$ より、電気量 $Q = \int I dt$ である。すなわち、$I$-$t$ グラフと時間軸で囲まれた面積が、その間に移動した電荷の総量を表すという物理的性質を利用している。</td>
+</tr>
+<tr>
+<td style="text-align: left;">ます目を数えると $45\text{ cm}^2$</td>
+<td style="text-align: left;">これまでの条件を組み合わせ、放電された電気量の合計が $Q = 45\text{ [cm}^2] \times 0.1\text{ [C/cm}^2] = 4.5\text{ C}$ であると数値化できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$t = 120\text{ s}$ 以降に放電された電気量を無視する</td>
+<td style="text-align: left;">$t = 0$ から $120$ 秒までの面積（斜線部）を、コンデンサーに蓄えられていた「初期電荷 $Q_0$」の全量とみなして計算してよい、という近似の指示である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">コンデンサーの電気容量は...求められた</td>
+<td style="text-align: left;">基本式 $Q = CV$ を変形した $C = \frac{Q}{V}$ を用いる。ここで $Q = 4.5\text{ C}$、電圧 $V$ は前問の条件である放電開始直前の値 $5.0\text{ V}$ を代入する（$C = 4.5 / 5.0 = 0.9\text{ F}$）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$10\text{ mA}$ という単位</td>
+<td style="text-align: left;">ミリ [m] は $10^{-3}$ を表す接頭辞であり、計算過程で必ず $0.01\text{ A}$ に換算しなければならない。これを見落とすと選択肢の桁が変わる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">コンデンサーの放電現象</td>
+<td style="text-align: left;">放電が進むにつれて極板間の電位差 $V$ が減少し、それに比例して電流 $I = V/R$ も減少するため、グラフは右下がりの曲線（指数関数）になる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-79">問4</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">電流の値が $I_0$ の $1/2$倍, $1/4$倍, $1/8$倍になる時間が 35s 間隔</td>
+<td style="text-align: left;">電流が半分になるのにかかる時間（半減期） $T$ が $35$ s で一定であることを示している。これは、放電電流が指数関数 $I(t) = I_0 \cdot (1/2)^{t/35}$ で表されることを意味する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">なかなか 0 にならない</td>
+<td style="text-align: left;">数学的には $t \to \infty$ で $I \to 0$ となる（漸近線）ため、理論上、放電が完全に完了する（電荷が $0$ になる）には無限の時間を要するという物理的特性を指している。</td>
+</tr>
+<tr>
+<td style="text-align: left;">最初の $1/1000$ 程度の $0.1$ mA 程度</td>
+<td style="text-align: left;">初期電流 $I_0 = 100$ mA に対し、目標値が $100 \times \frac{1}{1000} = 0.1$ mA であることを確認している。このとき、減少倍率 $1/1000$ を $2^n$ の形で近似する必要がある。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$1/1000$ と $2^{10} \approx 1024$ の近似</td>
+<td style="text-align: left;">高校物理や計算の定石として、<strong>$2^{10} = 1024 \approx 1000$</strong> という近似を用いる。つまり、電流が $1/1000$ になるには、半減期（$35$ s）の <strong>10回分</strong> の時間が必要であると読み解く。</td>
+</tr>
+<tr>
+<td style="text-align: left;">空欄 [25] に入る数値の計算</td>
+<td style="text-align: left;">半減期の 10倍の時間が経過したとき、電流は約 $1/1000$ になるため、測定時間は $35\text{ s} \times 10 = 350\text{ s}$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図5のグラフの特性</td>
+<td style="text-align: left;">時間が $T, 2T, 3T, \dots$ と算術級数的に増加すると、電流値が $1/2, 1/4, 1/8, \dots$ と幾何級数的に減少する。これはコンデンサーの放電における $I = I_0 e^{-t/RC}$ の性質そのものである。</td>
+</tr>
+<tr>
+<td style="text-align: left;">放電の時定数との関係</td>
+<td style="text-align: left;">半減期 $T = 35$ s と時定数 $\tau = RC$ の間には、$T = \tau \ln 2 \approx 0.693\tau$ の関係がある（本問を解く直接の鍵ではないが、背景にある物理法則）。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-80">問5</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">電流はコンデンサーの電圧に比例</td>
+<td style="text-align: left;">オームの法則 $V = RI$ より、$I = \frac{V}{R}$ が成り立つことを指す。抵抗 $R$ が一定であれば、電流 $I$ はその瞬間の電圧 $V$ に比例する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">残っている電気量もコンデンサーの電圧に比例</td>
+<td style="text-align: left;">コンデンサーの基本式 $Q = CV$ より、電気容量 $C$ が一定であれば、蓄えられている電気量 $Q$ はその瞬間の電圧 $V$ に比例する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">両者を組み合わせる</td>
+<td style="text-align: left;">$I = \frac{V}{R}$ と $Q = CV$ から $V$ を消去すると $I = \frac{Q}{RC}$ となる。つまり、<strong>「放出される電流 $I$ は、その瞬間にコンデンサーに残っている電気量 $Q$ に比例する」</strong>という重要な結論が導かれる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">電流の値が $t=0$ での値 $I_0$ の半分になる時刻 $t_1$</td>
+<td style="text-align: left;">電流 $I$ と残存電気量 $Q$ の比例関係から、電流が半分（$I_0/2$）になったとき、コンデンサーに残っている電気量も初期値 $Q_0$ の半分（$Q_0/2$）になっていることを意味する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$t=0$ から $t=t_1$ までに放電された電気量 $Q_1$</td>
+<td style="text-align: left;">$Q_1$ はグラフの面積から求められる「流出した電荷量」である。物理的には、$Q_1 = (\text{初期電気量 } Q_0) - (\text{時刻 } t_1 \text{ での残存電気量 } Q(t_1))$ と定式化できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">空欄 ウ ($Q_0$ の算出式)</td>
+<td style="text-align: left;">上記の条件 $Q(t_1) = \frac{1}{2}Q_0$ を代入すると、$Q_1 = Q_0 - \frac{1}{2}Q_0 = \frac{1}{2}Q_0$ となる。これを $Q_0$ について解くと、<strong>$Q_0 = 2Q_1$</strong> と導かれる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">最初の方法（図4）による電気容量の測定</td>
+<td style="text-align: left;">最初の方法は「ある有限な時間（$120\text{ s}$）までの面積」を全電気量 $Q$ とみなしていた。しかし、放電曲線は無限遠まで続くため、未放電の電荷が無視されている。</td>
+</tr>
+<tr>
+<td style="text-align: left;">空欄 エ (誤差の評価)</td>
+<td style="text-align: left;">最初の方法では全電気量を真の値より<strong>過小評価</strong>（小さく見積もって）している。$C = \frac{Q}{V}$ において、分子の $Q$ が真の値より小さいため、算出された $C$ も正しい値より<strong>「小さい」</strong>ことになる。</td>
+</tr>
+</tbody>
+</table>
+<h1 id="sec-81">2022</h1>
+<h2 id="sec-82">第1問</h2>
+<h3 id="sec-83">問1</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>逆位相</strong>で単振動</td>
+<td style="text-align: left;">波源 $S_1, S_2$ の振動の向きが常に逆である。一方の波源が山のとき、他方は谷を送り出す。干渉の条件（強めあう・弱めあう）が、同位相（通常）の場合の条件式と<strong>「逆」</strong>になる。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>同一周期</strong></td>
+<td style="text-align: left;">2つの波の振動数 $f$、波長 $\lambda$、速さ $v$ がすべて等しい（$v=f\lambda$）。これにより、水面上に安定した干渉模様（定常的な節線・腹線）が形成される。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>同一振幅</strong></td>
+<td style="text-align: left;">重なり合ったとき、完全に打ち消し合う（振幅が0になる）点が存在する。強めあう点では振幅が元の2倍（$2A$）になる。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>強めあう条件</strong></td>
+<td style="text-align: left;">点 P において、2つの波の「山と山」または「谷と谷」が重なること。合成波の振幅が最大になる条件を求める。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>実線は山の波面、破線は谷の波面</strong></td>
+<td style="text-align: left;">波源から実線までの距離は波長の整数倍（$n\lambda$）、破線までの距離は波長の「整数＋0.5」倍（$(n+1/2)\lambda$）に相当する（波源の位相によるが、距離の差を考える上での基準となる）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>図1の点 P の位置</strong></td>
+<td style="text-align: left;">作図より、点 P は「$S_1$ からの破線（谷）」と「$S_2$ からの実線（山）」の交点にある。逆位相の条件下では、<strong>「山と谷の交点」が強めあう（腹）</strong>ことを図が示唆している。</td>
+</tr>
+<tr>
+<td style="text-align: left;">**距離 $| l_1 - l_2$</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>$m = 0, 1, 2, \dots$</strong></td>
+<td style="text-align: left;">自然数（または0）を用いた一般式で答える指示。これは、中央の腹線（$m=0$）から数えて何番目の腹線上にあるかを一般化することを意味する。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>$S_1$ と $S_2$ の間の距離は波長の数倍以上大きい</strong></td>
+<td style="text-align: left;">波源付近の複雑な挙動を無視し、十分な数の干渉縞（双曲線）が観察できることを保証している。また、波を平面波近似せず、円形波として扱う前提を確認している。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>水面上（2次元）</strong></td>
+<td style="text-align: left;">3次元的な空間の干渉ではなく、平面上の経路差のみを考慮すればよい。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-84">問2</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">実像ができた</td>
+<td style="text-align: left;">凸レンズによる実像は、物体に対して上下・左右ともに反転した「倒立実像」となる（光軸を中心とした180度の回転対称）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">太い矢印は $y$ 軸方向正、細い矢印は $x$ 軸方向正</td>
+<td style="text-align: left;">物体の各部位の向きが $(+x, +y)$ 方向であることを示している。実像の反転性により、スクリーン上では矢印の向きが $(-x, -y)$ 方向へ変化する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">観測者がレンズ側から見る</td>
+<td style="text-align: left;">スクリーン上の座標定義（右向き正、上向き正）と観測者の視線方向が一致している。これにより、像を裏側から見るなどの特殊な反転を考慮せず、座標軸通りの反転として処理できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">レンズの上半分を完全に遮った</td>
+<td style="text-align: left;">物体の各点から放射された光のうち、レンズの上半分へ向かう光のみがカットされる。残りの下半分へ向かう光は、依然としてスクリーン上の各一点へ集束し続ける。</td>
+</tr>
+<tr>
+<td style="text-align: left;">像を観測すると（結像の原理）</td>
+<td style="text-align: left;">凸レンズによる結像は、レンズの「全ての点」を通る光の合成で成り立つ。レンズの一部を隠しても「光が集まる位置」は変わらないため、像の形は保たれるが、到達する光の総量（光束）が減る。</td>
+</tr>
+<tr>
+<td style="text-align: left;">光源、凸レンズ、スクリーンを光軸上に配置</td>
+<td style="text-align: left;">近軸光線の近似が成り立つ理想的な結像系であり、像の歪み（収差）や極端な倍率変化を考慮せず、標準的なレンズの性質のみを適用すればよい。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-85">問3</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">密度と厚さが一様な薄い円板</td>
+<td style="text-align: left;">円板の重心はその幾何学的な中心である点 O に一致する。円板の重力 $Mg$ は点 O に作用する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">点 P に糸を付けてつるした（静止した）</td>
+<td style="text-align: left;">剛体のつるし下げの平衡条件より、全体の重心 G は、つるし点 P を通る鉛直線上に位置する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">直線 OP と垂直な方向に距離 $d$</td>
+<td style="text-align: left;">点 O を原点、直線 OQ を $x$ 軸、直線 OP を $y$ 軸とする直交座標系を設定すると、円板（点 O）の座標は $(0, 0)$、物体（点 Q）の座標は $(d, 0)$ と表せる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">点 C は点 P の鉛直下方にある点</td>
+<td style="text-align: left;">線分 PC は鉛直線である。前述の「重心 G は点 P を通る鉛直線上にある」という条件と合わせると、点 C は全体の重心 G そのもの（または重心の $x$ 軸への射影）であることがわかる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">直線 OQ 上で点 P の鉛直下方</td>
+<td style="text-align: left;">全体の重心 G が直線 OQ 上にあるため、$OC = x$ は「点 O と点 Q を質点系としたときの重心の $x$ 座標」に相当する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">軽い糸（物体 $m$ の取り付け）</td>
+<td style="text-align: left;">糸の質量は無視できるため、系全体の質量は $M + m$ であり、考慮すべき重力は点 O における $Mg$ と点 Q における $mg$ のみである。</td>
+</tr>
+<tr>
+<td style="text-align: left;">静止した</td>
+<td style="text-align: left;">点 P のまわりの力のモーメントのつりあいが成立している。あるいは、全体の重心が鉛直線 PC 上にあることを利用して、重心の公式 $x = \frac{M \cdot 0 + m \cdot d}{M + m}$ を適用できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">線分 OC の長さ $x$</td>
+<td style="text-align: left;">点 O を基準（$x=0$）としたときの重心の水平距離を求める問題である。図の幾何学的関係から、重心の定義式 $\frac{\sum m_i x_i}{\sum m_i}$ がそのまま $x$ の値となる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-86">問4</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">理想気体</td>
+<td style="text-align: left;">状態方程式 $pV = nRT$ が成り立つ。また、内部エネルギー $U$ は絶対温度 $T$ にのみ依存し（$U = \frac{f}{2}nRT$）、定数を用いて $U \propto pV$ と表せる。つまり、各状態での $p$ と $V$ の積の大小を比較すればよい。</td>
+</tr>
+<tr>
+<td style="text-align: left;">容器内に閉じ込められている</td>
+<td style="text-align: left;">変化の過程で気体の物質量 $n$ は変化しない（一定）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">状態 A から状態 B へ定積変化</td>
+<td style="text-align: left;">体積が一定（$V_A = V_B$）である。グラフより $p_B > p_A$ であるから、$p_B V_B > p_A V_A$ となり、内部エネルギーは $U_B > U_A$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">状態 B から状態 C へ断熱変化</td>
+<td style="text-align: left;">外部との熱の出入りがない（$Q=0$）。熱力学第一法則 $\Delta U = Q - W$ より、膨張（$V$ が増加、$W > 0$）するとき内部エネルギーは減少する（$\Delta U = -W < 0$）。よって $U_B > U_C$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">状態 C から状態 A へ定圧変化</td>
+<td style="text-align: left;">圧力が一定（$p_C = p_A$）である。グラフより $V_C > V_A$ であるから、$p_C V_C > p_A V_A$ となり、内部エネルギーは $U_C > U_A$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図4（グラフの形状と位置関係）</td>
+<td style="text-align: left;">軸の目盛りはないが、点の位置関係から $p_B > p_A = p_C$ かつ $V_C > V_A = V_B$ であることが幾何学的に確定している。</td>
+</tr>
+<tr>
+<td style="text-align: left;">断熱変化（$B \rightarrow C$）の曲線</td>
+<td style="text-align: left;">断熱曲線は等温曲線よりも傾きが急である。点 B を通る等温線（$pV = \text{const.}$）を想定すると、点 C はその等温線よりも下側（低温度側）に位置することが読み取れる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-87">問5</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>十分に長い</strong>導線</td>
+<td style="text-align: left;">無限長直線電流とみなせるため、端の影響を無視し、距離 $r$ の地点における磁場の強さを $H = \frac{I}{2\pi r}$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>xy平面に対して垂直</strong>に置き</td>
+<td style="text-align: left;">電流の向き（$z$ 軸方向）と、磁場・力が作用する平面（$xy$ 平面）が互いに直交していることを示している。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>同じ向き（上向き）に電流</strong></td>
+<td style="text-align: left;">平行電流の間に働く力の性質より、2本の導線間には<strong>「引力」</strong>が働くことが確定する（力の向き「イ」の判定・検算に直結する）。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>導線1の電流が...つくる磁場</strong></td>
+<td style="text-align: left;"><strong>右ねじの法則</strong>を適用する。電流 $I_1$ を中心とした右まわりの同心円状の磁場が発生し、導線2の位置での接線方向が磁場の向き「ア」となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>磁場から...受ける力</strong></td>
+<td style="text-align: left;"><strong>フレミングの左手の法則</strong>（または電流が磁場から受ける力 $\vec{F} = I\vec{L} \times \vec{B}$）を適用する。電流 $I_2$、磁場 $B$、力 $F$ の3者が互いに垂直であることを利用して向き「イ」を決定する。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>透磁率は... $\mu_0$ と同じ</strong></td>
+<td style="text-align: left;">磁束密度 $B$ を求める際、磁場の強さ $H$ を用いて $B = \mu_0 H$ と変換する必要がある。これにより、磁束密度は $B = \frac{\mu_0 I_1}{2\pi r}$ となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>長さ $l$ の部分が受ける力</strong></td>
+<td style="text-align: left;">電磁力の公式 $F = IBl$ を適用する。ここで $B$ は導線1がつくる磁束密度、 $I$ は導線2を流れる電流 $I_2$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>図5の座標軸（x, y）と記号(a)〜(d)</strong></td>
+<td style="text-align: left;">物理的なベクトル方向を、解答群の記号に対応させるための幾何学的基準。右ねじ・左手の法則の結果を、図中の特定の矢印に投影して判断する。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sec-88">第2問</h2>
+<h3 id="sec-89">問1</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">速さ $v$ は、その時刻に物体が受けている力の大きさ $F$ に比例し</td>
+<td style="text-align: left;">質量 $m$ を一定としたとき、$v$ と $F$ の関係は $v = k_1 F$（$k_1$ は正の定数）と立式できる。横軸を $F$、縦軸を $v$ としたグラフを描くと、原点を通る右肩上がりの直線となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">質量 $m$ に反比例する</td>
+<td style="text-align: left;">力の大きさ $F$ を一定としたとき、$v$ と $m$ の関係は $v = \frac{k_2}{m}$（$k_2$ は正の定数）と立式できる。横軸を $m$、縦軸を $v$ としたグラフを描くと、第1象限における直角双曲線（反比例の曲線）となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">下線部(a)全体「速さ $v$ は…力 $F$ に比例し、質量 $m$ に反比例する」</td>
+<td style="text-align: left;">2つの関係を1つの数式にまとめると、仮説は $v = k \frac{F}{m}$（$k$ は正の比例定数）と立式できる。各選択肢のグラフはこの式を満たすかどうかの観点で判定する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">グラフ①（横軸 $F$、原点を通る2本の直線）</td>
+<td style="text-align: left;">立式した $v = \left(\frac{k}{m}\right) F$ より、$v-F$ グラフの直線の傾きは $\frac{k}{m}$ となる。質量 $m$ が分母にあるため、$m$ が大きいほど直線の傾きは小さくなるはずだが、グラフ①では「$m$ 大」の方が傾きが大きくなっているため不適当と判定できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">グラフ②（横軸 $F$、2本の曲線）</td>
+<td style="text-align: left;">横軸が $F$ であるため、「$v$ が $F$ に比例する」という条件からグラフは原点を通る直線にならなければならない。反比例の曲線になっているため不適当と判定できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">グラフ③（横軸 $m$、原点を通る2本の直線）</td>
+<td style="text-align: left;">横軸が $m$ であるため、「$v$ が $m$ に反比例する」という条件からグラフは双曲線にならなければならない。原点を通る直線になっているため不適当と判定できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">グラフ④（横軸 $m$、2本の双曲線）</td>
+<td style="text-align: left;">グラフの形状は「$v$ が $m$ に反比例する」ことを満たしている。さらに、立式した $v = \frac{kF}{m}$ において、反比例の比例定数（分子）は $kF$ となる。力 $F$ が大きいほど比例定数が大きくなるため、任意の $m$ に対して $v$ の値が大きくなり、曲線は上側（原点から遠い側）に描かれる。グラフ④は「$F$ 大」の曲線が上側にあり、条件をすべて満たしていると判定できる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-90">問2</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">水平な実験机上をなめらかに動く力学台車</td>
+<td style="text-align: left;">台車にはたらく動摩擦力などの抵抗力は無視できる。水平方向にはたらく合力は、ばねばかりが引く力のみであるとみなしてよい。</td>
+</tr>
+<tr>
+<td style="text-align: left;">力学台車を一定の大きさの力で引く</td>
+<td style="text-align: left;">ばねの弾性力（フックの法則に基づく）を一定に保つということである。したがって、測定中はばねの伸びが一定、すなわち「ばねばかりの目盛りが常に一定になる」状態を維持する必要がある（空欄8の解答根拠）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">【実験1】…力の大きさと速さの関係を調べる実験</td>
+<td style="text-align: left;">変数である「力」「質量」「速さ」のうち、力と速さの関係のみを抽出する「対照実験」である。調べたい条件（力）以外の条件は統一しなければならないため、運動する物体の質量である「力学台車とおもりの質量の和」は各測定で同じ値に固定する必要がある（空欄9の解答根拠）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（参考）【実験2】…物体の質量と速さの関係を調べる実験</td>
+<td style="text-align: left;">実験1とは逆に、質量と速さの関係を調べる対照実験であるため、この場合は引く力（ばねばかりの目盛り）を各測定で同じ値に固定する必要がある。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-91">問3</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">各測定とも台車を同じ大きさの一定の力で引く</td>
+<td style="text-align: left;">実験中、物体にはたらく力 $F$ は一定値に保たれている。また、各測定（ア、イ、ウ）において力学台車の質量 $m$ も一定である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aさんの仮説（問1の内容を前提とする）</td>
+<td style="text-align: left;">Aさんの仮説は $v = k\frac{F}{m}$ であった。今回の実験のように $F$ も $m$ も一定である状況下では、仮説が正しければ、速さ $v$ も時間によらず常に<strong>一定値</strong>をとるはずである。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図2のグラフ（縦軸：速さ $v$、横軸：時刻 $t$）</td>
+<td style="text-align: left;">ア、イ、ウのいずれのグラフも、原点を通らない右肩上がりの直線となっている。直線の式は $v = v_0 + at$ と表せる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">グラフが直線であることの物理的意味</td>
+<td style="text-align: left;">$v-t$ グラフの傾き（$\frac{\Delta v}{\Delta t}$）が一定であることから、物体は<strong>加速度 $a$ が一定の等加速度直線運動</strong>をしていることがわかる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">グラフが「右肩上がり」であることの物理的意味</td>
+<td style="text-align: left;">時刻 $t$ が経過するにつれて、速さ $v$ が増加している。つまり、<strong>速さは一定ではない</strong>。</td>
+</tr>
+<tr>
+<td style="text-align: left;">グラフの切片（$t=0$ で $v>0$）</td>
+<td style="text-align: left;">引く力が一定となった時刻（$t=0$）において、すでに物体は初速度 $v_0$ （$v_0 > 0$）を持っていたことがわかる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">グラフの傾きの違い</td>
+<td style="text-align: left;">$v-t$ グラフの傾きは加速度 $a$ を表す。グラフより、質量 $m$ が小さいほど傾きが大きく、質量 $m$ が大きいほど傾きが小さくなっている。ここから運動方程式 $ma = F$（$a = \frac{F}{m}$）の片鱗が読み取れるため、「質量による運動への影響は見いだせない」という選択肢③は不適当とわかる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aさんの仮説が誤りであると判断する根拠</td>
+<td style="text-align: left;">仮説からの予測「$F, m$ が一定なら $v$ は一定」に対し、実験結果は「$F, m$ が一定でも $v$ は時間とともに増加する」となっている。この<strong>「一定の力と質量のもとで、速さが一定になっていない」</strong>という明確な矛盾事実が、仮説を否定する直接的な根拠となる（これが選択肢④に該当する）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">グラフが交差していること</td>
+<td style="text-align: left;">ある時刻（例えば $t=0.3$ 付近）より前では質量最大の「ア」の速さが最も大きいが、その後は質量最小の「ウ」の速さが最も大きくなる。時刻によって大小関係が逆転するため、「質量が大きいほど速さが大きい」という選択肢①は常に成り立つわけではなく、不適当とわかる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-92">問4</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">「物体の運動量の変化＝その間に物体が受けた力積」</td>
+<td style="text-align: left;">時刻 $t=0$ での運動量を $p_0$、時刻 $t$ での運動量を $p$、物体にはたらく一定の力を $F$ とすると、運動量と力積の関係は $p - p_0 = F \cdot t$ と立式できる。これを $p$ について解くと $p = Ft + p_0$ となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">運動量と時刻のグラフ</td>
+<td style="text-align: left;">縦軸を運動量 $p$、横軸を時刻 $t$ としたグラフである。先ほど立式した $p = Ft + p_0$ より、このグラフは $t$ の1次関数（直線）となり、その<strong>直線の傾きが物体にはたらく力 $F$ を表す</strong>（$\frac{\Delta p}{\Delta t} = F$）ことが読み取れる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">暗黙の前提（問3のリード文からの引き継ぎ）</td>
+<td style="text-align: left;">「各測定とも台車を同じ大きさの一定の力で引く」という条件から、ア、イ、ウのいずれの測定においても、質量 $m$ に関わらず<strong>物体にはたらく力 $F$ は共通の一定値</strong>である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">グラフの形状（選択肢の判定）</td>
+<td style="text-align: left;">$p-t$ グラフの傾きが力 $F$ であり、ア・イ・ウのすべてで力 $F$ が共通であるため、3本のグラフは<strong>傾きが等しい（平行な）直線</strong>にならなければならない。これを満たすのは、注記で「傾きが同じ」と明示されている④のみであると判定できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（参考）$t=0$ における縦軸の切片</td>
+<td style="text-align: left;">グラフの $t=0$ の切片は、初期の運動量 $p_0 = m v_0$ を表す。図2のグラフから $t=0$ の初速度は $v_0$(ア) &gt; $v_0$(イ) &gt; $v_0$(ウ) と読み取れ、質量も $m$(ア) &gt; $m$(イ) &gt; $m$(ウ) であるため、$p_0$ の大きさは ア &gt; イ &gt; ウ となる。選択肢のグラフの切片の大小関係はすべてこれに合致しているため、ここでは傾きだけに着目すればよいとわかる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-93">問5</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">質量 $M_1$ の台車と、質量 $m_1$ の小球</td>
+<td style="text-align: left;">打ち上げ前は小球が台車に乗って一体となっているため、運動する物体全体の質量は $(M_1 + m_1)$ として扱う。</td>
+</tr>
+<tr>
+<td style="text-align: left;">水平右向きに速度 $V$ で等速直線運動する台車から小球を打ち上げた</td>
+<td style="text-align: left;">打ち上げ<strong>直前</strong>において、台車だけでなく小球も同じく水平右向きに速度 $V$ を持っている。このとき系の水平方向の全運動量は $(M_1 + m_1)V$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">台車の水平な上面に対して垂直上向きに…発射</td>
+<td style="text-align: left;">打ち上げの際、台車と小球の間で及ぼし合う力（内力）は鉛直方向（発射方向とその反作用）のみである。水平方向には力を及ぼし合わないため、<strong>小球の水平方向の速度成分は発射前の $V$ に維持される（慣性の法則）</strong>。</td>
+</tr>
+<tr>
+<td style="text-align: left;">小球の打ち上げの前後で、台車と小球の運動量の水平成分の和は保存する</td>
+<td style="text-align: left;">打ち上げ直後の台車の速度を $V_1$、小球の水平方向の速度を $V$ とすると、（直前の運動量の和）＝（直後の運動量の和）として、$(M_1 + m_1)V = M_1 V_1 + m_1 V$ と立式できる。※小球の水平速度を0と考えて $(M_1 + m_1)V = M_1 V_1$ （選択肢②）としてしまうミスに注意。</td>
+</tr>
+<tr>
+<td style="text-align: left;">直前の速度 $V$ と…直後の台車の速度 $V_1$ の関係式</td>
+<td style="text-align: left;">立式した運動量保存則の式 $(M_1 + m_1)V = M_1 V_1 + m_1 V$ を展開・整理すると、$M_1 V + m_1 V = M_1 V_1 + m_1 V$ となる。両辺から $m_1 V$ を引いて $M_1 V = M_1 V_1$ となり、最終的に $V = V_1$ （選択肢①）が導き出される。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（参考）選択肢⑤、⑥（エネルギーの式）について</td>
+<td style="text-align: left;">小球を発射する（内蔵されたバネなどを解放する）際、非保存力が正の仕事をするため、系全体の力学的エネルギーは増加する。したがって、打ち上げの前後で運動エネルギーの総和は保存されないため、等式で結んでいる⑤や⑥は無条件で不適当と判定できる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-94">問6</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">水平右向きに速度 $V$ で…質量 $M_2$ の台車に…おもりを落とした</td>
+<td style="text-align: left;">衝突<strong>直前</strong>における系の水平方向の運動量は、台車が持つ $M_2 V$ のみである。</td>
+</tr>
+<tr>
+<td style="text-align: left;">おもりは鉛直下向きに落下して…衝突した</td>
+<td style="text-align: left;">落下してくるおもりの速度ベクトルは鉛直方向のみであり、<strong>水平方向の速度成分は $0$</strong> である。したがって、衝突直前のおもりの水平方向の運動量は $m_2 \cdot 0 = 0$ となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">台車に…落としたところ、台車とおもりが一体となって</td>
+<td style="text-align: left;">衝突時、台車とおもりの間で摩擦力などの内力は及ぼし合うが、水平方向には系全体を加速・減速させるような外力ははたらかない。したがって、<strong>水平方向について運動量保存則が成り立つ</strong>。</td>
+</tr>
+<tr>
+<td style="text-align: left;">速度 $V_2$ で等速直線運動した</td>
+<td style="text-align: left;">衝突<strong>直後</strong>、台車とおもりは一体となっているため全体の質量は $(M_2 + m_2)$ となる。全体の速度が $V_2$ であるから、衝突直後の系の水平方向の運動量は $(M_2 + m_2)V_2$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（暗黙の条件）運動量保存則の立式</td>
+<td style="text-align: left;">水平方向の（衝突前の運動量の和）＝（衝突後の運動量の和）より、$M_2 V + 0 = (M_2 + m_2)V_2$ と立式できる。これが選択肢③の根拠となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（選択肢の吟味）おもりは鉛直下向きに…なので、水平方向の速度は変化せず（選択肢①）</td>
+<td style="text-align: left;">おもりが台車と一体になる過程で、おもりは台車から進行方向に摩擦力を受けて加速し、台車はおもりから逆向きの摩擦力（反作用）を受けて減速する。したがって台車の速度は $V$ から $V_2$ に変化する（$V > V_2$ となる）ため、この説明は誤りである。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（選択肢の吟味）全運動量が保存するので（選択肢②）</td>
+<td style="text-align: left;">衝突の際、鉛直方向については、おもりが台車に衝突する衝撃力に応じて、台車が床から受ける垂直抗力（外力）が変化する。床からの外力による力積を受けるため、鉛直方向の運動量は保存されず、ベクトルとしての「全運動量」も保存されない。したがってこの説明は誤りである。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（選択肢の吟味）全運動エネルギー（運動エネルギーの水平成分）が保存するので（選択肢④、⑤）</td>
+<td style="text-align: left;">物体同士が衝突して一体となる場合（完全非弾性衝突）、摩擦力などの非保存力によって運動エネルギーの一部が熱エネルギーや音のエネルギーなどに変換されて失われる。したがって、運動エネルギー（の和）を等式で結ぶことはできず、これらの説明は誤りである。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sec-95">第2問</h2>
+<h3 id="sec-96">問1-2</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述・図の情報</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">平面板を水平に設置、平面板の上をなめらかに動く</td>
+<td style="text-align: left;">台車に働く水平方向の合力は 0 である（摩擦力などを無視）。運動方程式より加速度は 0 となり、台車は等速直線運動をする（速さ $v$ は一定）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">進行方向にN極が向くように棒磁石が取り付けられている</td>
+<td style="text-align: left;">磁石がコイルに近づくときと遠ざかるときで、コイルを貫く磁束の変化（増減）が逆になる。レンツの法則により誘導起電力の向きも反転するため、グラフは正の起電力から負の起電力へと変化する形になる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図2のグラフの波形の形（電圧が正から負へ変化）</td>
+<td style="text-align: left;">電圧が 0 になる瞬間（グラフのゼロクロス点）は、コイルを貫く磁束 $\Phi$ が極大となり、その時間変化率 $\frac{\Delta \Phi}{\Delta t}$ が 0 になる瞬間である。すなわち、磁石の中心がコイルの中心に一致する瞬間を表す。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図2のグラフの横軸目盛り</td>
+<td style="text-align: left;">横軸は 0 から 0.5 s の間が 5 目盛りに分割されているため、横軸の 1 目盛りは 0.1 s であると読み取れる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図2のグラフからの通過時刻の読み取り</td>
+<td style="text-align: left;">1つ目の波形の電圧が 0 になる時刻を $t_1$、2つ目の波形が 0 になる時刻を $t_2$ とすると、グラフの目盛りより $t_1 = 0.3$ s、 $t_2 = 0.8$ s と特定できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">二つのコイルの中心間の距離は 0.20 m</td>
+<td style="text-align: left;">磁石が1つ目のコイルの中心から2つ目のコイルの中心まで移動する距離 $\Delta x$ は 0.20 m である。これと読み取った通過時刻から、台車の速さ $v$ は $v = \frac{\Delta x}{t_2 - t_1} = \frac{0.20}{0.8 - 0.3} = 0.40$ m/s と立式し計算できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図2における2つの波形の振幅</td>
+<td style="text-align: left;">1つ目と2つ目の波形の電圧の振幅（絶対値の最大値）が等しい。ファラデーの電磁誘導の法則 $V = -N\frac{\Delta \Phi}{\Delta t}$ （$\frac{\Delta \Phi}{\Delta t}$ は速さに比例）より、各コイル通過時で台車の速さが変化していない（等速直線運動である）ことが裏付けられる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">コイル間の相互インダクタンスの影響は無視でき</td>
+<td style="text-align: left;">2つのコイルに生じる誘導起電力は互いの電流が作る磁場に干渉されず、それぞれ棒磁石の運動による磁束変化のみによって独立に定まるとみなせる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図1の配線図</td>
+<td style="text-align: left;">2つのコイルは直列に接続されており、磁石が各コイルを同じ向きに通過する際、同じ極性の電圧変化がオシロスコープに入力される（図2で2つの波形が同じ形として連続して現れる理由）。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-97">問3</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述・図の情報</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">図3の「変更前」と「変更後」のグラフの横軸（時間）の比較</td>
+<td style="text-align: left;">電圧が 0 mV となる時刻（約 0.3 s と 0.8 s）および2つの波形の時間間隔が、変更前後で変化していない。コイル間の移動時間が不変であることから、<strong>台車の速さは変更されていない</strong>と判断できる。（選択肢①、②を除外）</td>
+</tr>
+<tr>
+<td style="text-align: left;">図3の「変更前」と「変更後」のグラフの波形の幅</td>
+<td style="text-align: left;">山が始まってから谷が終わるまでの時間（波形の横幅）が変更前後で変化していない。これは、コイルを通過する<strong>磁石の進行方向の長さが変化していない</strong>ことを意味する。（選択肢③を除外）</td>
+</tr>
+<tr>
+<td style="text-align: left;">図3の「変更前」と「変更後」のグラフの縦軸（電圧）の比較</td>
+<td style="text-align: left;">誘導起電力の最大値（振幅）が、変更前の 100 mV から変更後の 200 mV へと<strong>2倍に増加</strong>している。</td>
+</tr>
+<tr>
+<td style="text-align: left;">グラフの変化とファラデーの電磁誘導の法則 $V = -N \frac{\Delta \Phi}{\Delta t}$ の関係</td>
+<td style="text-align: left;">台車の速さが同じ（時間変化率 $\Delta t$ に関係する要素が一定）で誘導起電力 $V$ が2倍になったことから、コイルを貫く<strong>磁束 $\Phi$ （磁石の磁場の強さ）が2倍になった</strong>と立式・判断できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">選択肢④「互い違いに2個たばねた」場合の物理的推測</td>
+<td style="text-align: left;">N極とS極が並ぶため、それぞれの磁石が作る磁場が打ち消し合い、コイルを貫く合計の磁束はほぼ 0 になる。その結果、誘導起電力はほとんど発生しなくなる。（選択肢④を除外）</td>
+</tr>
+<tr>
+<td style="text-align: left;">選択肢⑤「同じ向きに2個たばねた」場合の物理的推測</td>
+<td style="text-align: left;">同じ極性で束ねることで、磁石の進行方向の長さを変えずに、コイルを貫く磁束 $\Phi$ を2倍にすることができる。これが、速さ一定のまま誘導起電力が2倍になる条件と一致する。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-98">問4</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述・図の情報</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">コイルの巻き数はすべて等しく ＋ 図5の3つの波形の振幅（縦軸の最大・最小値）が等しい</td>
+<td style="text-align: left;">ファラデーの電磁誘導の法則 $V = -N \frac{\Delta \Phi}{\Delta t}$ において、巻き数 $N$ が一定で発生する最大電圧（振幅）が等しいことから、コイル通過時の磁束の時間変化率 $\frac{\Delta \Phi}{\Delta t}$ が常に等しい。すなわち、<strong>台車は減速せず等速直線運動をしている</strong>と判断できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">コイルは等間隔に設置されている ＋ 図5の波形の時間間隔</td>
+<td style="text-align: left;">グラフにおいて、電圧が0になる瞬間（磁石の中心がコイルの中心を通過する時刻）の間隔が、1つ目と2つ目、2つ目と3つ目の間で等しい。コイル間の距離 $\Delta x$ が一定で、通過にかかる時間 $\Delta t$ も一定であるため、ここからも速さ $v = \frac{\Delta x}{\Delta t}$ が一定（等速直線運動）であることが裏付けられる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図4の配線 ＋ 図5の波形の形（正負の順番）</td>
+<td style="text-align: left;">図4より、3つのコイルは同じ巻き方で直列に接続されている。図5で3つの波形がすべて「正から負へ変化する」同じ形をしていることから、<strong>各コイルからオシロスコープに入力される電圧の極性がすべて揃っている</strong>ことが確認できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">台車に取り付けた磁石は1個である</td>
+<td style="text-align: left;">グラフに現れる3つの波形は、1つの磁石が3つの離れたコイルを順番に通過した結果（空間的な移動の軌跡が時間的なグラフとして現れたもの）として立式・解析できる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-99">問5</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述・図の情報</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">実験装置を傾けて / すべり降りた</td>
+<td style="text-align: left;">台車には進行方向（斜面下向き）に一定の力（重力の斜面方向成分 $mg \sin \theta$）が働き続ける。摩擦を無視すると（前問までの前提）、台車は下向きに加速度 $a = g \sin \theta$ の<strong>等加速度直線運動</strong>を行い、その速さ $v$ は時間とともに増加する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">静かに置くと</td>
+<td style="text-align: left;">台車の初速度は 0 である（$v_0 = 0$）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図7の配置（コイルが3つ直列に等間隔で配置）</td>
+<td style="text-align: left;">オシロスコープの画面には、磁石が各コイルを通過する際に生じる3組の波形（パルス）が、時間差をおいて順番に観測される。</td>
+</tr>
+<tr>
+<td style="text-align: left;">台車が加速する（速さ $v$ が大きくなる） ＋ コイルが等間隔</td>
+<td style="text-align: left;">コイル間の距離 $L$ は一定だが、そこを通過する台車の平均の速さが徐々に大きくなる。したがって、コイル間を移動する時間（波形と波形の間の時間間隔）は、<strong>後になるほど（右に行くほど）狭くなる</strong>。</td>
+</tr>
+<tr>
+<td style="text-align: left;">台車が加速する ＋ ファラデーの電磁誘導の法則</td>
+<td style="text-align: left;">誘導起電力の大きさ</td>
+</tr>
+<tr>
+<td style="text-align: left;">台車が加速する ＋ 磁石の長さが一定</td>
+<td style="text-align: left;">磁石が1つのコイルを通過するのに要する時間（波形が立ち上がってから収束するまでの時間）は、速さ $v$ が大きくなるほど短くなる。したがって、個々の波形の横幅（時間的な幅）は、<strong>後になるほど（右に行くほど）狭くなる</strong>。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図7における磁石の向き（N極が進行方向先頭）</td>
+<td style="text-align: left;">前問までと同様に、磁石がコイルに近づくときと遠ざかるときで磁束の増減が逆転する。各波形の形は、すべて「<strong>正の電圧から負の電圧へ変化する</strong>」パターンになる。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sec-100">第4問</h2>
+<h3 id="sec-101">問1</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文・図の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">一定の速さ $v$ で運動</td>
+<td style="text-align: left;">等速円運動であり、各時刻における速度ベクトルの大きさは等しく、$|\vec{v_1}| = |\vec{v_2}| = v$ と表される。図2(b)の扇形の半径が $v$ であることに直結する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">半径 $r$、速さ $v$、角速度 $\omega$</td>
+<td style="text-align: left;">等速円運動の公式 $v = r\omega$ が成り立つ。これより、空欄 [ ア ] に入る角速度の式として $\omega = \frac{v}{r}$ が導かれる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図2(a)の直角マーク</td>
+<td style="text-align: left;">速度ベクトル $\vec{v_1}, \vec{v_2}$ は円の接線方向を向いており、中心からの位置ベクトル（動径）と常に直交することを示す。これにより、微小時間 $\Delta t$ の間に動径が回転する角度と、速度ベクトルが回転する角度（なす角）が等しくなることが幾何学的に保証される。</td>
+</tr>
+<tr>
+<td style="text-align: left;">速度 $\vec{v_1}$ と… $\vec{v_2}$ との差の大きさ</td>
+<td style="text-align: left;">ベクトルの引き算 $\Delta\vec{v} = \vec{v_2} - \vec{v_1}$ の大きさ $|\Delta\vec{v}|$ を意味する。図2(b)において、$\vec{v_1}$ の終点から $\vec{v_2}$ の終点へ引いたベクトル（実線の弦）の長さに対応する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\omega\Delta t$ は $\vec{v_1}$ と $\vec{v_2}$ とがなす角</td>
+<td style="text-align: left;">角速度 $\omega$ で時間 $\Delta t$ 経過した際の回転角 $\Delta\theta = \omega\Delta t$ である。図2(b)において、大きさ $v$ の2つの速度ベクトルがなす二等辺三角形の頂角（扇形の中心角）が $\omega\Delta t$ であることを示す。</td>
+</tr>
+<tr>
+<td style="text-align: left;">弧（図2(b)の破線）と弦（図2(b)の実線）の長さは等しいとしてよい</td>
+<td style="text-align: left;">微小時間 $\Delta t$ における近似。半径 $v$、中心角 $\omega\Delta t$ の扇形において、弧の長さは $(\text{半径}) \times (\text{中心角}) = v \cdot \omega\Delta t$ と表される。この近似条件を用いることで、弦の長さ（速度の差の大きさ）を $|\vec{v_2} - \vec{v_1}| \approx v\omega\Delta t$ と立式できる（空欄 [ イ ] の導出）。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-102">問2</h3>
+<p>特になし</p>
+<h3 id="sec-103">問3</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">円運動の向心力は陽子と電子の間にはたらく静電気力のみ</td>
+<td style="text-align: left;">電子の質量を $m$、速さを $v$、軌道半径を $r$、電気素量を $e$、クーロンの法則の比例定数を $k_0$（下の式から推測）として、円運動の運動方程式 $m\frac{v^2}{r} = k_0\frac{e^2}{r^2}$ を立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">運動エネルギー</td>
+<td style="text-align: left;">電子の運動エネルギー $K = \frac{1}{2}mv^2$ である。運動方程式から導かれる $mv^2 = k_0\frac{e^2}{r}$ を用いて、$K = \frac{1}{2}k_0\frac{e^2}{r}$ と $r$ の式で表せる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">無限遠を基準とした静電気力による位置エネルギー</td>
+<td style="text-align: left;">距離 $r$ 離れた電荷 $+e$（陽子）と $-e$（電子）が持つ静電気力による位置エネルギーであり、$U = k_0\frac{(+e)(-e)}{r} = -k_0\frac{e^2}{r}$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">電子のエネルギー（運動エネルギーと…位置エネルギーの和）$E_n$</td>
+<td style="text-align: left;">力学的エネルギーの定義より $E_n = K + U$。上で求めた式を代入し、$E_n = \frac{1}{2}k_0\frac{e^2}{r} - k_0\frac{e^2}{r} = -\frac{1}{2}k_0\frac{e^2}{r}$ と簡略化できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$r = \frac{h^2}{4\pi^2 k_0 m e^2} n^2$</td>
+<td style="text-align: left;">（直前のボーアの量子条件等の記述は $r$ の導出過程であり、計算には直接不要）この $r$ の式を、導出した $E_n = -\frac{1}{2}k_0\frac{e^2}{r}$ に代入し整理することで、空欄を埋めるための $E_n$ の具体的な式が導出できる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-104">問4</h3>
+<p>特になし</p>
+<h1 id="sec-105">2021</h1>
+<h2 id="sec-106">第1問</h2>
+<h3 id="sec-107">問1</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文・図の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">台車を<strong>一定の力</strong>で右向きに押し続けた （図中の「加速 $\rightarrow$」）</td>
+<td style="text-align: left;">運動方程式 $ma=F$ （力 $F$ は一定）より、台車は右向きに一定の大きさの加速度 $a$ で等加速度直線運動をしていると立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（暗黙の前提） 台車に固定された観測者（非慣性系）</td>
+<td style="text-align: left;">加速度 $a$ で運動する台車上の座標系（非慣性系）で考えると、質量 $m$ の物体（おもりや水など）には、実際の力に加えて、台車の加速度とは逆向き（<strong>水平左向き</strong>）に大きさ $ma$ の<strong>慣性力</strong>がはたらく。</td>
+</tr>
+<tr>
+<td style="text-align: left;">おもりと水面の傾きは<strong>一定となった</strong></td>
+<td style="text-align: left;">台車とともに動く観測者から見て、おもりと水は相対的に静止している。すなわち、非慣性系において慣性力を含めた「力のつり合い」が成立している状態として扱える。</td>
+</tr>
+<tr>
+<td style="text-align: left;">おもりの傾き</td>
+<td style="text-align: left;">おもりには、鉛直下向きの重力 $mg$ と水平左向きの慣性力 $ma$ がはたらき、この2力の合力（見かけの重力）の方向は<strong>左斜め下</strong>となる。糸の張力 $T$ はこの合力とつり合うため、糸は見かけの重力と同じ方向（鉛直線に対して<strong>左側</strong>）に傾いて静止する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">水面の傾き （暗黙の前提：自由表面の性質）</td>
+<td style="text-align: left;">静止した液体の自由表面（水面）は、その液体にはたらく力の合力（見かけの重力）の方向に垂直になる性質がある。見かけの重力は左斜め下を向くため、水面に立てた法線も左下へ傾く。したがって水面はそれに垂直な面、すなわち<strong>左側が高く右側が低い</strong>（水平面に対して左上がりの）平面となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">空気の抵抗は無視できる</td>
+<td style="text-align: left;">おもりの傾きを考える際、台車上の空気の流れなどによる抵抗力は一切考慮する必要がなく、重力、慣性力、糸の張力の3力のみの作図・立式で力のつり合いを決定してよい。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-108">問2</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文・図の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">なめらかに回転する滑車、ロープの質量は無視できる</td>
+<td style="text-align: left;">1本のロープにはたらく張力の大きさはどこでも一定である。また、滑車を引く力に滑車自身の重力を含める必要はない。</td>
+</tr>
+<tr>
+<td style="text-align: left;">質量 50 kg の荷物、質量 10 kg の板、質量 60 kg の人</td>
+<td style="text-align: left;">これらをまとめて一つの物体系（システム）として扱うことができる。全体の質量は $M = 50 + 10 + 60 = 120$ kg となり、系全体にはたらく重力は $Mg = 120 \times 9.8$ N と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">人が鉛直下向きにロープを引いた</td>
+<td style="text-align: left;">人がロープを下向きに張力 $T$ で引くとき、作用・反作用の法則により、人（物体系の一部）はロープから鉛直上向きに力 $T$ を受ける。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図2（ロープの配置と動滑車）</td>
+<td style="text-align: left;">動滑車は1本のロープがU字型に掛かっているため、ロープが動滑車（およびそこにつながる板）を鉛直上向きに引く力は $2T$ と表せる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">物体系全体を上向きに引く力</td>
+<td style="text-align: left;">物体系（人＋荷物＋板＋動滑車）を一体とみなした場合、系外から上向きにはたらく力は、人を引く張力 $T$ と動滑車を引く張力 $2T$ の合計であり、$T + 2T = 3T$ となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">引く力が [ ] Nより大きくなると、初めて…持ち上げることができた</td>
+<td style="text-align: left;">板が床から離れる瞬間を考える。このとき、床から板にはたらく垂直抗力 $N$ が $N = 0$ となる。この瞬間における鉛直方向の力のつり合いの式 $3T = Mg$ （上向きの力＝下向きの重力）を満たす $T$ の値が求める引く力の境界値となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">ロープは常に鉛直であり、板は水平を保っていた</td>
+<td style="text-align: left;">各力（重力、張力）はすべて鉛直方向のみにはたらき、水平方向の成分や物体を回転させる力のモーメントは発生しない。したがって、質点系の鉛直方向の力のつり合い（並進運動のつり合い）のみを考えればよい。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-109">問3</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文・図の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">互いに平行な極板 / 極板の電位は順に一定値 $V$ ずつ高くなっている</td>
+<td style="text-align: left;">隣り合う極板間には<strong>一様な電場</strong>が生じている（端の乱れは無視する）。また、どの隣り合う極板間においても電位差 $\Delta V$ は共通して $V$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">極板の間隔（図3上部の $3L, L, 2L, \dots$）</td>
+<td style="text-align: left;">極板間の距離を $d$ とすると、各領域における一様な電場の強さ $E$ は $E = \frac{V}{d}$ と立式できる。電位差 $V$ が一定であるため、電場の強さ $E$ は極板間隔 $d$ に反比例することがわかる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">点電荷にはたらく静電気力の大きさが最も大きくなる</td>
+<td style="text-align: left;">置く点電荷の電気量を $q$ とすると、受ける静電気力の大きさは $F = |q|E = \frac{|q|V}{d}$ と表される。同一の点電荷を置くため $|q|$ は一定であり、力が最大となるのは分母の極板間隔 $d$ が最小となる領域であると判定できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">極板間の「中央の点」</td>
+<td style="text-align: left;">平行極板間は一様な電場であるため、電場の強さは極板間のどの位置でも一定である。したがって「中央」という位置条件は静電気力の大きさに影響せず、各点がどの極板間（どの間隔 $d$ の領域）に属しているかのみを考慮すればよい。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図3の点A〜Fと極板間隔の対応</td>
+<td style="text-align: left;">図から各点が含まれる領域の極板間隔を読み取ると、A:$3L$, B:$L$, C:$2L$, D:$2L$, E:$3L$, F:$2L$ となる。これを比較し、間隔が最小（$d=L$）である点Bにおいて静電気力が最大になると決定できる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-110">問4</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文・図の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Aさんが…静止しているBさんに向かって一定の速さで歩いてくる</td>
+<td style="text-align: left;">音源（Aさん）が静止した観測者（Bさん）に近づくため、ドップラー効果が生じる。音速を $V$、音源の速さを $v$ とすると、Bさんに直接届く音波は前方に圧縮されて波長が短くなり、その振動数 $f_1$ は $f_1 = \frac{V}{V - v} f$ と立式できる。これより $f_1 > f$ （元の振動数より大きい）と判定できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">壁を背にして…歩いてくる / 壁で反射してBさんに向かってくる</td>
+<td style="text-align: left;">音源が壁から遠ざかるため、壁に向かう音波は後方に引き伸ばされて波長が長くなる。静止した壁での反射では振動数は変化しないため、Bさんに届く反射音の振動数 $f_2$ は $f_2 = \frac{V}{V + v} f$ と立式できる。これより $f_2 < f$ （元の振動数より小さい）と判定できる。（壁の反対側に、速さ $v$ で遠ざかる鏡像の音源を仮定しても同様に立式できる）</td>
+</tr>
+<tr>
+<td style="text-align: left;">静止しているBさん</td>
+<td style="text-align: left;">観測者の速度は $0$ である。したがって、ドップラー効果の公式において観測者の運動による振動数の変化は考慮せず、公式の分子は音速 $V$ そのままとなる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">1秒間に $n$ 回のうなりを聞いた</td>
+<td style="text-align: left;">直接音（振動数 $f_1$）と反射音（振動数 $f_2$）が重なり合ってうなりが生じている。1秒あたりのうなりの回数 $n$ は2つの音の振動数の差の絶対値に等しいため、$n = |f_1 - f_2| = f_1 - f_2$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aさんがさらに速く歩いたとき</td>
+<td style="text-align: left;">音源の速さ $v$ が大きくなる。$v$ が増加すると、公式の分母の変化により $f_1$ はさらに大きく（高く）なり、$f_2$ はさらに小さく（低く）なる。したがって、両者の振動数の差 $n = f_1 - f_2$ はより大きくなり、うなりの回数は「多くなる」と判定できる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-111">問5</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文・図の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">なめらかに動くピストン / 円筒容器</td>
+<td style="text-align: left;">ピストンの移動において摩擦力は考慮しなくてよい。また、気体の体積 $V$ は、容器の底からピストンまでの距離 $L$ と容器の断面積 $S$ を用いて $V = S \times L$ と表せるため、体積 $V$ と距離 $L$ は比例関係にある。</td>
+</tr>
+<tr>
+<td style="text-align: left;">理想気体が閉じ込められている</td>
+<td style="text-align: left;">容器内の気体は漏れず物質量（モル数）は一定である。また、理想気体の状態方程式 $pV=nRT$ や、各種の状態変化の法則（ボイルの法則、ポアソンの法則など）を適用できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図5(a)：鉛直に立てられており…静止していた</td>
+<td style="text-align: left;">大気圧を $p_0$、ピストンの質量を $m$、断面積を $S$、内部気体の圧力を $p_a$ とすると、ピストンにはたらく鉛直方向の力のつり合い（上向きの力＝下向きの力）は $p_a S = p_0 S + mg$ と立式できる。すなわち $p_a = p_0 + \frac{mg}{S}$ となり、初期状態の気体の圧力は大気圧よりも高い。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図5(b)：上下を逆さにして…静止するところまで</td>
+<td style="text-align: left;">逆さにした後の内部気体の圧力を $p_b$ とすると、力のつり合いは $p_b S + mg = p_0 S$ （または $p_0 S = p_b S + mg$）と立式できる。すなわち $p_b = p_0 - \frac{mg}{S}$ となる。これより $p_a > p_b$ となり、状態(a)から状態(b)にかけて気体は<strong>圧力が低下し、体積が膨張する</strong>変化をしたことが判定できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">等温変化、断熱変化、および $p-V$ グラフ</td>
+<td style="text-align: left;">膨張過程（体積が増加し圧力が低下する過程）において、$p-V$ グラフ上で同一の初期状態から出発した場合、断熱変化の曲線（$pV^\gamma = \text{一定}$）は等温変化の曲線（$pV = \text{一定}$）よりも傾きが急になり、下側に位置する。したがって、圧力が同じ値（$p_b$）まで低下したとき、到達する体積は等温変化の方が大きくなる（$V_{\text{等温}} > V_{\text{断熱}}$）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$L_{\text{等温}}$ と $L_{\text{断熱}}$ の大小関係</td>
+<td style="text-align: left;">体積 $V$ と距離 $L$ の比例関係（$V \propto L$）から、$V_{\text{等温}} > V_{\text{断熱}}$ という体積の大小関係が、そのまま距離の大小関係 $L_{\text{等温}} > L_{\text{断熱}}$ に直結する。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sec-112">第2問</h2>
+<h3 id="sec-113">問1</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文・図の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">スイッチは開いており，コンデンサーは充電されていない</td>
+<td style="text-align: left;">スイッチを閉じる直前のコンデンサーの蓄えられた電気量は $Q = 0$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">スイッチを閉じた瞬間（$t = 0$）</td>
+<td style="text-align: left;">コンデンサーの電気量 $Q$ は不連続に変化できないため、閉じた瞬間も $Q = 0$ のままである。$V = \frac{Q}{C}$ より、<strong>コンデンサーの両端の電位差は $0$ V</strong> となり、この瞬間のみコンデンサーを<strong>「導線（短絡）」</strong>とみなして作図できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">点Qを流れる電流</td>
+<td style="text-align: left;">コンデンサーを導線とみなしたとき、点Qは「上段の2つの抵抗の接続点」と「下段の2つの抵抗の接続点」を結ぶ分岐点となる。点Qを流れる電流を求めるには、キルヒホッフの第1法則（電流連続の式）をこの接続点に適用する必要がある。</td>
+</tr>
+<tr>
+<td style="text-align: left;">電圧が $6.0$ V の直流電源</td>
+<td style="text-align: left;">電源の内部抵抗に関する記述がないため、内部抵抗は $0$ とみなす。スイッチを閉じたとき、回路の左端（点P側）の電位は右端（接地側）に対して常に $6.0$ V 高い状態で一定に保たれる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">接地（アース）のシンボル</td>
+<td style="text-align: left;">接地されている点（回路の右端）の電位を基準の $0$ V として計算を進めることができる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">直流回路における抵抗の接続</td>
+<td style="text-align: left;">コンデンサーを導線とみなすと、回路は「左側の抵抗2つ（$10,\Omega$ と $20,\Omega$）の並列接続」と「右側の抵抗2つ（$20,\Omega$ と $R=10,\Omega$）の並列接続」が直列につながった形に簡略化できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">有効数字2桁</td>
+<td style="text-align: left;">最終的な電流値の計算結果は、問題文の数値（$10, 20, 0.10, 6.0$）に合わせて、3桁目を四捨五入して2桁で表現する。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-114">問2</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文・図の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">スイッチを閉じて十分時間が経過した（定常状態）</td>
+<td style="text-align: left;">コンデンサーの充電が完了し、<strong>コンデンサーを含む枝路（中央の縦のライン）には電流が流れない</strong>。回路計算において、この部分は「断線（開放）」しているものとして扱える。</td>
+</tr>
+<tr>
+<td style="text-align: left;">コンデンサーに流れ込む電流は0</td>
+<td style="text-align: left;">回路構成が、上段の直列抵抗（$10,\Omega + 20,\Omega$）と下段の直列抵抗（$20,\Omega + 10,\Omega$）が、電源に対して独立に並列接続された形に簡略化される。</td>
+</tr>
+<tr>
+<td style="text-align: left;">点Pを流れる電流の大きさ</td>
+<td style="text-align: left;">点Pは回路の主路にあるため、そこを流れる電流は<strong>上段の枝路と下段の枝路に流れる電流の合計（全電流）</strong>である。キルヒホッフの第1法則より $I_P = I_{\text{上}} + I_{\text{下}}$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">コンデンサーに蓄えられた電気量</td>
+<td style="text-align: left;">コンデンサーの基本式 $Q = CV$ を用いる。ここで $V$ は<strong>コンデンサーの両極板が接続されている2点間の電位差</strong>である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">電位差の決定（暗黙の前提）</td>
+<td style="text-align: left;">コンデンサーに電流が流れていないため、両極板の電位はそれぞれが接続されている「抵抗どうしの接続点」の電位と等しい。各枝路を流れる電流による電圧降下、または分圧の法則を用いて、上側と下側の接続点の電位をそれぞれ算出し、その差（絶対値）をとる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">接地（アース）のシンボル</td>
+<td style="text-align: left;">回路の右端を電位 $0$ V の基準点とする。これにより、電源の左側の電位は $6.0$ V、各接続点の電位はそこから接地までの間にある抵抗の電圧降下として具体的に数値化できる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-115">問3</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文・図の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">コンデンサーに蓄えられた電荷を完全に放電させた</td>
+<td style="text-align: left;">スイッチを入れる直前の状態として、コンデンサーの電気量 $Q = 0$、極板間の電位差 $V = 0$ であることを指す。</td>
+</tr>
+<tr>
+<td style="text-align: left;">スイッチを入れた直後（$t = 0$）</td>
+<td style="text-align: left;">コンデンサーの電位差が $0$ であるため、この瞬間、コンデンサーは抵抗のない<strong>「導線（短絡）」</strong>とみなせる。回路全体の合成抵抗 $R_0$ は、左側の並列部分（$10,\Omega$ と $20,\Omega$）と右側の並列部分（$20,\Omega$ と $R$）の直列和として計算される。</td>
+</tr>
+<tr>
+<td style="text-align: left;">スイッチを入れた後、十分時間が経過したとき（暗黙の前提：定常状態）</td>
+<td style="text-align: left;">コンデンサーの充電が完了し、電流が流れなくなるため、コンデンサーは<strong>「断線（開放）」</strong>とみなせる。回路全体の合成抵抗 $R_\infty$ は、上段の直列路（$10,\Omega + 20,\Omega$）と下段の直列路（$20,\Omega + R$）の並列和として計算される。</td>
+</tr>
+<tr>
+<td style="text-align: left;">点Pを流れる電流はスイッチを入れた直後の値を保持した</td>
+<td style="text-align: left;">時間経過によって点Pを流れる全電流 $I_P$ が変化しないことを意味する。これは電源電圧が一定である以上、回路全体の<strong>合成抵抗が時間によって変化しない</strong>（$R_0 = R_\infty$）という条件に読み替えられる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">電流が変化しないための物理的背景（暗黙の前提）</td>
+<td style="text-align: left;">コンデンサーを含む枝路に最初から最後まで電流が流れないとき、回路の状態は変化しない。すなわち、コンデンサーの両端の電位が常に等しくなる<strong>「ホイートストンブリッジの平衡条件」</strong>が成立していることを示唆している。</td>
+</tr>
+<tr>
+<td style="text-align: left;">ホイートストンブリッジの平衡条件の数式化</td>
+<td style="text-align: left;">ブリッジ回路において中央に電流が流れない条件は、<strong>「たすき掛けの抵抗値の積が等しい」</strong>ことである。図1の配置より、$(10,\Omega) \times R = (20,\Omega) \times (20,\Omega)$ という方程式が成立する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">有効数字2桁</td>
+<td style="text-align: left;">答えの数値 $R$ を求める際、計算結果を $12.3 \times 10^{14}$ のような形式（$1.2 \times 10^1$ など）に整え、3桁目を四捨五入して2桁で答える必要がある。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-116">問4</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文・図の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">鉛直上向きで磁束密度 $B$ の一様な磁場 / レールは水平面内</td>
+<td style="text-align: left;">導体棒が水平に動くことで磁力線を垂直に切り、棒の両端に誘導起電力 $V = vBd$ が発生する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">間隔 $d$ で平行 / 導体棒はレールと垂直</td>
+<td style="text-align: left;">回路の一部を構成する導体棒の有効な長さ（磁場中を動き電流が流れる長さ）は $d$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">単位長さあたりの抵抗値は $r$ / レールの電気抵抗は無視できる</td>
+<td style="text-align: left;">導体棒1本の抵抗は $R = rd$ である。2本の導体棒がレールを介して直列につながるため、回路全体の全抵抗は $R_{全} = 2rd$ となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">導体棒 a，b の質量は等しく ($m$) / 摩擦なく動く</td>
+<td style="text-align: left;">2本の導体棒を一つの系とみなすと、水平方向の外力が無視できるため、系全体の運動量 $mv_a + mv_b$ が保存される。</td>
+</tr>
+<tr>
+<td style="text-align: left;">自己誘導の影響は無視できる</td>
+<td style="text-align: left;">電流が変化する過程においても、コイルとしての逆起電力 $L \frac{dI}{dt}$ は考慮せず、誘導起電力とオームの法則のみで回路方程式を立ててよい。</td>
+</tr>
+<tr>
+<td style="text-align: left;">時刻 $t=0$ に棒 a に初速度 $v_0$ を与えた</td>
+<td style="text-align: left;">棒 a の誘導起電力により、回路に時計回り（または反時計回り）の誘導電流が流れる。この電流により、棒 a には減速する向き（左）、棒 b には加速する向き（右）に電磁力 $F = I d B$ がはたらく。</td>
+</tr>
+<tr>
+<td style="text-align: left;">十分に長いレール（暗黙の前提）</td>
+<td style="text-align: left;">2本の棒の速度が等しくなるまで、棒がレールから外れることなく運動を続けられることを意味する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">速度が一定となったとき（暗黙の前提：定常状態）</td>
+<td style="text-align: left;">棒 a と棒 b の速度が等しくなると、回路を貫く磁束の変化がなくなるため誘導電流が $0$ になり、電磁力も消滅して等速運動へ移行する。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-117">問5-6</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文・図の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">同一の閉回路を流れる電流 $I$</td>
+<td style="text-align: left;">2本の導体棒 a, b はレールを介して1つの直列回路を構成しているため、両者を流れる電流の大きさ $I$ はどの瞬間も常に等しい。</td>
+</tr>
+<tr>
+<td style="text-align: left;">磁場から受ける力 $F = IdB$</td>
+<td style="text-align: left;">磁束密度 $B$、導体棒の有効長 $d$、電流 $I$ が2本の棒で共通であるため、磁場から受ける力の大きさ $F$ は常に等しくなる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">レンツの法則と力の向き</td>
+<td style="text-align: left;">誘導電流は磁束の変化を妨げる向きに流れるため、運動している棒 a には減速する向き（左向き）、静止していた棒 b には回路を貫く磁束の変化を減らす向き（棒 a と同じ右向き）の力がはたらく。つまり、2本の棒が受ける力の向きは互いに反対である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">系全体にはたらく水平方向の外力が $0$</td>
+<td style="text-align: left;">レールに摩擦がなく、2本の棒が受ける力は「系内部での作用・反作用」に相当するため、棒 a と棒 b を合わせた物体系全体の運動量 $m v_a + m v_b$ は常に保存される。</td>
+</tr>
+<tr>
+<td style="text-align: left;">運動量保存則による速度の関係</td>
+<td style="text-align: left;">初状態の全運動量は $m v_0 + m \cdot 0 = m v_0$ である。質量 $m$ が等しいため、任意の時刻 $t$ において常に $v_a + v_b = v_0$ が成立する。これはグラフにおいて、$v_a$ の減少分と $v_b$ の増加分が常に等しい（$v_0/2$ に対して線対称になる）ことを意味する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">電流が止まる条件（定常状態）</td>
+<td style="text-align: left;">棒 a と棒 b の速度が等しくなったとき、両者の誘導起電力が打ち消し合って回路の全起電力が $0$ となり、電流が流れなくなる。電流が止まれば磁場から受ける力も $0$ となるため、以降は等速運動を続ける。</td>
+</tr>
+<tr>
+<td style="text-align: left;">最終速度 $v_f$ の導出</td>
+<td style="text-align: left;">$v_a = v_b = v_f$ となったとき、運動量保存則 $m v_f + m v_f = m v_0$ より、$v_f = \frac{v_0}{2}$ と計算できる。グラフの漸近線はこの値になる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">速度の符号（右向きを正とする）</td>
+<td style="text-align: left;">棒 a は正の初速度から減速し、棒 b は $0$ から正の向き（右向き）に加速する。最終的に両者とも正の速度 $\frac{v_0}{2}$ に収束するため、グラフの曲線はどちらも $v > 0$ の領域に描かれる。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sec-118">第3問</h2>
+<h3 id="sec-119">問1</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文・図の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ある振動数の光が媒質中に入射したとき</td>
+<td style="text-align: left;">境界面における波動の連続性より、光の<strong>振動数 $f$ は不変</strong>である（ア）。一方、媒質の屈折率を $n$ とすると、媒質中での光速は $v = c/n$、波長は $\lambda = \lambda_0/n$ となり、どちらも<strong>真空中の $1/n$ 倍に変化する</strong>（イ）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">波長の短い光ほど屈折率が大きくなる</td>
+<td style="text-align: left;">屈折率 $n$ が大きいほど、スネルの法則（屈折の法則） $1 \cdot \sin \theta_1 = n \cdot \sin \theta_2$ における屈折角 $\theta_2$ は小さくなる。これは、光が<strong>境界線の法線側へより大きく曲げられる</strong>ことを意味する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図2の(i)と(ii)の経路（最初の屈折）</td>
+<td style="text-align: left;">DE面への入射点における屈折の様子を比較すると、経路(i)の方が経路(ii)よりも入射光の直進方向から大きく折れ曲がり、法線に近い側を通っている。したがって、<strong>(i)の方が屈折率の大きい「波長の短い光」の経路</strong>であると判定できる（ウ）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">AC面とBC面で反射</td>
+<td style="text-align: left;">図2では光が外部へ漏れずに折れ返っており、これら底面の境界において<strong>全反射</strong>が起きていることが暗黙の前提となっている。屈折率 $n$ が大きい波長の短い光ほど、臨界角 $\theta_c = \arcsin(1/n)$ が小さくなるため、より全反射の条件を満たしやすくなる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">白色光が…入り、…出て行く</td>
+<td style="text-align: left;">ダイヤモンドに入射した一筋の白色光（多色光）が、内部での複数回の屈折・反射を経て、波長ごとの屈折角のわずかな差が拡大され、EB面から別々の角度で出ていく（分散）。これにより、見る角度によって異なる色が見える仕組みとなっている。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-120">問2</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文・図の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ダイヤモンドの絶対屈折率 $n$、空気の絶対屈折率 $1$</td>
+<td style="text-align: left;">ダイヤモンドは空気より屈折率が高いため、空気から入射する際は屈折角 $r$ が入射角 $i$ より小さくなり（法線寄りに曲がり）、ダイヤモンド内から空気へ出る際は全反射が起こり得る。</td>
+</tr>
+<tr>
+<td style="text-align: left;">屈折角 $r$ と入射角 $i$ の関係</td>
+<td style="text-align: left;">境界面DEにおけるスネルの法則（屈折の法則）より、各媒質の屈折率と角度の正弦（サイン）の積が等しくなる。すなわち $1 \cdot \sin i = n \cdot \sin r$ と立式できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">全反射の条件（AC面）</td>
+<td style="text-align: left;">入射角 $\theta_{AC}$ が臨界角 $\theta_c$ より大きいとき（$\theta_{AC} > \theta_c$）、光は境界面を透過せず、反射の法則に従ってすべて内部へ反射される。</td>
+</tr>
+<tr>
+<td style="text-align: left;">臨界角 $\theta_c$ の決定</td>
+<td style="text-align: left;">スネルの法則において、空気側への屈折角が最大値の $90^\circ$ になる臨界の状態を考える。公式 $n \sin \theta_c = 1 \cdot \sin 90^\circ$ に $\sin 90^\circ = 1$ を代入して、$\sin \theta_c = \frac{1}{n}$ と導出できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">単色光を考える</td>
+<td style="text-align: left;">光の波長による屈折率の違い（分散）を考慮せず、特定の波長に対する屈折率 $n$ を定数として扱ってよいことを意味する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図3の補助線（点線）</td>
+<td style="text-align: left;">境界面DEおよびACに対してそれぞれ垂直に引かれた「法線」である。屈折や反射の角度（$i, r, \theta_{AC}$ など）は、常にこの法線とのなす角として定義・計算される。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-121">問3</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">単色光</td>
+<td style="text-align: left;">光の波長は一定であり、媒質の屈折率 $n$ はその波長に対する値として一定とみなせる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">光路の一部</td>
+<td style="text-align: left;">光は均一媒質中を直進し、境界面では反射の法則および屈折の法則（スネルの法則）に従う。</td>
+</tr>
+<tr>
+<td style="text-align: left;">DE面上の点Pから入射</td>
+<td style="text-align: left;">光は空気（屈折率を $n_0 \approx 1$ とする）からダイヤモンド（またはガラス）へ入射（屈折）する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">DE面への入射角を $i$</td>
+<td style="text-align: left;">点Pにおける屈折の法則は、$1 \cdot \sin i = n \sin r$ と表せる（$n$はダイヤモンドまたはガラスの屈折率、$r$は屈折角）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">AC面への入射角を $\theta_{AC}$、BC面への入射角を $\theta_{BC}$</td>
+<td style="text-align: left;">ダイヤモンド（またはガラス）内部から空気へ向かう光の入射角。これらの面で全反射または部分反射（と屈折）が起こる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図4のダイヤモンドのカット形状</td>
+<td style="text-align: left;">各面のなす角度は一定である。幾何学的考察により、屈折角 $r$ と $\theta_{AC}$、$\theta_{BC}$ の間には関係式が成立する。これにより、$i$ の値に対して $\theta_{AC}$ と $\theta_{BC}$ の値が一意に決まる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図5(a) ダイヤモンドのグラフ</td>
+<td style="text-align: left;">横軸の入射角 $i$ を変化させたときの、縦軸の角度 $\theta_{AC}$ と $\theta_{BC}$ の変化を表す。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図5(a)の破線（臨界角 $\theta_c$）</td>
+<td style="text-align: left;">ダイヤモンドから空気へ光が進むときの全反射の臨界角であり、$\sin \theta_c = 1/n_d$（$n_d$はダイヤモンドの屈折率）を満たす。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図5(a)のグラフと破線の比較 (BC面)</td>
+<td style="text-align: left;">$0^\circ < i < 90^\circ$ の全域で $\theta_{BC} > \theta_c$ であることから、BC面では常に入射角 $i$ によらず全反射が起こる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図5(a)のグラフと破線の比較 (AC面)</td>
+<td style="text-align: left;">$0^\circ < i < i_c$ の範囲で $\theta_{AC} > \theta_c$ であるため、この範囲の入射角 $i$ ではAC面で全反射が起こる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図5(a)のグラフと破線の比較 (AC面)</td>
+<td style="text-align: left;">$i_c < i < 90^\circ$ の範囲で $\theta_{AC} < \theta_c$ であるため、この範囲の入射角 $i$ ではAC面で部分反射（と屈折）が起こり、光の一部が外部へ透過する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">(b)は同じ形にカットしたガラス</td>
+<td style="text-align: left;">ダイヤモンドとガラスのカット形状は同一。したがって、入射角 $i$ と内部の角度 $\theta_{AC}, \theta_{BC}$ を結びつける幾何学的な関係式は、物質によらず共通である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図5(b) ガラスのグラフ</td>
+<td style="text-align: left;">横軸の入射角 $i'$ を変化させたときの、縦軸の角度 $\theta'*{AC}$ と $\theta'*{BC}$ の変化を表す。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図5(b)の破線（臨界角 $\theta'_c$）</td>
+<td style="text-align: left;">ガラスから空気へ光が進むときの全反射の臨界角であり、$\sin \theta'_c = 1/n_g$（$n_g$はガラスの屈折率）を満たす。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図5(a)と(b)の臨界角の比較</td>
+<td style="text-align: left;">グラフの縦軸から $\theta_c < \theta'_c$ と読み取れる。$\sin\theta$ は $0^\circ < \theta < 90^\circ$ で単調増加関数なので、$\sin\theta_c < \sin\theta'_c$ となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">臨界角の比較からわかる屈折率の関係</td>
+<td style="text-align: left;">$\sin\theta_c = 1/n_d$ と $\sin\theta'_c = 1/n_g$ 及び $\sin\theta_c < \sin\theta'_c$ の関係から、$1/n_d < 1/n_g$、すなわち $n_d > n_g$（ダイヤモンドはガラスより屈折率が大きい）とわかる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図5(b)のグラフと破線の比較</td>
+<td style="text-align: left;">$0^\circ < i' < 90^\circ$ の全域で $\theta'_{AC} < \theta'*c$ かつ $\theta'*{BC} < \theta'_c$ と読み取れる。これは、ガラスではAC面、BC面ともに常に部分反射（と屈折）が起こることを示唆している。</td>
+</tr>
+<tr>
+<td style="text-align: left;">「部分反射」は、...光は境界面を透過すること</td>
+<td style="text-align: left;">部分反射が起こると、光のエネルギーの一部は物質の外部へ漏れ出てしまう。全反射（反射率100%）に比べて、反射光は弱くなる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">ダイヤモンドがガラスより明るく輝く</td>
+<td style="text-align: left;">入射した光が、物質内部で外部へ透過することなく、効率よく反射されて観察者のいる方向（上方）へ戻ってくる量が、ダイヤモンドの方がガラスより多いことを意味する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">屈折率が [ケ] ため臨界角が小さく</td>
+<td style="text-align: left;">屈折率 $n$ が大きい媒質ほど、臨界角 $\theta_c$ ($\sin \theta_c = 1/n$) は小さくなるという物理法則。</td>
+</tr>
+<tr>
+<td style="text-align: left;">入射角の広い範囲で二度 [コ] し</td>
+<td style="text-align: left;">「二度」とは図4の光路で示されるAC面とBC面での2回の反射を指す。「明るく輝く」という現象は、この2回の反射が光を効率よく上方へ戻すことによって起こることを示唆している。</td>
+</tr>
+<tr>
+<td style="text-align: left;">観察者のいる上方へ進む光が多いからである</td>
+<td style="text-align: left;">輝きの強さは、入射した光がどのくらい上方（DE面側）に戻ってくるかで決まる。全反射は光を内部に閉じ込めて上方へ導くのに効果的である。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-122">問4</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">図6は蛍光灯の原理を考えるための簡単な模式図である。</td>
+<td style="text-align: left;">図に示されたフィラメント、プレート、電源などの配置・接続関係に基づいて物理モデルを構築する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">フィラメントを加熱して熱電子（電子）を放出させ</td>
+<td style="text-align: left;">熱電子放出という現象。フィラメントから放出された直後の電子の初速度は無視できるほど小さいと仮定し、初期運動エネルギーを $K_i=0$ とみなす。</td>
+</tr>
+<tr>
+<td style="text-align: left;">電圧 $V$ で加速させる</td>
+<td style="text-align: left;">フィラメントとプレートの間に電位差 $V$ が存在し、その間の空間に電場（電界）が形成されている。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図6の電源の向き</td>
+<td style="text-align: left;">フィラメントが負極、プレートが正極に接続されているため、プレートの電位はフィラメントの電位よりも $V$ だけ高い。</td>
+</tr>
+<tr>
+<td style="text-align: left;">電子（電気素量 $e$）</td>
+<td style="text-align: left;">電子は負の電荷 $-e$ を持つ荷電粒子である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">電子が加速され</td>
+<td style="text-align: left;">電荷 $-e$ を持つ電子は、電位の低いフィラメントから電位の高いプレートへ向かう向きに静電気力を受けて運動する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">電子がプレートに到達したとき</td>
+<td style="text-align: left;">電子は、フィラメントからプレートまで、電位差 $V$ の区間を移動する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">電荷 $q$ の粒子が電位差 $\Delta V$ の区間を移動するときに電場からされる仕事は $W=q\Delta V$</td>
+<td style="text-align: left;">電子の電荷は $q=-e$、電子が移動する始点（フィラメント）と終点（プレート）の電位差は $V_{プレート} - V_{フィラメント} = V$ なので、電場が電子にする仕事は $W = (-e)(V_{フィラメント} - V_{プレート}) = (-e)(-V) = eV$ と計算できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">管内で水銀原子と一度も衝突せずに</td>
+<td style="text-align: left;">電子は移動中に他の粒子との衝突によるエネルギー損失がない。</td>
+</tr>
+<tr>
+<td style="text-align: left;">仕事と運動エネルギーの関係（エネルギー保存則）</td>
+<td style="text-align: left;">静電気力のみが仕事をするため、された仕事 $W$ はすべて電子の運動エネルギーの増加量 $\Delta K$ に等しい。すなわち、$W = \Delta K = K_f - K_i$ が成り立つ。</td>
+</tr>
+<tr>
+<td style="text-align: left;">電子が得る運動エネルギー</td>
+<td style="text-align: left;">プレートに到達したときの運動エネルギー $K_f$ を求める。$K_i=0$ なので、$K_f = W = eV$ となる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-123">問5-6</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">加速された電子が水銀原子に衝突した場合</td>
+<td style="text-align: left;">電子と水銀原子の2体系を考える。衝突現象なので、運動量保存則と（衝突の種類に応じた）エネルギー保存則を適用する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">衝突はxy平面内で起こったものとする</td>
+<td style="text-align: left;">運動量をベクトルとして扱い、x成分とy成分に分解して考える。運動量保存則は各成分について独立に成立する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">水銀原子が動いた向きをy軸の負の向き</td>
+<td style="text-align: left;">衝突後の水銀原子の運動量ベクトルは $(-y)$ 方向を向く。したがって、運動量のx成分は0 ($P_{Hg, x} = 0$)、y成分は負の値 ($P_{Hg, y} < 0$) をとる。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>過程(a)</strong></td>
+<td style="text-align: left;">衝突によって水銀原子の内部状態が変化しないため、これは<strong>弾性衝突</strong>である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">運動エネルギー$E_0$の電子</td>
+<td style="text-align: left;">衝突前の電子の運動量を $\vec{p_e}$ とすると、その大きさは $p_e = \sqrt{2m_e E_0}$（$m_e$ は電子の質量）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">状態Aで静止している水銀原子</td>
+<td style="text-align: left;">衝突前の水銀原子の運動エネルギーは0、運動量も0ベクトルである。状態Aは内部エネルギーが最も低い状態（基底状態）である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">電子の運動エネルギーは $E$ となる</td>
+<td style="text-align: left;">衝突後の電子の運動量を $\vec{p'_e}$ とすると、その大きさは $p'_e = \sqrt{2m_e E}$。</td>
+</tr>
+<tr>
+<td style="text-align: left;">水銀原子は状態Aのまま、運動エネルギー $E_{水銀}$ をもって運動する</td>
+<td style="text-align: left;">衝突後の水銀原子の運動量を $\vec{P}*{Hg}$ とすると、その大きさは $P*{Hg} = \sqrt{2M_{Hg} E_{水銀}}$（$M_{Hg}$ は水銀原子の質量）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">過程(a)の法則</td>
+<td style="text-align: left;">弾性衝突なので、運動量保存則 ($\vec{p_e} = \vec{p'*e} + \vec{P}*{Hg}$) と、運動エネルギー保存則 ($E_0 = E + E_{水銀}$) が成り立つ。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>過程(b)</strong></td>
+<td style="text-align: left;">衝突によって水銀原子の内部状態がエネルギーの高い状態Bに変化するため、これは<strong>非弾性衝突</strong>である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">水銀原子は状態Aよりエネルギーが高い状態Bに変化して</td>
+<td style="text-align: left;">衝突により、系の運動エネルギーの一部が水銀原子の内部エネルギーの増加に変換される。状態Aと状態Bのエネルギー差を $\Delta U = U_B - U_A$ とする。</td>
+</tr>
+<tr>
+<td style="text-align: left;">過程(b)の法則</td>
+<td style="text-align: left;">非弾性衝突なので、運動量保存則は成り立つ。しかし運動エネルギーは保存しない。エネルギー全体の保存則として、$E_0 = E' + E'_{水銀} + \Delta U$ が成立する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">状態Bの水銀原子は、やがてエネルギーの低い状態Aに戻り、そのとき紫外線を放出する</td>
+<td style="text-align: left;">励起状態（状態B）から基底状態（状態A）への遷移。このとき、エネルギー差 $\Delta U$ に等しいエネルギーを持つ光子が1個放出される。</td>
+</tr>
+<tr>
+<td style="text-align: left;">紫外線を放出する</td>
+<td style="text-align: left;">放出される光子のエネルギー $E_{photon}$ は、プランク定数を $h$、光の振動数を $\nu$ として $E_{photon} = h\nu = \Delta U$ と表される（ボーアの振動数条件）。この光子の波長が紫外線の領域にある。</td>
+</tr>
+<tr>
+<td style="text-align: left;">この紫外線が蛍光灯管内の蛍光物質にあたって、可視光線が生じる</td>
+<td style="text-align: left;">蛍光現象。蛍光物質は、エネルギーの高い紫外線光子を吸収し、吸収したエネルギーより小さいエネルギーを持つ可視光の光子を放出する。エネルギーの差額は主に熱エネルギーとなる。$E_{可視光} < E_{紫外線}$。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sec-124">第4問</h2>
+<h3 id="sec-125">問1</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Aさんは固定した台座の上に立っている</td>
+<td style="text-align: left;">ボールが投げられる始点（Aさんの手）は静止しているとみなす。ボールを投げたことによるAさんの反動は考えない。</td>
+</tr>
+<tr>
+<td style="text-align: left;">Bさんは水平な氷上に静止したそりの上に立っている</td>
+<td style="text-align: left;">ボールが届く直前の終点（Bさんの手）は、水平面上のある高さに静止しているとみなす。</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aさんが...ボールを...斜め上方に投げた</td>
+<td style="text-align: left;">ボールは斜方投射運動を行う。</td>
+</tr>
+<tr>
+<td style="text-align: left;">空気抵抗は無視できるものとし、重力加速度の大きさを g とする</td>
+<td style="text-align: left;">ボールに働く力は重力（鉛直下向き、大きさ $mg$）のみである。したがって、ボールの力学的エネルギーは保存する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">ボールの運動のモデル化</td>
+<td style="text-align: left;">運動を水平方向と鉛直方向に分解して考える。水平方向は力が働かないため等速直線運動、鉛直方向は重力のみが働くため等加速度直線運動（加速度 $-g$）となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">速さ $v_A$, 水平面となす角 $\theta_A$</td>
+<td style="text-align: left;">投射時の初速度の水平成分は $v_{Ax} = v_A \cos\theta_A$、鉛直成分は $v_{Ay} = v_A \sin\theta_A$ と表せる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">速さ $v_B$, 水平面となす角 $\theta_B$</td>
+<td style="text-align: left;">Bさんに届く直前の速度の水平成分は $v_{Bx} = v_B \cos\theta_B$、鉛直成分の大きさは $v_B \sin\theta_B$ と表せる。図より、鉛直成分の向きは下向きである。</td>
+</tr>
+<tr>
+<td style="text-align: left;">水平方向の運動</td>
+<td style="text-align: left;">水平方向には力が働かないため、速度の水平成分は常に一定である。したがって、$v_{Ax} = v_{Bx}$ すなわち $v_A \cos\theta_A = v_B \cos\theta_B$ という関係式が成り立つ。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図1</td>
+<td style="text-align: left;">ボールの軌跡は上に凸の放物線である。また、Aさんのいる位置（始点）の高さが、Bさんのいる位置（終点）の高さよりも高いことを示している。</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aさんが投げた瞬間のボールの高さの方が、Bさんに届く直前のボールの高さより高いとき</td>
+<td style="text-align: left;">始点の高さを $h_A$、終点の高さを $h_B$ とすると、$h_A > h_B$ である。ボールは位置エネルギーが減少する運動をしている。</td>
+</tr>
+<tr>
+<td style="text-align: left;">力学的エネルギー保存則</td>
+<td style="text-align: left;">始点と終点での力学的エネルギーが等しいので、$\frac{1}{2}mv_A^2 + mgh_A = \frac{1}{2}mv_B^2 + mgh_B$ が成り立つ。</td>
+</tr>
+<tr>
+<td style="text-align: left;">エネルギー保存則と高さの条件の組み合わせ</td>
+<td style="text-align: left;">$h_A > h_B$ より $mgh_A > mgh_B$ なので、エネルギー保存則の式から $\frac{1}{2}mv_A^2 < \frac{1}{2}mv_B^2$ が導かれる。速さは正の値なので、$v_A < v_B$ となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">水平速度一定の式と速さの大小関係の組み合わせ</td>
+<td style="text-align: left;">$v_A \cos\theta_A = v_B \cos\theta_B$ と $v_A < v_B$ から、$\cos\theta_A = \frac{v_B}{v_A}\cos\theta_B$ であり、$\frac{v_B}{v_A} > 1$ なので、$\cos\theta_A > \cos\theta_B$ となる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">三角関数の性質</td>
+<td style="text-align: left;">角度 $\theta$ が $0^\circ < \theta < 90^\circ$ の範囲では、$\cos\theta$ は単調に減少する関数である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\cos\theta_A > \cos\theta_B$ から導かれる角度の関係</td>
+<td style="text-align: left;">$\cos$が単調減少関数であることから、$\theta_A < \theta_B$ が導かれる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aさんが投げた瞬間のボールの高さと...高さが等しい場合には、$v_A=v_B$, $\theta_A=\theta_B$</td>
+<td style="text-align: left;">この記述は、高さが同じ（$h_A=h_B$）という特殊な場合の答えを示している。この条件から $v_A=v_B$, $\theta_A=\theta_B$ となることを利用して、高さが異なる本問の状況を類推・検証するためのヒントとなる。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-126">問2-3</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>問2</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Bさんが届いたボールを捕球して、そりとBさんとボールが一体となって氷上をすべり出す</td>
+<td style="text-align: left;">捕球は、ボールと「そり＋Bさん」の<strong>完全非弾性衝突</strong>とみなせる。衝突後の運動は<strong>水平方向</strong>のみである。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（問1より）そりと氷との間に摩擦力ははたらかない</td>
+<td style="text-align: left;">「ボール＋そり＋Bさん」を一つの系と見なすと、捕球の前後で系に働く水平方向の外力は0である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">水平方向の外力が0</td>
+<td style="text-align: left;">系の<strong>水平方向の運動量は保存される</strong>（運動量保存則が成立する）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">（問1より）Bさんは...静止したそりの上に立っている</td>
+<td style="text-align: left;">捕球直前の「そり＋Bさん」の速度は0である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">捕球直前のボールの速さ $v_B$, 角度 $\theta_B$</td>
+<td style="text-align: left;">捕球直前のボールの速度の水平成分は $v_B \cos\theta_B$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">捕球前の系の水平運動量</td>
+<td style="text-align: left;">(ボールの水平運動量) + (そり+Bさんの水平運動量) = $mv_B \cos\theta_B + M \cdot 0$</td>
+</tr>
+<tr>
+<td style="text-align: left;">捕球した後、...速さが一定値 $V$ になった</td>
+<td style="text-align: left;">捕球後、一体となった物体の質量は $(m+M)$、速度は $V$ である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">捕球後の系の水平運動量</td>
+<td style="text-align: left;">(一体となった物体の水平運動量) = $(m+M)V$</td>
+</tr>
+<tr>
+<td style="text-align: left;">運動量保存則の適用</td>
+<td style="text-align: left;">(捕球前の水平運動量) = (捕球後の水平運動量) なので、$mv_B \cos\theta_B = (m+M)V$ という等式が成り立つ。この式を $V$ について解けばよい。</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>問3</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Bさんが...ボールを捕球して一体となって運動するとき</td>
+<td style="text-align: left;">問2と同じく、完全非弾性衝突である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">完全非弾性衝突</td>
+<td style="text-align: left;">一般に、衝突によって力学的エネルギーは保存せず、熱エネルギーや音エネルギー、変形エネルギーなどに変換されるため減少する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">捕球する直前の全力学的エネルギー $E_1$</td>
+<td style="text-align: left;">(ボールの運動エネルギー) + (そり+Bさんの運動エネルギー) であり、$E_1 = \frac{1}{2}mv_B^2 + \frac{1}{2}M \cdot 0^2 = \frac{1}{2}mv_B^2$。（衝突前後のごく短時間での比較なので、位置エネルギーは変化しないと考える）</td>
+</tr>
+<tr>
+<td style="text-align: left;">捕球した後の全力学的エネルギー $E_2$</td>
+<td style="text-align: left;">(一体となった物体の運動エネルギー) であり、$E_2 = \frac{1}{2}(m+M)V^2$。</td>
+</tr>
+<tr>
+<td style="text-align: left;">エネルギーの差 $\Delta E = E_2 - E_1$</td>
+<td style="text-align: left;">衝突による力学的エネルギーの変化量。$\Delta E = \frac{1}{2}(m+M)V^2 - \frac{1}{2}mv_B^2$ を計算し、その正負を判断する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">運動エネルギーと運動量の関係 $K = p^2/2m$</td>
+<td style="text-align: left;">運動量 $p$ を持つ質量 $m$ の物体の運動エネルギーは $K=p^2/(2m)$ と表せる。これを利用してエネルギー変化を評価できる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">エネルギー変化の評価</td>
+<td style="text-align: left;">衝突前後の水平運動量は $p_{x} = mv_B \cos\theta_B$ で保存する。衝突前の運動エネルギーは $E_1 = \frac{1}{2}m(v_B \cos\theta_B)^2 + \frac{1}{2}m(v_B \sin\theta_B)^2$。衝突後の運動エネルギーは $E_2 = \frac{p_x^2}{2(m+M)} = \frac{(mv_B \cos\theta_B)^2}{2(m+M)}$。$E_2 - E_1 < 0$ となるため、力学的エネルギーは減少する。</td>
+</tr>
+<tr>
+<td style="text-align: left;">失われたエネルギー</td>
+<td style="text-align: left;">減少した力学的エネルギー ($\Delta E < 0$) は、主に熱や音のエネルギーに変換される。これはエネルギー保存則（熱力学第一法則）の一部である。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="sec-127">問4</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">①問題文の記述</th>
+<th style="text-align: left;">②読み取れる物理的な情報・条件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">ボールがそり上面に衝突し跳ね返る</td>
+<td style="text-align: left;">ボールとそり（Bさんを含む）の2物体間における衝突の物理モデルとして捉える。</td>
+</tr>
+<tr>
+<td style="text-align: left;">衝突前に静止していたそりは、衝突後も静止したままであった</td>
+<td style="text-align: left;">そりの運動量の変化（$\Delta p$）が 0 であることを意味する。運動量と力積の関係（$I = \Delta p$）より、そりがボールから受けた力積 $I$ の水平成分は 0 である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">そり上面は水平</td>
+<td style="text-align: left;">ボールがそりから受ける垂直抗力の向きは、鉛直上向き（面に対して垂直）に限定される。</td>
+</tr>
+<tr>
+<td style="text-align: left;">そり上面とボールの間には摩擦力ははたらかない</td>
+<td style="text-align: left;">接線方向の力が 0 であることを意味する。そり上面が水平であるため、摩擦力（水平方向の力）が働かない。</td>
+</tr>
+<tr>
+<td style="text-align: left;">摩擦力が 0 ＋ 面が水平</td>
+<td style="text-align: left;">衝突時にボールとそりが及ぼし合う力（作用・反作用）には、水平成分が全く含まれない。つまり「はたらいた力の水平方向の成分がゼロ」である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">衝突前後のボールの速度の水平成分</td>
+<td style="text-align: left;">水平方向に力が働かないため、ボールの速度の水平成分 $v_x$ は、衝突の前後で変化せず保存される（$v_{x, \text{before}} = v_{x, \text{after}}$）。</td>
+</tr>
+<tr>
+<td style="text-align: left;">弾性衝突（はね返り係数 $e=1$）</td>
+<td style="text-align: left;">衝突の前後で、系全体の運動エネルギーが保存される現象。本問では、そりの運動エネルギーが常に 0 であるため、ボールの速さ（速度の大きさ）が変化しないことと同等である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">非弾性衝突（$0 \leqq e < 1$）</td>
+<td style="text-align: left;">衝突により運動エネルギーの一部が熱や音に変わる現象。本問では、垂直抗力が働く鉛直方向においてのみ、エネルギーの損失（速度の鉛直成分 $v_y$ の減少）が起こりうる。</td>
+</tr>
+<tr>
+<td style="text-align: left;">「必ず弾性衝突しているんだろうか？」への回答</td>
+<td style="text-align: left;">そりが動かない条件（水平方向の力・力積が 0）は、衝突が弾性か非弾性か（鉛直方向のエネルギー損失の有無）とは独立した条件である。</td>
+</tr>
+<tr>
+<td style="text-align: left;">鉛直方向の運動によっては弾性衝突とは限らない</td>
+<td style="text-align: left;">ボールが鉛直方向の速度を失う（非弾性衝突する）場合でも、水平方向に力が働かなければ「そりは静止したまま」という条件は成立する。したがって、そりが動かないことから「弾性衝突である」と断定することはできない。</td>
+</tr>
+<tr>
+<td style="text-align: left;">図2の放物線の軌跡</td>
+<td style="text-align: left;">衝突後、ボールが再び放物線運動をすることを示している。水平方向には等速運動を続けつつ、鉛直方向には重力による等加速度運動に戻ることを表す。</td>
+</tr>
+</tbody>
+</table>
+  </div>
+</div>
+<button class="sidebar-toggle" id="sidebarToggle" aria-label="目次">&#9776;</button>
+<script>
+(() => {
+  const btn = document.getElementById('sidebarToggle');
+  const sb = document.getElementById('sidebar');
+  btn.addEventListener('click', () => sb.classList.toggle('open'));
+  document.querySelector('.main').addEventListener('click', () => sb.classList.remove('open'));
+  const links = sb.querySelectorAll('a.toc-h2, a.toc-h3');
+  const headings = [];
+  links.forEach(a => {
+    const id = a.getAttribute('href').slice(1);
+    const el = document.getElementById(id);
+    if (el) headings.push({ el, a });
+  });
+  let ticking = false;
+  function updateActive() {
+    let current = headings[0];
+    const scrollY = window.scrollY + 80;
+    for (const h of headings) {
+      if (h.el.offsetTop <= scrollY) current = h;
+    }
+    links.forEach(a => a.classList.remove('active'));
+    if (current) {
+      current.a.classList.add('active');
+      const sbRect = sb.getBoundingClientRect();
+      const aRect = current.a.getBoundingClientRect();
+      if (aRect.top < sbRect.top + 50 || aRect.bottom > sbRect.bottom - 20) {
+        current.a.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      }
+    }
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking) { requestAnimationFrame(updateActive); ticking = true; }
+  });
+  updateActive();
+})();
+</script>
+</body>
+</html>
