@@ -468,6 +468,10 @@ MathJax = {{
     border-bottom: 2px solid #1a5276;
     padding-bottom: 6px; margin: 28px 0 14px;
   }}
+  .has-years h2 {{
+    border-bottom: none;
+    padding-bottom: 0; margin: 18px 0 8px;
+  }}
   .problem-grid {{
     display: flex; flex-wrap: wrap; gap: 8px;
   }}
@@ -490,7 +494,7 @@ MathJax = {{
 </style>
 </head>
 <body>
-<div class="container">
+<div class="container{' has-years' if has_h1 else ''}">
   <a class="back-link" href="index.html">
     <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M10 2L4 8l6 6V2z"/></svg>
     TOP
