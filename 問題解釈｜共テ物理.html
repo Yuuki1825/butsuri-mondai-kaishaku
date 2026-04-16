@@ -45,7 +45,7 @@ MathJax = {
     font-weight: 700; font-size: 0.85rem; color: #1a5276;
     padding: 4px 16px 12px;
   }
-  .sidebar a.toc-h2, .sidebar a.toc-h3 {
+  .sidebar a.toc-h1, .sidebar a.toc-h2, .sidebar a.toc-h3 {
     display: block; text-decoration: none; color: #555;
     padding: 3px 16px; transition: background 0.1s, color 0.1s;
   }
@@ -54,6 +54,8 @@ MathJax = {
     color: #1a5276; font-weight: 600; background: #eef2f7;
     border-left: 3px solid #3498db; padding-left: 13px;
   }
+  .toc-h1 { font-weight: 700; color: #2c3e50 !important; margin-top: 14px; font-size: 0.92rem; padding-top: 10px; border-top: 1px solid #ddd; }
+  .toc-h1:first-of-type { border-top: none; padding-top: 0; }
   .toc-h2 { font-weight: 600; color: #1a5276 !important; margin-top: 10px; font-size: 0.88rem; }
   .toc-h3 { padding-left: 28px !important; font-size: 0.8rem; }
   .sidebar a.toc-h3.active { padding-left: 25px !important; }
@@ -94,7 +96,7 @@ MathJax = {
       章一覧に戻る
     </a>
     <div class="sidebar-title">問題解釈｜共テ物理</div>
-    <a class="toc-h3" href="#sec-1">2026</a>
+    <a class="toc-h1" href="#sec-1">2026</a>
 <a class="toc-h2" href="#sec-2">第1問</a>
 <a class="toc-h3" href="#sec-3">問1</a>
 <a class="toc-h3" href="#sec-4">問2</a>
@@ -112,7 +114,7 @@ MathJax = {
 <a class="toc-h3" href="#sec-16">問1・問2・問3</a>
 <a class="toc-h3" href="#sec-17">問4</a>
 <a class="toc-h3" href="#sec-18">問5</a>
-<a class="toc-h3" href="#sec-19">2025</a>
+<a class="toc-h1" href="#sec-19">2025</a>
 <a class="toc-h2" href="#sec-20">第1問</a>
 <a class="toc-h3" href="#sec-21">問1</a>
 <a class="toc-h3" href="#sec-22">問2</a>
@@ -131,7 +133,7 @@ MathJax = {
 <a class="toc-h2" href="#sec-35">第4問</a>
 <a class="toc-h3" href="#sec-36">問1-4</a>
 <a class="toc-h3" href="#sec-37">問5以降</a>
-<a class="toc-h3" href="#sec-38">2024</a>
+<a class="toc-h1" href="#sec-38">2024</a>
 <a class="toc-h2" href="#sec-39">第1問</a>
 <a class="toc-h3" href="#sec-40">問1</a>
 <a class="toc-h3" href="#sec-41">問2</a>
@@ -152,7 +154,7 @@ MathJax = {
 <a class="toc-h3" href="#sec-56">問3</a>
 <a class="toc-h3" href="#sec-57">問4</a>
 <a class="toc-h3" href="#sec-58">問5</a>
-<a class="toc-h3" href="#sec-59">2023</a>
+<a class="toc-h1" href="#sec-59">2023</a>
 <a class="toc-h2" href="#sec-60">第1問</a>
 <a class="toc-h3" href="#sec-61">問1</a>
 <a class="toc-h3" href="#sec-62">問2</a>
@@ -174,7 +176,7 @@ MathJax = {
 <a class="toc-h3" href="#sec-78">問3</a>
 <a class="toc-h3" href="#sec-79">問4</a>
 <a class="toc-h3" href="#sec-80">問5</a>
-<a class="toc-h3" href="#sec-81">2022</a>
+<a class="toc-h1" href="#sec-81">2022</a>
 <a class="toc-h2" href="#sec-82">第1問</a>
 <a class="toc-h3" href="#sec-83">問1</a>
 <a class="toc-h3" href="#sec-84">問2</a>
@@ -198,7 +200,7 @@ MathJax = {
 <a class="toc-h3" href="#sec-102">問2</a>
 <a class="toc-h3" href="#sec-103">問3</a>
 <a class="toc-h3" href="#sec-104">問4</a>
-<a class="toc-h3" href="#sec-105">2021</a>
+<a class="toc-h1" href="#sec-105">2021</a>
 <a class="toc-h2" href="#sec-106">第1問</a>
 <a class="toc-h3" href="#sec-107">問1</a>
 <a class="toc-h3" href="#sec-108">問2</a>
@@ -3871,7 +3873,7 @@ MathJax = {
   const sb = document.getElementById('sidebar');
   btn.addEventListener('click', () => sb.classList.toggle('open'));
   document.querySelector('.main').addEventListener('click', () => sb.classList.remove('open'));
-  const links = sb.querySelectorAll('a.toc-h2, a.toc-h3');
+  const links = sb.querySelectorAll('a.toc-h1, a.toc-h2, a.toc-h3');
   const headings = [];
   links.forEach(a => {
     const id = a.getAttribute('href').slice(1);

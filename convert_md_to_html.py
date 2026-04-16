@@ -201,7 +201,7 @@ def convert_md_to_html(input_md, output_html, title):
     # Build sidebar TOC
     toc_html_parts = []
     for level, hid, text in toc_entries:
-        cls = 'toc-h2' if level == 2 else 'toc-h3'
+        cls = 'toc-h1' if level == 1 else ('toc-h2' if level == 2 else 'toc-h3')
         toc_html_parts.append(f'<a class="{cls}" href="#{hid}">{text}</a>')
     toc_html = '\n'.join(toc_html_parts)
 
@@ -256,7 +256,7 @@ MathJax = {{
     font-weight: 700; font-size: 0.85rem; color: #1a5276;
     padding: 4px 16px 12px;
   }}
-  .sidebar a.toc-h2, .sidebar a.toc-h3 {{
+  .sidebar a.toc-h1, .sidebar a.toc-h2, .sidebar a.toc-h3 {{
     display: block; text-decoration: none; color: #555;
     padding: 3px 16px; transition: background 0.1s, color 0.1s;
   }}
@@ -265,6 +265,8 @@ MathJax = {{
     color: #1a5276; font-weight: 600; background: #eef2f7;
     border-left: 3px solid #3498db; padding-left: 13px;
   }}
+  .toc-h1 {{ font-weight: 700; color: #2c3e50 !important; margin-top: 14px; font-size: 0.92rem; padding-top: 10px; border-top: 1px solid #ddd; }}
+  .toc-h1:first-of-type {{ border-top: none; padding-top: 0; }}
   .toc-h2 {{ font-weight: 600; color: #1a5276 !important; margin-top: 10px; font-size: 0.88rem; }}
   .toc-h3 {{ padding-left: 28px !important; font-size: 0.8rem; }}
   .sidebar a.toc-h3.active {{ padding-left: 25px !important; }}
@@ -319,7 +321,7 @@ MathJax = {{
   const sb = document.getElementById('sidebar');
   btn.addEventListener('click', () => sb.classList.toggle('open'));
   document.querySelector('.main').addEventListener('click', () => sb.classList.remove('open'));
-  const links = sb.querySelectorAll('a.toc-h2, a.toc-h3');
+  const links = sb.querySelectorAll('a.toc-h1, a.toc-h2, a.toc-h3');
   const headings = [];
   links.forEach(a => {{
     const id = a.getAttribute('href').slice(1);
