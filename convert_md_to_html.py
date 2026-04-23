@@ -27,7 +27,7 @@ def convert_md_to_html(input_md, output_html, title, shift_headings=False):
     content = re.sub(pattern, store_codecogs, content)
 
     def fix_latex(latex):
-        latex = re.sub(r'\\\\([a-zA-Z])', lambda m: '\\' + m.group(1), latex)
+        latex = re.sub(r'\\\\([a-zA-Z ])', lambda m: '\\' + m.group(1), latex)
         latex = latex.replace('\\=', '=')
         latex = latex.replace('\\_', '_')
         latex = latex.replace('\\<', '<')

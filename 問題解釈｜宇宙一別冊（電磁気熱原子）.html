@@ -398,11 +398,11 @@ MathJax = {
 </tr>
 <tr>
 <td style="text-align: left;">点電荷が作る電場の大きさ</td>
-<td style="text-align: left;">点電荷 $Q$ から距離 $r$ だけ離れた点の電場の強さ $E$ [N/C] は、公式 $E = k \frac{}$</td>
+<td style="text-align: left;">点電荷 $Q$ から距離 $r$ だけ離れた点の電場の強さ $E$ [N/C] は、公式 $E = k \frac{\lvert Q \rvert}{r^2}$ を用いて算出する。</td>
 </tr>
 <tr>
 <td style="text-align: left;">$5.0 \times 10^{-8}$ C の正電荷を置いた</td>
-<td style="text-align: left;">置かれた電荷 $q$ が、その地点にある電場 $E$ から受ける静電気力の大きさ $F$ [N] は、公式 $F = qE$ で表される（またはクーロンの法則 $F = k \frac{}$</td>
+<td style="text-align: left;">置かれた電荷 $q$ が、その地点にある電場 $E$ から受ける静電気力の大きさ $F$ [N] は、公式 $F = qE$ で表される（またはクーロンの法則 $F = k \frac{\lvert q_1 q_2 \rvert}{r^2}$ を用いてもよい）。</td>
 </tr>
 <tr>
 <td style="text-align: left;">大きさを求めよ</td>
@@ -742,7 +742,7 @@ MathJax = {
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>(1)</strong> $100\\ \Omega$の抵抗に，$2.0\text{ A}$の電流</td>
+<td style="text-align: left;"><strong>(1)</strong> $100\ \Omega$の抵抗に，$2.0\text{ A}$の電流</td>
 <td style="text-align: left;">オームの法則 $V = RI$ が成立する。電気エネルギーが抵抗を通過する際に電位が下がる現象（電圧降下）が生じている。</td>
 </tr>
 <tr>
@@ -759,14 +759,14 @@ MathJax = {
 </tr>
 <tr>
 <td style="text-align: left;">抵抗の大きさを求めよ</td>
-<td style="text-align: left;">物体の断面形状が一様で，材質が均質であることを前提としている。$l = 0.10\text{ m}$，$\rho = 6.0 \times 10^{-8}\\ \Omega\cdot\text{m}$ を公式に代入する。</td>
+<td style="text-align: left;">物体の断面形状が一様で，材質が均質であることを前提としている。$l = 0.10\text{ m}$，$\rho = 6.0 \times 10^{-8}\ \Omega\cdot\text{m}$ を公式に代入する。</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>(3)</strong> $0^\circ\text{C}$ における抵抗 $\dots 2.0\\ \Omega$</td>
-<td style="text-align: left;">基準温度（$0^\circ\text{C}$）での抵抗値を $R_0 = 2.0\\ \Omega$ とおく。</td>
+<td style="text-align: left;"><strong>(3)</strong> $0^\circ\text{C}$ における抵抗 $\dots 2.0\ \Omega$</td>
+<td style="text-align: left;">基準温度（$0^\circ\text{C}$）での抵抗値を $R_0 = 2.0\ \Omega$ とおく。</td>
 </tr>
 <tr>
-<td style="text-align: left;">$100^\circ\text{C}$ まで上昇したとき，$10\\ \Omega$</td>
+<td style="text-align: left;">$100^\circ\text{C}$ まで上昇したとき，$10\ \Omega$</td>
 <td style="text-align: left;">温度変化に伴う抵抗の変化を示す式 $R_t = R_0(1 + \alpha t)$ を用いる。ここで $t = 100$，$R_{100} = 10$ である。</td>
 </tr>
 <tr>
@@ -774,7 +774,7 @@ MathJax = {
 <td style="text-align: left;">式中の $\alpha$ を求める。温度変化に対して抵抗（または抵抗率）が線形に（一次関数的に）変化するという近似を前提としている。</td>
 </tr>
 <tr>
-<td style="text-align: left;">$\dots 2.0\\ \Omega$ から $10\\ \Omega$ へ増加</td>
+<td style="text-align: left;">$\dots 2.0\ \Omega$ から $10\ \Omega$ へ増加</td>
 <td style="text-align: left;">正の温度係数を持つ（一般に金属などの導体である）ことが読み取れる。</td>
 </tr>
 </tbody>
@@ -832,7 +832,7 @@ MathJax = {
 <td style="text-align: left;">電源の電圧 $V$ [V] を任意の値に設定できる。回路における独立変数（または従属変数）として扱う。</td>
 </tr>
 <tr>
-<td style="text-align: left;">$4.0\\ \Omega$ の抵抗、回路図</td>
+<td style="text-align: left;">$4.0\ \Omega$ の抵抗、回路図</td>
 <td style="text-align: left;">電源と抵抗が 1 つずつの単純な直列回路である。電源の内部抵抗や導線の抵抗を $0$ と仮定すると、電源の起電力 $V$ がそのまま抵抗にかかる電圧（電圧降下）に等しい。</td>
 </tr>
 <tr>
@@ -848,8 +848,8 @@ MathJax = {
 <td style="text-align: left;">抵抗 $R$ が一定であるため、グラフは必ず原点 $(0, 0)$ を通る直線になる。点 $(I, V) = (1.0, 4.0)$ や $(0.5, 2.0)$ などの代表的な点を通るように描く。</td>
 </tr>
 <tr>
-<td style="text-align: left;">(4) 抵抗を $2.0\\ \Omega$ に変更</td>
-<td style="text-align: left;">比例定数（傾き）が $4.0$ から $2.0$ に変化する。同じ電圧 $V$ をかけたとき、流れる電流 $I$ は $4.0\\ \Omega$ のときの $2$ 倍になる。</td>
+<td style="text-align: left;">(4) 抵抗を $2.0\ \Omega$ に変更</td>
+<td style="text-align: left;">比例定数（傾き）が $4.0$ から $2.0$ に変化する。同じ電圧 $V$ をかけたとき、流れる電流 $I$ は $4.0\ \Omega$ のときの $2$ 倍になる。</td>
 </tr>
 <tr>
 <td style="text-align: left;">グラフの比較</td>
@@ -1000,16 +1000,16 @@ MathJax = {
 <td style="text-align: left;">電源の長い線は正極、短い線は負極を表す。図よりB側が正極、A側が負極に繋がっているため、点Bの電位は $V_A$ より $23$ V 高い $23$ V と読み取れる。</td>
 </tr>
 <tr>
-<td style="text-align: left;">$10\\ \Omega$ と $30\\ \Omega$ の並列接続</td>
-<td style="text-align: left;">2つの抵抗の両端にかかる電圧は共通（$V_C - V_A$）である。この部分の合成抵抗 $R_p$ は「和分の積」より $R_p = \frac{10 \times 30}{10 + 30} = 7.5\\ \Omega$ と算出される。</td>
+<td style="text-align: left;">$10\ \Omega$ と $30\ \Omega$ の並列接続</td>
+<td style="text-align: left;">2つの抵抗の両端にかかる電圧は共通（$V_C - V_A$）である。この部分の合成抵抗 $R_p$ は「和分の積」より $R_p = \frac{10 \times 30}{10 + 30} = 7.5\ \Omega$ と算出される。</td>
 </tr>
 <tr>
-<td style="text-align: left;">$50\\ \Omega$ の抵抗と並列部分の接続</td>
-<td style="text-align: left;">導線B～C間にある $50\\ \Omega$ の抵抗と、その先の並列部分は直列の関係にある。回路全体の合成抵抗 $R_{total}$ は $50 + 7.5 = 57.5\\ \Omega$ となる。</td>
+<td style="text-align: left;">$50\ \Omega$ の抵抗と並列部分の接続</td>
+<td style="text-align: left;">導線B～C間にある $50\ \Omega$ の抵抗と、その先の並列部分は直列の関係にある。回路全体の合成抵抗 $R_{total}$ は $50 + 7.5 = 57.5\ \Omega$ となる。</td>
 </tr>
 <tr>
 <td style="text-align: left;">回路を流れる全電流 $I$</td>
-<td style="text-align: left;">オームの法則 $V = RI$ より、電源から供給される全電流は $I = \frac{23}{57.5} = 0.4$ A である。この電流は $50\\ \Omega$ の抵抗をそのまま通過し、点Cで分流する。</td>
+<td style="text-align: left;">オームの法則 $V = RI$ より、電源から供給される全電流は $I = \frac{23}{57.5} = 0.4$ A である。この電流は $50\ \Omega$ の抵抗をそのまま通過し、点Cで分流する。</td>
 </tr>
 <tr>
 <td style="text-align: left;">点Cでの分流（キルヒホッフ第1法則）</td>
@@ -1017,11 +1017,11 @@ MathJax = {
 </tr>
 <tr>
 <td style="text-align: left;">電圧降下による点Cの電位</td>
-<td style="text-align: left;">点Cの電位 $V_C$ は、点Bの電位から $50\\ \Omega$ の抵抗での電圧降下分を引いた値（$V_C = 23 - 50 \times 0.4$）として求められる。</td>
+<td style="text-align: left;">点Cの電位 $V_C$ は、点Bの電位から $50\ \Omega$ の抵抗での電圧降下分を引いた値（$V_C = 23 - 50 \times 0.4$）として求められる。</td>
 </tr>
 <tr>
 <td style="text-align: left;">接地を基準とした並列部分の電圧</td>
-<td style="text-align: left;">$V_A = 0$ V であるため、並列部分（$10\\ \Omega$ または $30\\ \Omega$）にかかる電圧そのものが点Cの電位 $V_C$ と一致する（$V_C = 7.5 \times 0.4$）。</td>
+<td style="text-align: left;">$V_A = 0$ V であるため、並列部分（$10\ \Omega$ または $30\ \Omega$）にかかる電圧そのものが点Cの電位 $V_C$ と一致する（$V_C = 7.5 \times 0.4$）。</td>
 </tr>
 </tbody>
 </table>
@@ -1043,7 +1043,7 @@ MathJax = {
 <td style="text-align: left;">電流計自体の許容電流（フルスケール）が $1.0\text{ mA}$ である。全体に $10\text{ mA}$ 流すとき、電流計にはちょうど $1.0\text{ mA}$、分流器には残りの $9.0\text{ mA}$ が流れる状態を作る。</td>
 </tr>
 <tr>
-<td style="text-align: left;">$0.54\\ \Omega$ の抵抗をもつ電流計</td>
+<td style="text-align: left;">$0.54\ \Omega$ の抵抗をもつ電流計</td>
 <td style="text-align: left;">並列回路では両端の電圧が共通である。オームの法則 $V = RI$ より、「電流計の電圧降下（$0.54 \times 1.0$）」と「分流器の電圧降下（$R \times 9.0$）」が等しくなるように抵抗値 $R$ を決定する。</td>
 </tr>
 <tr>
@@ -1055,7 +1055,7 @@ MathJax = {
 <td style="text-align: left;">電圧計自体の許容電圧（フルスケール）が $10\text{ V}$ である。全体に $100\text{ V}$ 加えるとき、電圧計にはちょうど $10\text{ V}$、倍率器には残りの $90\text{ V}$ がかかる状態を作る。</td>
 </tr>
 <tr>
-<td style="text-align: left;">$50\\ \Omega$ の抵抗をもつ電圧計</td>
+<td style="text-align: left;">$50\ \Omega$ の抵抗をもつ電圧計</td>
 <td style="text-align: left;">直列回路では流れる電流が共通である。電圧計に $10\text{ V}$ かかるときに流れる電流（$10/50 = 0.2\text{ A}$）が、そのまま倍率器にも流れるとして、$90 = R \times 0.2$ より抵抗値 $R$ を決定する。</td>
 </tr>
 <tr>
@@ -1074,7 +1074,7 @@ MathJax = {
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>(1)</strong> $5.0\\ \Omega$ の抵抗に $3.0\text{ A}$ の電流</td>
+<td style="text-align: left;"><strong>(1)</strong> $5.0\ \Omega$ の抵抗に $3.0\text{ A}$ の電流</td>
 <td style="text-align: left;">ジュール熱 $Q$ [J] を求めるために，抵抗 $R$ と電流 $I$ を用いた公式 $Q = RI^2t$ を選択する。</td>
 </tr>
 <tr>
@@ -1082,7 +1082,7 @@ MathJax = {
 <td style="text-align: left;">ジュール [J] はワット秒 [W$\cdot$s] と等価であるため，時間を秒単位に換算（$10 \times 60 = 600\text{ s}$）して代入する必要がある。</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>(2)</strong> $35\\ \Omega$ の電熱線に $20\text{ A}$ の電流</td>
+<td style="text-align: left;"><strong>(2)</strong> $35\ \Omega$ の電熱線に $20\text{ A}$ の電流</td>
 <td style="text-align: left;">消費電力 $P$ [W] を求める公式 $P = RI^2$ を用いる。電力は「単位時間あたりのエネルギー」であるため，時間は計算に含めない。</td>
 </tr>
 <tr>
@@ -1121,11 +1121,11 @@ MathJax = {
 <td style="text-align: left;">電球は電圧によって抵抗値が変化する非オーム抵抗（非線形素子）である。電球の電流 $I_L$ と電圧 $V_L$ は、常にこの曲線上の関係を満たさなければならない。</td>
 </tr>
 <tr>
-<td style="text-align: left;">電球と $30\\ \Omega$ の抵抗が並列</td>
+<td style="text-align: left;">電球と $30\ \Omega$ の抵抗が並列</td>
 <td style="text-align: left;">並列接続された電球と抵抗には共通の電圧 $V_L$ がかかる。キルヒホッフ第1法則より、この並列部分に流れ込む全電流 $I$ は、$I = I_L + \frac{V_L}{30}$ と表せる。</td>
 </tr>
 <tr>
-<td style="text-align: left;">並列部分と $60\\ \Omega$ の抵抗が直列</td>
+<td style="text-align: left;">並列部分と $60\ \Omega$ の抵抗が直列</td>
 <td style="text-align: left;">キルヒホッフ第2法則より、電源電圧 $12$ V は回路各部での電圧降下の和に等しい。したがって、$12 = V_L + 60I$ という関係式が成立する。</td>
 </tr>
 <tr>
@@ -1153,7 +1153,7 @@ MathJax = {
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>(1)</strong> 電気容量 $20\\ \mu\text{F}$ のコンデンサー</td>
+<td style="text-align: left;"><strong>(1)</strong> 電気容量 $20\ \mu\text{F}$ のコンデンサー</td>
 <td style="text-align: left;">静電容量 $C = 20 \times 10^{-6}$ F を表す。単位「$\mu$（マイクロ）」は $10^{-6}$ 倍であることを示している。</td>
 </tr>
 <tr>
@@ -1990,7 +1990,7 @@ MathJax = {
 </tr>
 <tr>
 <td style="text-align: left;">ファラデーの電磁誘導の法則</td>
-<td style="text-align: left;">コイルに発生する誘導起電力の大きさ $V$ は、巻き数 $N$ と磁束の時間変化率に比例する（公式 $V = N \left$</td>
+<td style="text-align: left;">コイルに発生する誘導起電力の大きさ $V$ は、巻き数 $N$ と磁束の時間変化率に比例する（公式 $V = N \left\lvert \frac{\Delta \Phi}{\Delta t} \right\rvert$）。</td>
 </tr>
 <tr>
 <td style="text-align: left;">50回巻き、$0.30$秒間に磁束が$6.0$ Wb増えた</td>
@@ -2166,7 +2166,7 @@ MathJax = {
 </tr>
 <tr>
 <td style="text-align: left;">巻き数 $2N$ の2次コイル</td>
-<td style="text-align: left;">ファラデーの電磁誘導の法則より、2次コイルに生じる誘導起電力の大きさ $V$ は、巻き数 $N_2 = 2N$ を用いて $V = 2N \left$</td>
+<td style="text-align: left;">ファラデーの電磁誘導の法則より、2次コイルに生じる誘導起電力の大きさ $V$ は、巻き数 $N_2 = 2N$ を用いて $V = 2N \left\lvert \frac{\Delta \Phi}{\Delta t} \right\rvert$ と立式できる。</td>
 </tr>
 <tr>
 <td style="text-align: left;">電流が $\Delta I$ だけ変化したときの起電力 $V$</td>
@@ -2174,7 +2174,7 @@ MathJax = {
 </tr>
 <tr>
 <td style="text-align: left;">相互インダクタンス $M$</td>
-<td style="text-align: left;">2次コイルの誘導起電力の式 $V = M \left$</td>
+<td style="text-align: left;">2次コイルの誘導起電力の式 $V = M \left\lvert \frac{\Delta I_1}{\Delta t} \right\rvert$ における比例定数 $M$ を指す。</td>
 </tr>
 <tr>
 <td style="text-align: left;">図のコイルの巻き方</td>
@@ -2193,7 +2193,7 @@ MathJax = {
 <tbody>
 <tr>
 <td style="text-align: left;">自己インダクタンス $L = 7.0$ H</td>
-<td style="text-align: left;">自己誘導起電力の大きさ $V$ と電流の変化率 $\frac{\Delta I}{\Delta t}$ の比例定数として、$V = L \left$</td>
+<td style="text-align: left;">自己誘導起電力の大きさ $V$ と電流の変化率 $\frac{\Delta I}{\Delta t}$ の比例定数として、$V = L \left\lvert \frac{\Delta I}{\Delta t} \right\rvert$ と表される。</td>
 </tr>
 <tr>
 <td style="text-align: left;">$I-t$ グラフが直線（折れ線）</td>
@@ -2279,7 +2279,7 @@ MathJax = {
 <tbody>
 <tr>
 <td style="text-align: left;">自己インダクタンス $L$、電流の変化 $\Delta i$</td>
-<td style="text-align: left;">自己誘導起電力の大きさ $V$ について、公式 $V = L \left$</td>
+<td style="text-align: left;">自己誘導起電力の大きさ $V$ について、公式 $V = L \left\lvert \frac{\Delta i}{\Delta t} \right\rvert$ を用いて立式する。</td>
 </tr>
 <tr>
 <td style="text-align: left;">電流 $i$ が $\Delta t$ 秒間流れる</td>
@@ -2437,7 +2437,7 @@ MathJax = {
 </tr>
 <tr>
 <td style="text-align: left;">図3（$L$ と $C$ の直列）</td>
-<td style="text-align: left;">コイルとコンデンサーの電圧は互いに逆向き（位相差 $\pi$）である。そのため、インピーダンスはリアクタンスの差の絶対値 $Z = \left$</td>
+<td style="text-align: left;">コイルとコンデンサーの電圧は互いに逆向き（位相差 $\pi$）である。そのため、インピーダンスはリアクタンスの差の絶対値 $Z = \left\lvert \omega L - \frac{1}{\omega C} \right\rvert$ と立式できる。</td>
 </tr>
 <tr>
 <td style="text-align: left;">回路の合成インピーダンスの公式</td>
