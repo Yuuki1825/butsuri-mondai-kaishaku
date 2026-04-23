@@ -527,3 +527,4 @@ idx2 = convert_md_to_html("問題解釈｜名門の森1.md", "問題解釈｜名
 idx3 = convert_md_to_html("問題解釈｜名門の森2.md", "問題解釈｜名門の森2.html", "問題解釈｜名門の森2")
 idx4 = convert_md_to_html("問題解釈｜共テ物理.md", "問題解釈｜共テ物理.html", "問題解釈｜共テ物理")
 idx5 = convert_md_to_html("問題解釈｜宇宙一別冊（力学波動）.md", "問題解釈｜宇宙一別冊（力学波動）.html", "問題解釈｜宇宙一別冊（力学波動）", shift_headings=True)
+idx6 = convert_md_to_html("問題解釈｜宇宙一別冊（電磁気熱原子）.md", "問題解釈｜宇宙一別冊（電磁気熱原子）.html", "問題解釈｜宇宙一別冊（電磁気熱原子）", shift_headings=True)
